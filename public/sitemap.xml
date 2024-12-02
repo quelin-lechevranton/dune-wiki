@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2024-11-24T15:51:49+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/larsoft/</loc>
+    <loc>https://example.org/larsoft/</loc>
     <lastmod>2024-11-24T15:51:49+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/basic/</loc>
+    <loc>https://example.org/basic/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/art/</loc>
+    <loc>https://example.org/dune/art/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/detector/</loc>
+    <loc>https://example.org/dune/detector/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/</loc>
+    <loc>https://example.org/dune/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/dune/</loc>
+    <loc>https://example.org/dune/dune/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/fhicl/</loc>
+    <loc>https://example.org/dune/fhicl/</loc>
   </url><url>
-    <loc>http://localhost:1313/larsoft/installation/</loc>
+    <loc>https://example.org/larsoft/installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/larsoft/</loc>
+    <loc>https://example.org/dune/larsoft/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/nu/</loc>
+    <loc>https://example.org/dune/nu/</loc>
   </url><url>
-    <loc>http://localhost:1313/larsoft/objects/</loc>
+    <loc>https://example.org/larsoft/objects/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune/root/</loc>
+    <loc>https://example.org/dune/root/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://example.org/tags/</loc>
   </url>
 </urlset>

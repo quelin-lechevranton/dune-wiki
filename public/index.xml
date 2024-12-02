@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dune-wiki on My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://example.org/</link>
     <description>Recent content in dune-wiki on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/basic/</link>
+      <link>https://example.org/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/basic/</guid>
+      <guid>https://example.org/basic/</guid>
       <description>&lt;h1 id=&#34;for-testing-purposes&#34;&gt;&#xA;    for testing purposes&#xA;    &#xA;    &#xA;&lt;/h1&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/dune/art/</link>
+      <link>https://example.org/dune/art/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/art/</guid>
+      <guid>https://example.org/dune/art/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Detector Properties</title>
-      <link>http://localhost:1313/dune/detector/</link>
+      <link>https://example.org/dune/detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/detector/</guid>
+      <guid>https://example.org/dune/detector/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Deep Underground Neutrino Experiement</title>
-      <link>http://localhost:1313/dune/dune/</link>
+      <link>https://example.org/dune/dune/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/dune/</guid>
+      <guid>https://example.org/dune/dune/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Fermilab Hierarchical Configuration Language</title>
-      <link>http://localhost:1313/dune/fhicl/</link>
+      <link>https://example.org/dune/fhicl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/fhicl/</guid>
+      <guid>https://example.org/dune/fhicl/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Installation</title>
-      <link>http://localhost:1313/larsoft/installation/</link>
+      <link>https://example.org/larsoft/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/larsoft/installation/</guid>
+      <guid>https://example.org/larsoft/installation/</guid>
       <description>Instruction for a local LArSoft installation</description>
     </item>
     <item>
       <title>Liquid Argon Software</title>
-      <link>http://localhost:1313/dune/larsoft/</link>
+      <link>https://example.org/dune/larsoft/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/larsoft/</guid>
+      <guid>https://example.org/dune/larsoft/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Neutrino Physics</title>
-      <link>http://localhost:1313/dune/nu/</link>
+      <link>https://example.org/dune/nu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/nu/</guid>
+      <guid>https://example.org/dune/nu/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Objects</title>
-      <link>http://localhost:1313/larsoft/objects/</link>
+      <link>https://example.org/larsoft/objects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/larsoft/objects/</guid>
+      <guid>https://example.org/larsoft/objects/</guid>
       <description>classes and methods of LArSoft objects</description>
     </item>
     <item>
       <title>ROOT: CERN data analysis framework</title>
-      <link>http://localhost:1313/dune/root/</link>
+      <link>https://example.org/dune/root/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dune/root/</guid>
+      <guid>https://example.org/dune/root/</guid>
       <description>&amp;hellip;</description>
     </item>
   </channel>
