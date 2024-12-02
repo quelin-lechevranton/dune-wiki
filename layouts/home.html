@@ -1,10 +1,18 @@
 
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
-    <h1>{{ .Title }}</h1>
-    <h2>HOME LAYOUT</h2>
-    {{ .Content }}
+<head>
+    {{ partialCached "head.html" . }}
+</head>
+<body class="home">
+    <header>
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+    </header>
+    <main>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </main>
 </body>
 </html>

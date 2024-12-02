@@ -1,0 +1,47 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+
+
+$border-size: .1* f.$xl;
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        top: 10em;
+    } to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+section.pages {
+    margin-top: 2em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+
+    a {
+        display: block;
+        padding: 1em;
+        border-radius: 1em;
+        border: $border-size solid c.$mute;
+        transition: border-color .2s;
+
+        position: relative;
+        opacity: 0;
+
+        @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+                animation: slideIn .2s #{$i * 0.04}s forwards;
+            }
+        }
+
+        &:before {
+            content: none;
+        }
+        &:hover {
+            border: $border-size solid c.$accent;
+        }
+    }
+}

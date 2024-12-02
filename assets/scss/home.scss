@@ -1,0 +1,22 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+@use 'sizes' as s; 
+
+body.home {
+
+    header {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+    main {
+        width: s.$content_width;
+        margin: 100px auto 0 auto;
+
+        h1 {
+            font-size: f.$xxxl;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+
+.toc {
+
+    .toc-title {
+        font-size: f.$l;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
+    nav {
+        font-size: f.$s;
+
+        animation: unrollIn .2s;
+
+        ol>li {
+            text-indent: .5em;
+            &>ol>li {
+                text-indent: 1.5em;
+            }
+        }
+
+        li {
+            line-height: 2;
+
+            ol {
+                max-height: 0;
+                overflow-y: hidden;
+                transition: max-height .2s;
+            }
+
+            a {
+                transition: font-weight .2s, color .2s;
+            }
+
+            &.active>a {
+                font-weight: bold;
+            }
+
+            a:has(~ol)::after {
+                content: "";
+                display: inline-block;
+
+                background-color: c.$secondary;
+                mask-image: url("/img/chevron-up.svg");
+                mask-size: 1em;
+
+                position: absolute;
+                top: 0.1em;
+                right: -1.3em;
+
+                width: 1em;
+                height: 1em;
+
+                transition: transform 0.2s;
+            }
+            a:has(~ol.expanded)::after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}

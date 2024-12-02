@@ -2,19 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/dune/</loc>
-    <lastmod>2024-11-24T15:51:49+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-11-24T15:51:49+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dune/installation/</loc>
-    <lastmod>2024-11-24T14:51:49+01:00</lastmod>
+    <loc>http://localhost:1313/larsoft/</loc>
+    <lastmod>2024-11-24T15:51:49+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dune/objects/</loc>
-    <lastmod>2024-11-24T14:51:49+01:00</lastmod>
+    <loc>http://localhost:1313/basic/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/art/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/detector/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/dune/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/fhicl/</loc>
+  </url><url>
+    <loc>http://localhost:1313/larsoft/installation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/larsoft/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/nu/</loc>
+  </url><url>
+    <loc>http://localhost:1313/larsoft/objects/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune/root/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

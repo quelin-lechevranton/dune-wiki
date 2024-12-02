@@ -1,0 +1,778 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* default styles */
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Menlo";
+  font-style: normal;
+  src: url("/fonts/Menlo-Regular.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: italic;
+  src: url("/fonts/Menlo-Italic.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/Menlo-Bold.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/fonts/Menlo-BoldItalic.ttf");
+}
+body.home header {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+body.home main {
+  width: 750px;
+  margin: 100px auto 0 auto;
+}
+body.home main h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    top: 10em;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+section.pages {
+  margin-top: 2em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+section.pages a {
+  display: block;
+  padding: 1em;
+  border-radius: 1em;
+  border: 2.4px solid #e6e7e9;
+  transition: border-color 0.2s;
+  position: relative;
+  opacity: 0;
+}
+section.pages a:nth-child(1) {
+  animation: slideIn 0.2s 0.04s forwards;
+}
+section.pages a:nth-child(2) {
+  animation: slideIn 0.2s 0.08s forwards;
+}
+section.pages a:nth-child(3) {
+  animation: slideIn 0.2s 0.12s forwards;
+}
+section.pages a:nth-child(4) {
+  animation: slideIn 0.2s 0.16s forwards;
+}
+section.pages a:nth-child(5) {
+  animation: slideIn 0.2s 0.2s forwards;
+}
+section.pages a:nth-child(6) {
+  animation: slideIn 0.2s 0.24s forwards;
+}
+section.pages a:nth-child(7) {
+  animation: slideIn 0.2s 0.28s forwards;
+}
+section.pages a:nth-child(8) {
+  animation: slideIn 0.2s 0.32s forwards;
+}
+section.pages a:nth-child(9) {
+  animation: slideIn 0.2s 0.36s forwards;
+}
+section.pages a:nth-child(10) {
+  animation: slideIn 0.2s 0.4s forwards;
+}
+section.pages a:nth-child(11) {
+  animation: slideIn 0.2s 0.44s forwards;
+}
+section.pages a:nth-child(12) {
+  animation: slideIn 0.2s 0.48s forwards;
+}
+section.pages a:nth-child(13) {
+  animation: slideIn 0.2s 0.52s forwards;
+}
+section.pages a:nth-child(14) {
+  animation: slideIn 0.2s 0.56s forwards;
+}
+section.pages a:nth-child(15) {
+  animation: slideIn 0.2s 0.6s forwards;
+}
+section.pages a:nth-child(16) {
+  animation: slideIn 0.2s 0.64s forwards;
+}
+section.pages a:nth-child(17) {
+  animation: slideIn 0.2s 0.68s forwards;
+}
+section.pages a:nth-child(18) {
+  animation: slideIn 0.2s 0.72s forwards;
+}
+section.pages a:nth-child(19) {
+  animation: slideIn 0.2s 0.76s forwards;
+}
+section.pages a:nth-child(20) {
+  animation: slideIn 0.2s 0.8s forwards;
+}
+section.pages a:nth-child(21) {
+  animation: slideIn 0.2s 0.84s forwards;
+}
+section.pages a:nth-child(22) {
+  animation: slideIn 0.2s 0.88s forwards;
+}
+section.pages a:nth-child(23) {
+  animation: slideIn 0.2s 0.92s forwards;
+}
+section.pages a:nth-child(24) {
+  animation: slideIn 0.2s 0.96s forwards;
+}
+section.pages a:nth-child(25) {
+  animation: slideIn 0.2s 1s forwards;
+}
+section.pages a:nth-child(26) {
+  animation: slideIn 0.2s 1.04s forwards;
+}
+section.pages a:nth-child(27) {
+  animation: slideIn 0.2s 1.08s forwards;
+}
+section.pages a:nth-child(28) {
+  animation: slideIn 0.2s 1.12s forwards;
+}
+section.pages a:nth-child(29) {
+  animation: slideIn 0.2s 1.16s forwards;
+}
+section.pages a:nth-child(30) {
+  animation: slideIn 0.2s 1.2s forwards;
+}
+section.pages a:before {
+  content: none;
+}
+section.pages a:hover {
+  border: 2.4px solid rgb(157, 50, 181);
+}
+
+body > header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  padding: 1.5em 0;
+  margin-bottom: 2em;
+  z-index: 1;
+  background-color: white;
+  border-bottom: #e6e7e9 1px solid;
+  box-shadow: 0 0 10px #e6e7e9;
+}
+body > header ol {
+  display: flex;
+  align-items: baseline;
+}
+body > header .breadcrumb {
+  width: 750px;
+  margin: 0 auto;
+}
+body > header .breadcrumb li {
+  display: inline;
+  transition: color 0.2s;
+}
+body > header .breadcrumb li.ancestor {
+  color: #8a8e91;
+}
+body > header .breadcrumb li.ancestor:hover {
+  color: black;
+}
+body > header .breadcrumb li.ancestor::after {
+  margin: 0 0.5em;
+  content: "";
+  display: inline-block;
+  background-color: #8a8e91;
+  mask-image: url("/img/chevron-right.svg");
+  mask-size: 1em;
+  position: relative;
+  top: 0.1em;
+  width: 1em;
+  height: 1em;
+}
+
+.toc .toc-title {
+  font-size: 19.2px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.toc nav {
+  font-size: 14.4px;
+  animation: unrollIn 0.2s;
+}
+.toc nav ol > li {
+  text-indent: 0.5em;
+}
+.toc nav ol > li > ol > li {
+  text-indent: 1.5em;
+}
+.toc nav li {
+  line-height: 2;
+}
+.toc nav li ol {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 0.2s;
+}
+.toc nav li a {
+  transition: font-weight 0.2s, color 0.2s;
+}
+.toc nav li.active > a {
+  font-weight: bold;
+}
+.toc nav li a:has(~ ol)::after {
+  content: "";
+  display: inline-block;
+  background-color: #8a8e91;
+  mask-image: url("/img/chevron-up.svg");
+  mask-size: 1em;
+  position: absolute;
+  top: 0.1em;
+  right: -1.3em;
+  width: 1em;
+  height: 1em;
+  transition: transform 0.2s;
+}
+.toc nav li a:has(~ ol.expanded)::after {
+  transform: rotate(-180deg);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1em 0;
+}
+h2:nth-child(1) {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 19.2px;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+h2, h3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+h2 a.github, h3 a.github {
+  position: absolute;
+  left: -3rem;
+}
+h2 a.github svg, h3 a.github svg {
+  width: 2rem;
+}
+h2 a.github svg path, h3 a.github svg path {
+  transition: fill 0.2s;
+  fill: black;
+}
+h2 a.github svg:hover path, h3 a.github svg:hover path {
+  fill: rgb(157, 50, 181);
+}
+
+blockquote {
+  margin: 2em 2em;
+  padding: 0.5em 0.5em 0.5em 1em;
+  border-left: #8a8e91 0.2em solid;
+  background-color: #e6e7e9;
+  border-radius: 0 1em 1em 0;
+}
+
+div.highlight {
+  color: black;
+  font-family: "Menlo", monospace;
+  font-size: 14.4px;
+  margin: 2em 2em;
+  background-color: white;
+  border-radius: 1em;
+  border: 1px solid #e6e7e9;
+  box-shadow: 0 0 10px #e6e7e9;
+}
+div.highlight header {
+  margin: 0.5em 1em -0.5em 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #e6e7e9;
+  position: relative;
+}
+div.highlight header .window-button {
+  margin-top: 0.25em;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: #e6e7e9;
+  transition: background-color 0.2s 0.2s;
+}
+div.highlight header .window-button:nth-child(1) {
+  left: 0rem;
+}
+div.highlight header .window-button:nth-child(1):hover {
+  transition: background-color 0.2s;
+  background-color: #ed6a5d;
+}
+div.highlight header .window-button:nth-child(2) {
+  left: 1.25rem;
+}
+div.highlight header .window-button:nth-child(2):hover {
+  transition: background-color 0.2s;
+  background-color: #f4be4f;
+}
+div.highlight header .window-button:nth-child(3) {
+  left: 2.5rem;
+}
+div.highlight header .window-button:nth-child(3):hover {
+  transition: background-color 0.2s;
+  background-color: #61c553;
+}
+div.highlight header .code-label {
+  width: 100%;
+  text-align: center;
+  color: #8a8e91;
+}
+div.highlight pre {
+  font-family: inherit;
+  margin: 1em;
+  display: flex;
+  position: relative;
+}
+div.highlight pre .code-gutter {
+  color: #8a8e91;
+  margin-right: 1em;
+  text-align: right;
+}
+div.highlight pre .code-gutter span.code-line {
+  display: block;
+}
+div.highlight pre code {
+  font-family: inherit;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  background-color: inherit;
+}
+div.highlight pre button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 0 0 0 40%;
+  padding: 0 0 0.2em 0.4em;
+}
+div.highlight pre button svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+div.highlight pre button.check {
+  display: none;
+  fill: black;
+}
+div.highlight pre button.copy path {
+  transition: fill 0.2s;
+  fill: white;
+}
+div.highlight pre button.copy svg:hover {
+  cursor: pointer;
+}
+div.highlight pre button.copy svg:hover path {
+  fill: black;
+}
+div.highlight pre:hover button.copy path {
+  fill: #8a8e91;
+}
+
+.highlight .hll {
+  background-color: #8a8e91;
+}
+
+.highlight .c {
+  color: #8a8e91;
+} /* Comment */
+.highlight .err {
+  color: #f33538;
+} /* Error */
+.highlight .k {
+  color: #992299;
+} /* Keyword */
+.highlight .l {
+  color: #eb8d2f;
+} /* Literal */
+.highlight .n {
+  color: black;
+} /* Name */
+.highlight .o {
+  color: #229999;
+} /* Operator */
+.highlight .p {
+  color: black;
+} /* Punctuation */
+.highlight .ch {
+  color: #8a8e91;
+} /* Comment.Hashbang */
+.highlight .cm {
+  color: #8a8e91;
+} /* Comment.Multiline */
+.highlight .cp {
+  color: #8a8e91;
+} /* Comment.Preproc */
+.highlight .cpf {
+  color: #8a8e91;
+} /* Comment.PreprocFile */
+.highlight .c1 {
+  color: #8a8e91;
+} /* Comment.Single */
+.highlight .cs {
+  color: #8a8e91;
+} /* Comment.Special */
+.highlight .gd {
+  color: #f33538;
+} /* Generic.Deleted */
+.highlight .ge {
+  font-style: italic;
+} /* Generic.Emph */
+.highlight .gh {
+  color: black;
+  font-weight: bold;
+} /* Generic.Heading */
+.highlight .gi {
+  color: #229922;
+} /* Generic.Inserted */
+.highlight .gp {
+  color: #8a8e91;
+  font-weight: bold;
+} /* Generic.Prompt */
+.highlight .gs {
+  font-weight: bold;
+} /* Generic.Strong */
+.highlight .gu {
+  color: #229999;
+  font-weight: bold;
+} /* Generic.Subheading */
+.highlight .kc {
+  color: #992299;
+} /* Keyword.Constant */
+.highlight .kd {
+  color: #992299;
+} /* Keyword.Declaration */
+.highlight .kn {
+  color: #229999;
+} /* Keyword.Namespace */
+.highlight .kp {
+  color: #992299;
+} /* Keyword.Pseudo */
+.highlight .kr {
+  color: #992299;
+} /* Keyword.Reserved */
+.highlight .kt {
+  color: #dd9922;
+} /* Keyword.Type */
+.highlight .ld {
+  color: #229922;
+} /* Literal.Date */
+.highlight .m {
+  color: #eb8d2f;
+} /* Literal.Number */
+.highlight .s {
+  color: #229922;
+} /* Literal.String */
+.highlight .na {
+  color: #224499;
+} /* Name.Attribute */
+.highlight .nb {
+  color: #dd9922;
+} /* Name.Builtin */
+.highlight .nc {
+  color: #dd9922;
+} /* Name.Class */
+.highlight .no {
+  color: #f33538;
+} /* Name.Constant */
+.highlight .nd {
+  color: #229999;
+} /* Name.Decorator */
+.highlight .ni {
+  color: black;
+} /* Name.Entity */
+.highlight .ne {
+  color: #f33538;
+} /* Name.Exception */
+.highlight .nf {
+  color: #224499;
+} /* Name.Function */
+.highlight .nl {
+  color: black;
+} /* Name.Label */
+.highlight .nn {
+  color: #dd9922;
+} /* Name.Namespace */
+.highlight .nx {
+  color: #224499;
+} /* Name.Other */
+.highlight .py {
+  color: black;
+} /* Name.Property */
+.highlight .nt {
+  color: #229999;
+} /* Name.Tag */
+.highlight .nv {
+  color: #f33538;
+} /* Name.Variable */
+.highlight .ow {
+  color: #229999;
+} /* Operator.Word */
+.highlight .w {
+  color: black;
+} /* Text.wspace */
+.highlight .mb {
+  color: #eb8d2f;
+} /* Literal.Number.Bin */
+.highlight .mf {
+  color: #eb8d2f;
+} /* Literal.Number.Float */
+.highlight .mh {
+  color: #eb8d2f;
+} /* Literal.Number.Hex */
+.highlight .mi {
+  color: #eb8d2f;
+} /* Literal.Number.Integer */
+.highlight .mo {
+  color: #eb8d2f;
+} /* Literal.Number.Oct */
+.highlight .sa {
+  color: #229922;
+} /* Literal.String.Affix */
+.highlight .sb {
+  color: #229922;
+} /* Literal.String.Backtick */
+.highlight .sc {
+  color: black;
+} /* Literal.String.Char */
+.highlight .dl {
+  color: #229922;
+} /* Literal.String.Delimiter */
+.highlight .sd {
+  color: #8a8e91;
+} /* Literal.String.Doc */
+.highlight .s2 {
+  color: #229922;
+} /* Literal.String.Double */
+.highlight .se {
+  color: #eb8d2f;
+} /* Literal.String.Escape */
+.highlight .sh {
+  color: #229922;
+} /* Literal.String.Heroc */
+.highlight .si {
+  color: #eb8d2f;
+} /* Literal.String.Interpol */
+.highlight .sx {
+  color: #229922;
+} /* Literal.String.Other */
+.highlight .sr {
+  color: #229922;
+} /* Literal.String.Regex */
+.highlight .s1 {
+  color: #229922;
+} /* Literal.String.Single */
+.highlight .ss {
+  color: #229922;
+} /* Literal.String.Symbol */
+.highlight .bp {
+  color: black;
+} /* Name.Builtin.Pseudo */
+.highlight .fm {
+  color: #224499;
+} /* Name.Function.Magic */
+.highlight .vc {
+  color: #f33538;
+} /* Name.Variable.Class */
+.highlight .vg {
+  color: #f33538;
+} /* Name.Variable.Global */
+.highlight .vi {
+  color: #f33538;
+} /* Name.Variable.Instance */
+.highlight .vm {
+  color: #f33538;
+} /* Name.Variable.Magic */
+.highlight .il {
+  color: #eb8d2f;
+} /* Literal.Number.Integer.Long */
+table {
+  display: block;
+  margin: 2em 2em;
+}
+table th, table td {
+  padding: 0.5em;
+}
+table thead {
+  border-bottom: 1px solid black;
+}
+table thead th {
+  font-weight: bold;
+}
+table tbody tr {
+  border-bottom: 1px solid #e6e7e9;
+}
+table tbody tr:last-child {
+  border: none;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+main {
+  margin: 0 auto;
+  width: fit-content;
+}
+main .content {
+  display: inline-block;
+  width: 750px;
+  min-width: 600px;
+  line-height: 1.2;
+}
+main .toc {
+  display: inline-block;
+  position: fixed;
+  margin-left: 2em;
+  width: 250px;
+  max-height: 70%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+@media screen and (max-width: 1100px) {
+  main .toc {
+    display: none;
+  }
+}
+
+code {
+  font-family: "Menlo", monospace;
+  background-color: #e6e7e9;
+  padding: 0.1em 0.2em;
+  border-radius: 0.2em;
+}
+
+a:not(.github) {
+  position: relative;
+}
+a:not(.github)::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  bottom: -0.1em;
+  left: 2.5%;
+  width: 95%;
+  height: 0.1em;
+  background-color: rgb(157, 50, 181);
+  transition: opacity 0.2s, transform 0.2s;
+  transform: scaleX(0);
+}
+a:not(.github):hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}

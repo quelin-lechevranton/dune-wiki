@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+<title></title>
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css">
+
+        <script src="/js/toc.js"></script>
+        <script src="/js/code-copy.js"></script>
+    </head>
+    <body class="single">
+        <header>
+    <nav class="breadcrumb">
+        <ol>
+            
+            <li class="ancestor"><a href="http://localhost:1313/">Home</a></li>
+            
+            <li class="current"></a></li>
+        </ol>
+    </nav>
+</header>
+        <main>
+            <h1>Detector Properties</h1>
+            <section class="content">
+                <h2 id="geometry">
+    Geometry
+    
+    
+</h2><p><a href="https://github.com/LArSoft/larcore/tree/develop/larcore/Geometry">larcore/Geometry</a></p>
+<p><a href="https://github.com/LArSoft/larcorealg/tree/develop/larcorealg/Geometry">larcorealg/Geometry</a></p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;larcore/Geometry/Geometry.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">const</span> <span class="n">geo</span><span class="o">::</span><span class="n">Geometry</span><span class="o">*</span> <span class="n">fGeom</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fGeom</span> <span class="o">=</span> <span class="o">&amp;*</span><span class="n">art</span><span class="o">::</span><span class="n">ServiceHandle</span><span class="o">&lt;</span><span class="n">geo</span><span class="o">::</span><span class="n">Geometry</span><span class="o">&gt;</span><span class="p">();</span></span></span></code>
+    </pre>
+</div><p><code>geo::Geometry</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Cryostat(geo::CryostatID)</code></td>
+          <td><code>(geo::CryostatGeo: public BoxBoundedGeo)</code></td>
+      </tr>
+      <tr>
+          <td><code>TPC(geo::TPCID)</code></td>
+          <td><code>(geo::TPCGeo: public BoxBoundedGeo)</code></td>
+      </tr>
+      <tr>
+          <td><code>NTPC()</code></td>
+          <td><code>(unsigned int)</code></td>
+      </tr>
+      <tr>
+          <td><code>Nplanes()</code></td>
+          <td><code>(unsigned int)</code></td>
+      </tr>
+      <tr>
+          <td><code>Nwires(geo::PlaneID)</code></td>
+          <td><code>(unsigned int)</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>geo::BoxBoundedGeo</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Min()</code></td>
+          <td><code>(geo::Point_t)</code></td>
+      </tr>
+      <tr>
+          <td><code>Max()</code></td>
+          <td><code>(geo::Point_t)</code></td>
+      </tr>
+      <tr>
+          <td><code>MinX()</code></td>
+          <td><code>(double) Min().X()</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>geo::CryostatGeo</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>BoundingBox()</code></td>
+          <td><code>(geo::BoxBoundedGeo) (*this)</code></td>
+      </tr>
+      <tr>
+          <td><code>Width()</code></td>
+          <td><code>(double)</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>geo::WireReadoutGeom.h</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Nchannels()</code></td>
+          <td><code>(unsigned int)</code></td>
+      </tr>
+      <tr>
+          <td><code>ChannelToWire(raw::ChannelID_t)</code></td>
+          <td><code>(vecotr&lt;geo::WireID&gt;)</code></td>
+      </tr>
+      <tr>
+          <td><code>View(raw::ChannelID_t)</code></td>
+          <td><code>(geo::View_t)</code></td>
+      </tr>
+      <tr>
+          <td><code>NearestChannel(geo::Point_t,geo::PlaneID)</code></td>
+          <td><code>(raw::ChannelID_t)</code></td>
+      </tr>
+      <tr>
+          <td><code>PlaneWireToChannel(geo::WireID)</code></td>
+          <td><code>(raw::ChannelID_t)</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="detectorpropertiesservice">
+    DetectorPropertiesService
+    
+    
+</h2><p><a href="https://github.com/LArSoft/lardata/tree/develop/lardata/DetectorInfoServices">lardata/DectorInfoServices</a></p>
+<p><a href="https://github.com/LArSoft/lardataalg/tree/develop/lardataalg/DetectorInfo">lardataalg/DetectorInfo</a></p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorPropertiesService</span><span class="o">*</span> <span class="n">fDetProp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorClocksService</span><span class="o">*</span> <span class="n">fDetClocks</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorClocksData</span> <span class="n">clockData</span> <span class="o">=</span> <span class="n">fDetClocks</span><span class="o">-&gt;</span><span class="n">DataForJob</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorPropertiesData</span> <span class="n">detProp</span> <span class="o">=</span> <span class="n">fDetProp</span><span class="o">-&gt;</span><span class="n">DataForJob</span><span class="p">(</span><span class="n">clockData</span><span class="p">);</span></span></span></code>
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="n">DataForJob</span><span class="p">(</span><span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorClocksService</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">DataFor</span><span class="p">(</span><span class="n">art</span><span class="o">::</span><span class="n">Event</span><span class="p">,</span> <span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorClocksService</span><span class="p">);</span></span></span></code>
+    </pre>
+</div>
+            </section>
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ol>
+    <li><a href="#geometry">Geometry</a></li>
+    <li><a href="#detectorpropertiesservice">DetectorPropertiesService</a></li>
+  </ol>
+</nav>
+            </nav>
+        </main>
+    </body>
+</html>

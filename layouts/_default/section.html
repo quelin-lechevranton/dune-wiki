@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
-    <h1>{{ .Title }}</h1>
-    <h2>SECTION LAYOUT</h2>
-    {{ .Content }}
-
-    <ul>
-        {{ range .Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-</body>
+    <head>
+        {{ partialCached "head.html" . }}
+    </head>
+    <body>
+        {{ partialCached "header.html" . }}
+        <main class="section">
+            <section class="content">
+                <h1>{{ .Title }}</h1>
+                {{ .Content }}
+                <section class="pages">
+                    {{ range .Pages }}
+                    <a href="{{ .Permalink }}"><h2>{{ .LinkTitle }}</h2>{{ .Summary}}</a>
+                    {{ end }}
+                </section>
+            </section>
+        </main>
+    </body>
 </html>

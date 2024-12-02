@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+<title>DUNE</title>
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css">
+
+        <script src="/js/toc.js"></script>
+        <script src="/js/code-copy.js"></script>
+    </head>
+    <body class="single">
+        <header>
+    <nav class="breadcrumb">
+        <ol>
+            
+            <li class="ancestor"><a href="http://localhost:1313/">Home</a></li>
+            
+            <li class="current">DUNE</a></li>
+        </ol>
+    </nav>
+</header>
+        <main>
+            <h1>Neutrino Physics</h1>
+            <section class="content">
+                <!-- ![event_number_mu_to_e](Figures/event_number_mutoe.png)
+
+![event_number_mu_to_mu](Figures/event_number_mutomu.png) -->
+<blockquote>
+<p>\(N=\phi\varepsilon \sigma N_T P(\nu_\mu\to\nu_e)\)</p>
+</blockquote>
+<dl>
+<dt>this is a definition</dt>
+<dd>definition</dd>
+<dt>Term to define</dt>
+<dd>This is the definition of the term</dd>
+<dd>This is another definition</dd>
+<dt>Another term</dt>
+<dd>Yet another definition</dd>
+</dl>
+<h2 id="physics">
+    Physics
+    
+    
+</h2><h3 id="neutrinos">
+    neutrinos
+    
+    
+</h3><ul>
+<li>
+<p>solar: nuclear fusion: \(pp\to {}^2{\rm H}e^+\nu_e\), energy: \(\sim {\rm~MeV}\)</p>
+</li>
+<li>
+<p>reactor: nuclear fission: ?, energy: \(\sim {\rm~MeV}\)</p>
+</li>
+<li>
+<p>atmospheric: energy: \(\sim {\rm~MeV}-{\rm~PeV}\)</p>
+</li>
+<li>
+<p>neutrino mass: \(<0.9{\rm~eV}\)</p>
+</li>
+<li>
+<p>in matter: \(\nu_ee^-\) annihilation: phase difference in oscillation parameters</p>
+</li>
+</ul>
+<h3 id="oscillations">
+    oscillations
+    
+    
+</h3><h3 id="lar-40_18rm-ar">
+    LAr: \({}^{40}_{18}{\rm Ar}\)
+    
+    
+</h3><ul>
+<li>
+<p>density: \(1.4{\rm~g/cm^3}\)</p>
+</li>
+<li>
+<p>dominant low-energy interaction: charged-current absorption: \(\nu_e+{}^{40}{\rm Ar}\to e^-+{}^{40}{\rm K^*}\) (\(\nu_en\to e^-p\))</p>
+</li>
+<li>
+<p>additional channels: \(\bar\nu_e\) CC, \(\nu_e\) elastic scattering</p>
+</li>
+<li>
+<p>sensitivity: \(\sim 5{\rm~MeV}-?\) (with \({}^{39}{\rm Ar}\) down to \(500{\rm~keV}\))</p>
+</li>
+<li>
+<p>\(\mu^+\): 100% decay to \(e^+\), \(\mu^-\): 25% decay to \(e^-\) and 75% captured by \({\rm Ar^+}\)</p>
+</li>
+<li>
+<p>electron propagation: energy deposit via inoization (continuous, track-like topology) or radiative losses (bremsstrahlung: at all energies, electron and photon showers)</p>
+</li>
+<li>
+<p>Bremsstrahlung photons may Compton scatter or create electron pairs, with a typical attenuation length of \(20-30{\rm~cm}\) (at Michel electron energy range)</p>
+</li>
+</ul>
+<h2 id="dune-hardware">
+    DUNE Hardware
+    
+    
+</h2><h3 id="beam-fermilab">
+    beam @Fermilab
+    
+    
+</h3><ul>
+<li>
+<p>\(\nu\) energy: \(100{\rm~MeV}\sim 1{\rm~GeV}\)</p>
+</li>
+<li>
+<p>uncertainties (cf. Kosc p51)</p>
+</li>
+</ul>
+<!-- ![flux_wo_osc](Figures/flux_wo_osc.png) -->
+<h3 id="far-detector-surf-homestake-mines">
+    far detector @SURF @Homestake mines
+    
+    
+</h3><ul>
+<li>
+<p>cryostat, exterior: \(65.8\times 17.8\times 18.9{\rm~m^3}\), interior: \(62.0\times 15.1\times 14.0{\rm~m^3}\)</p>
+</li>
+<li>
+<p>assumed constant matter density: \(2.6{\rm~g/cm^3}\)</p>
+</li>
+<li>
+<p>expected muon rate: \(0.2{\rm~Hz}\) with \(283{\rm~GeV}\) average energy</p>
+</li>
+</ul>
+<h3 id="lartpcs">
+    LArTPCs
+    
+    
+</h3><ul>
+<li>
+<p>Fiducial volume: \(10{\rm~kt}\) (\(17.5{\rm~kt}\) in total)</p>
+</li>
+<li>
+<p>electric field: \(500{\rm~V/cm}\)</p>
+</li>
+<li>
+<p>electron drift velocity: (around 4 ms for 6 m)</p>
+</li>
+<li>
+<p>time tick duration: \(500{\rm~ns}\)</p>
+</li>
+</ul>
+<h2 id="software">
+    Software
+    
+    
+</h2><h3 id="larsoft">
+    LArSoft
+    
+    
+</h3><ul>
+<li>
+<p>cosmic ray muon generation: CORSIKA</p>
+</li>
+<li>
+<p>particle propagation and interaction: Geant4 (using QGSP BERT physics list)</p>
+</li>
+<li>
+<p>pattern recognition and event reconstruction: Pandora software package</p>
+</li>
+<li>
+<p>\(\Delta\)-rays threshold: \(455{\rm~keV}\) (in ProtoDUNE-SP)</p>
+</li>
+</ul>
+<h2 id="prototyping">
+    prototyping
+    
+    
+</h2><h3 id="protodune-sp-cern">
+    protoDUNE-SP @CERN
+    
+    
+</h3><ul>
+<li>
+<p>HD</p>
+</li>
+<li>
+<p>fiducial volume of LAr: \(770\ \rm t\)</p>
+</li>
+<li>
+<p>wdh: \(7.2\times 7 \times 6{\rm~m^3}\)</p>
+</li>
+<li>
+<p>maximum drift length: \(3.6{\rm~m}\)</p>
+</li>
+<li>
+<p>cathode - anode voltage: \(180 - 0{\rm~kV}\)</p>
+</li>
+<li>
+<p>U &amp; V layers angles: \(\pm 35.7^\circ\)</p>
+</li>
+<li>
+<p>layer distance: \(4.75{\rm~mm}\)</p>
+</li>
+<li>
+<p>wire pitch: U,V: \(4.67{\rm~mm}\) and X: \(4.79{\rm~mm}\)</p>
+</li>
+<li>
+<p>total electronic channel per APA: \(2560\)</p>
+</li>
+<li>
+<p>expected muon flux: \(1{\rm~cm^{-2}.min^{-1}}\)</p>
+</li>
+</ul>
+<h3 id="michel-electrons-at-protodune-sp">
+    Michel electrons (at protoDUNE-SP)
+    
+    
+</h3><ul>
+<li>
+<p>energy: up to \(\sim 50{\rm~MeV}\)</p>
+</li>
+<li>
+<p>different reconstruction algorithm then GeV electromagnetic showers</p>
+</li>
+<li>
+<p>purity: true reconstructed tracks / all reconstructed tracks</p>
+</li>
+<li>
+<p>completeness: true reconstructed tracks / all true tracks</p>
+</li>
+<li>
+<p>candidate muon track criteria (28% of \(T_0\) tagged with 99.7% purity):</p>
+<ol>
+<li>
+<p>\(T_0\) tagged tracks (2% of data sample)</p>
+</li>
+<li>
+<p>muon track endpoint \(>30{\rm~cm}\) away from detector boundaries</p>
+</li>
+<li>
+<p>muon track endpoint in the fiducial volume</p>
+</li>
+<li>
+<p>muon track endpoint \(>10{\rm~cm}\) away from boundaries between two adjacent APAs</p>
+</li>
+<li>
+<p>no broken tracks (due to anode gaps) ie. two tracks with: \(<30{\rm~cm}\) gap and \(<14^\circ\) or \(>165^\circ\) angle difference</p>
+</li>
+<li>
+<p>\(>75{\rm~cm}\) total track length (crosses both volumes, through the cathode)</p>
+</li>
+<li>
+<p>\(>200\) ticks or \(<5800\) ticks long tracks (event readout window)</p>
+</li>
+</ol>
+</li>
+<li>
+<p>candidate Michel electron criteria:</p>
+<ol>
+<li>
+<p>\(<10{\rm~cm}\) away from candidate muon track endpoint, between 5 and 40 hits</p>
+</li>
+<li>
+<p>\(<130^\circ\) angle between M. eletron track and candidate muon track (last 10 hits)</p>
+</li>
+<li>
+<p>\(>10^\circ\) or \(<170^\circ\) angle between M. electron track and collection plane wire</p>
+</li>
+<li>
+<p>cone</p>
+</li>
+</ol>
+</li>
+<li>
+<p>total event purity from simulation: 95% (5%: \(\Delta\)-rays, bremsstrahlung-\(\gamma\),&hellip;)</p>
+</li>
+</ul>
+<h2 id="rationale">
+    Rationale
+    
+    
+</h2><h3 id="differences-with-hk">
+    differences with HK
+    
+    
+</h3><ul>
+<li>
+<p>LAr vs. water</p>
+</li>
+<li>
+<p>DUNE has lower sensitivity threshold</p>
+</li>
+<li>
+<p>Cherenkov only sees relativistic particles, DUNE sees every charged particle</p>
+</li>
+<li>
+<p>HK dominant low-energy interaction: \(\bar \nu_e\) inverse β-decay</p>
+</li>
+</ul>
+
+            </section>
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ol>
+    <li><a href="#physics">Physics</a>
+      <ol>
+        <li><a href="#neutrinos">neutrinos</a></li>
+        <li><a href="#oscillations">oscillations</a></li>
+        <li><a href="#lar-40_18rm-ar">LAr: </a></li>
+      </ol>
+    </li>
+    <li><a href="#dune-hardware">DUNE Hardware</a>
+      <ol>
+        <li><a href="#beam-fermilab">beam @Fermilab</a></li>
+        <li><a href="#far-detector-surf-homestake-mines">far detector @SURF @Homestake mines</a></li>
+        <li><a href="#lartpcs">LArTPCs</a></li>
+      </ol>
+    </li>
+    <li><a href="#software">Software</a>
+      <ol>
+        <li><a href="#larsoft">LArSoft</a></li>
+      </ol>
+    </li>
+    <li><a href="#prototyping">prototyping</a>
+      <ol>
+        <li><a href="#protodune-sp-cern">protoDUNE-SP @CERN</a></li>
+        <li><a href="#michel-electrons-at-protodune-sp">Michel electrons (at protoDUNE-SP)</a></li>
+      </ol>
+    </li>
+    <li><a href="#rationale">Rationale</a>
+      <ol>
+        <li><a href="#differences-with-hk">differences with HK</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+            </nav>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+@use 'colors' as c;
+
+blockquote {
+    margin: 2em 2em;
+    padding: .5em .5em .5em 1em;
+    border-left: c.$secondary .2em solid;
+    background-color: c.$mute;
+    border-radius: 0 1em 1em 0;
+}

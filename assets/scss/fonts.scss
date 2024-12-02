@@ -1,0 +1,30 @@
+@font-face { 
+    font-family: 'Menlo'; 
+    font-style: normal; 
+    src: url('/fonts/Menlo-Regular.ttf');
+}
+@font-face { 
+    font-family: 'Menlo'; 
+    font-style: italic; 
+    src: url('/fonts/Menlo-Italic.ttf');
+}
+@font-face { 
+    font-family: 'Menlo'; 
+    font-style: normal; 
+    font-weight: bold;
+    src: url('/fonts/Menlo-Bold.ttf');
+}
+@font-face { 
+    font-family: 'Menlo'; 
+    font-style: italic; 
+    font-weight: bold;
+    src: url('/fonts/Menlo-BoldItalic.ttf');
+}
+
+$m: 16px;
+$xs: $m * 0.7;
+$s: $m * 0.9;
+$l: $m * 1.2;
+$xl: $m * 1.5;
+$xxl: $m * 2;
+$xxxl: $m * 5;
