@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dune-wiki on My New Hugo Site</title>
-    <link>https://example.org/</link>
-    <description>Recent content in dune-wiki on My New Hugo Site</description>
+    <title>dune-wiki on Dune Wiki</title>
+    <link>https://quelin-lechevranton.github.io/dune-wiki/</link>
+    <description>Recent content in dune-wiki on Dune Wiki</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quelin-lechevranton.github.io/dune-wiki/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://example.org/basic/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/basic/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/basic/</guid>
       <description>&lt;h1 id=&#34;for-testing-purposes&#34;&gt;&#xA;    for testing purposes&#xA;    &#xA;    &#xA;&lt;/h1&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>https://example.org/dune/art/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/art/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/art/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/art/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Detector Properties</title>
-      <link>https://example.org/dune/detector/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/detector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/detector/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/detector/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Deep Underground Neutrino Experiement</title>
-      <link>https://example.org/dune/dune/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/dune/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/dune/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/dune/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Fermilab Hierarchical Configuration Language</title>
-      <link>https://example.org/dune/fhicl/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/fhicl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/fhicl/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/fhicl/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Installation</title>
-      <link>https://example.org/larsoft/installation/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/larsoft/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/larsoft/installation/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/larsoft/installation/</guid>
       <description>Instruction for a local LArSoft installation</description>
     </item>
     <item>
       <title>Liquid Argon Software</title>
-      <link>https://example.org/dune/larsoft/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/larsoft/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/larsoft/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/larsoft/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Neutrino Physics</title>
-      <link>https://example.org/dune/nu/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/nu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/nu/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/nu/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Objects</title>
-      <link>https://example.org/larsoft/objects/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/larsoft/objects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/larsoft/objects/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/larsoft/objects/</guid>
       <description>classes and methods of LArSoft objects</description>
     </item>
     <item>
       <title>ROOT: CERN data analysis framework</title>
-      <link>https://example.org/dune/root/</link>
+      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/root/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/dune/root/</guid>
+      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/root/</guid>
       <description>&amp;hellip;</description>
     </item>
   </channel>
