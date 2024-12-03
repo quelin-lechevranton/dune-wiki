@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>{{ .Title }}</title>
         {{ partialCached "head.html" . }}
     </head>
     <body>
-        {{ partialCached "header.html" . }}
+        {{ partial "header.html" . }}
         <main class="section">
             <section class="content">
                 <h1>{{ .Title }}</h1>

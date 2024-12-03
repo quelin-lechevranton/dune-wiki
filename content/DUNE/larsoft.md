@@ -5,8 +5,6 @@ summary: "..."
 ---
 
 
-# LArSoft: *liquid argon software*
-
 ## MRB [here](https://cdcvs.fnal.gov/redmine/projects/mrb/wiki/MrbRefereceGuide)
 
 | command | alias | arguments |

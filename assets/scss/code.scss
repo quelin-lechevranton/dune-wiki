@@ -13,7 +13,7 @@ $code-button: #ed6a5d #f4be4f #61c553;
 
 div.highlight  {
     color: $code-text;
-    font-family: 'Menlo', monospace; // doesn't work for some reason
+    font-family: f.$mono;
     font-size: f.$s;
 
     // width: 93%;

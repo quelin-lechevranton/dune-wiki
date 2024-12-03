@@ -5,8 +5,6 @@ summary: "..."
 ---
 
 
-# DUNE: Deep Underground Neutrino Experiment
-
 [NuFIT](http://www.nu-fit.org/)
 
 ## Q?

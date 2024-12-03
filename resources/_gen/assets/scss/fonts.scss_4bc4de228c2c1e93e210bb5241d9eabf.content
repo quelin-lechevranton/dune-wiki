@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Menlo";
+  font-style: normal;
+  src: url("/fonts/Menlo-Regular.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: italic;
+  src: url("/fonts/Menlo-Italic.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/Menlo-Bold.ttf");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/fonts/Menlo-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  src: url("/fonts/JetBrainsMono-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/fonts/JetBrainsMono-BoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("/fonts/JetBrainsMono-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: lighter;
+  src: url("/fonts/JetBrainsMono-LightItalic.woff2") format("woff2");
+}

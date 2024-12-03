@@ -172,7 +172,7 @@ for (int i=0; i< tt->GetEntries(); i++) {
 
 ```
 
-## `TColor`
+## `TColor` {root="https://root.cern.ch/doc/master/classTColor.html"}
 
 ```C++
 typedef short Color_t;
