@@ -1,4 +1,4 @@
 ---
-linkTitle: 'Home'
 title: dune-wiki
+linkTitle: 'Home'
 ---

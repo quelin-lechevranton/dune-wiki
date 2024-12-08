@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>Deep Underground Neutrino Experiement</title>
+        <meta charset="utf-8">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-copy.js" defer></script>
+
+    </head>
+    <body class="single">
+        <header>
+    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumb">
+                <ol>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+                    
+                </ol>
+            </nav>
+            <h1>Deep Underground Neutrino Experiement<div class="subtitle"></div></h1>
+            <section class="content">
+                <p><a href="http://www.nu-fit.org/">NuFIT</a></p>
+<h2 id="q">
+    Q?
+    
+    
+    
+</h2><ul>
+<li>
+<p>some tracks are way off the detector limits while space points stay inside</p>
+</li>
+<li>
+<p>howto: <code>$ lar -c c.fcl -o out.root</code></p>
+</li>
+<li>
+<p><code>Calorimetry::fTrkPitch</code></p>
+</li>
+<li>
+<p><code>Calorimetry::fXYZ</code></p>
+</li>
+<li>
+<p><code>anab::T0</code></p>
+</li>
+<li>
+<p><code>GetSimEnergyDeposit(MCParticle)</code></p>
+</li>
+</ul>
+<h3 id="irn-thibaut">
+    IRN Thibaut
+    
+    
+    
+</h3><ul>
+<li>Statistics / systematics / resolution</li>
+<li>Coldbox ?</li>
+<li>ProtoDUNE-VD : pourquoi autant de vide ?</li>
+</ul>
+<h2 id="todo">
+    Todo
+    
+    
+    
+</h2><ul>
+<li>
+<p><code>TrkSt</code> &lt;-&gt; <code>TrkEnd</code></p>
+</li>
+<li>
+<p><code>SimEnerDep::trackid</code> <code>SimEnerDep::originTrackid</code></p>
+</li>
+<li>
+<p><code>MCCheater</code></p>
+</li>
+<li>
+<p>michel electrons track length (reco: ~10 cm)</p>
+</li>
+<li>
+<p>#michel elec with track / #michel elec</p>
+</li>
+<li>
+<p>#michel elec / #muon gen</p>
+</li>
+<li>
+<p>for events with maxTrkLen &lt; 30 cm =&gt; sum des EnergDep / CluSumADC / CluIntFit</p>
+</li>
+<li>
+<p>website with <code>jsROOT</code> instead of slide shows for presentations</p>
+</li>
+<li>
+<p>SublimeText: ssh/vim/web</p>
+</li>
+<li>
+<p>include path to cvmfs</p>
+</li>
+</ul>
+<h2 id="ideas">
+    Ideas
+    
+    
+    
+</h2><ul>
+<li>$E = m\sqrt{\beta^2\gamma^2+1}$</li>
+</ul>
+<h2 id="analysis">
+    Analysis
+    
+    
+    
+</h2><ul>
+<li>les muons à incidence verticale ont tendances à être reconstruit par plusieurs traces</li>
+<li>les muons à incidence horizontale ont tendances à être reconstruit par aucune traces</li>
+<li>au-delà de 100 MeV, le moment initiale (<code>MCTruth</code>) ne semble pas avoir d&rsquo;incidence sur le nombre de trace reconstruite</li>
+</ul>
+<p>pour 1100 muons incidents:</p>
+<ul>
+<li>1386 traces dont 513 (37%) restent à l&rsquo;intérieur du détecteur</li>
+<li>toutes les traces sont produites par des muons (d&rsquo;après <code>PFP.Pdgcode()</code>)</li>
+<li>117 (11%) sont sans trace (dont ~50 généré à 15° de l&rsquo;horizontale)</li>
+<li>757 (69%) ont une trace</li>
+<li>226 (20%) ont plusieurs traces (dont ~50 généré à 15° de la verticale)</li>
+</ul>
+<p>pour un événement à plusieurs traces:</p>
+<ul>
+<li>0.8 traces sont longues (&gt; 25 cm)</li>
+<li>2.0 traces sont courtes (&lt; 25 cm)</li>
+</ul>
+<h2 id="cg">
+    CG
+    
+    
+    
+</h2><ul>
+<li>
+<p>$P(\theta)$ du neutrino in $\pi^+\to\mu^+\nu_\mu$ for $E_\pi =$ (cf. DUNE beam)</p>
+</li>
+<li>
+<p>on-axis/off-axis: energy distribution (DUNE is on-axis, T2K is off-axis)</p>
+</li>
+<li>
+<p>off-axis near detectors on DUNE (Prism) ?</p>
+</li>
+<li>
+<p>spectre en energy des neutinos du beam dans DUNE</p>
+</li>
+<li>
+<p>Ar vs Xe vs H20 ?</p>
+</li>
+<li>
+<p>LAr: scintillator, mostly inerte, ${}^{39}Ar$ impurities, cheap (1 $/kg), low energy sensibility (~1 MeV)</p>
+</li>
+<li>
+<p>LXe: 1 $/g</p>
+</li>
+<li>
+<p>H20: Cerenkov effect (no low energy)</p>
+</li>
+</ul>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ol>
+    <li><a href="#q">Q?</a>
+      <ol>
+        <li><a href="#irn-thibaut">IRN Thibaut</a></li>
+      </ol>
+    </li>
+    <li><a href="#todo">Todo</a></li>
+    <li><a href="#ideas">Ideas</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#cg">CG</a></li>
+  </ol>
+</nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

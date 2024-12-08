@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROOT on Dune Wiki</title>
+    <link>http://localhost:1313/dune-wiki/analysis/root/</link>
+    <description>Recent content in ROOT on Dune Wiki</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/dune-wiki/analysis/root/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pyROOT</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/pyroot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/pyroot/</guid>
+      <description>&amp;hellip;</description>
+    </item>
+    <item>
+      <title>ROOT</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/root/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/root/</guid>
+      <description>&amp;hellip;</description>
+    </item>
+    <item>
+      <title>TColor</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/tcolor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/tcolor/</guid>
+      <description>TColor color wheel widget</description>
+    </item>
+  </channel>
+</rss>

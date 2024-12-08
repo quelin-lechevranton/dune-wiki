@@ -34,3 +34,11 @@ markup:
           - - \(
             - \)
         enable: true
+
+# https://gohugo.io/content-management/taxonomies/#default-taxonomies
+disableKinds:
+  - taxonomy
+  - term
+  - 404
+
+  

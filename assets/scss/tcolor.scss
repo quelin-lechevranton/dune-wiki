@@ -1,0 +1,282 @@
+@use 'sass:math' as m;
+
+@use 'colors' as c;
+@use 'sizes' as s;
+@use 'fonts' as f;
+
+
+$layer-width: 550px;
+$layer-height: 550px;
+
+$interface-width: 180px;
+$interface-height: 340px;
+
+$screen-width: $interface-width;
+$screen-height: 100px;
+
+$slider-width: $interface-width * 0.8;
+$slider-height: 50px;
+
+$circle-size: 45px;
+$rotor-shift: calc($circle-size / 5 * 4);
+$rotor-distance: calc($circle-size / 5);
+$rotor-radius: $circle-size + $rotor-distance;
+
+
+@mixin rotation($angle, $time, $direction) {
+    @keyframes rotation-#{$angle} {
+        from { transform: rotate($angle); }
+        to { transform: rotate(360deg + $angle); }
+    }
+    & { // "Sass's behavior for declarations that appear after nested rules will be changing to match the behavior specified by CSS"
+        animation: rotation-#{$angle} $time linear infinite $direction;
+    }
+}
+
+.TColor {
+
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+
+
+    .interface {
+
+        position: absolute;
+        top: calc($layer-height / 2 - $interface-height / 2);
+        right: calc((s.$content_width - $layer-width - $interface-width) / 2);
+
+        width: $interface-width;
+        height: $interface-height;
+
+        text-align: center;
+
+        a {
+            &::before {
+                content: none;
+            }
+            svg {
+                width: 2rem;
+
+                path {
+                    transition: fill .2s;
+                    fill: c.$secondary;
+                }
+
+                &:hover {
+                    path {
+                        fill: c.$primary;
+                    }
+                }
+            }
+        }
+    
+        .screen {
+            width: $screen-width;
+            height: $screen-height;
+            margin: 1em 0 2em 0;
+            border-radius: 20px;
+            font-family: f.$mono;
+            text-align: center;
+
+            line-height: $screen-height; //vertical centering
+            font-size: 150%;
+            font-weight: 700;
+
+            box-shadow: 0 0 10px c.$mute;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        .legend {
+            width: 100%;
+            text-align: center;
+            // font-size: 16px;
+
+            $font-width-ratio: 0.6;
+
+            div {
+                margin-bottom: .5em;
+
+                .tag {
+                    display: inline-block; //for width to work
+                    width: 4.5em * $font-width-ratio;
+
+                    font-style: italic;
+
+                    background-color: c.$secondary;
+                    color: c.$background;
+
+                    border-radius: .5em * $font-width-ratio;
+
+                    &:hover {
+                        cursor: pointer;
+                        transition: background-color 0.2s;
+                        background-color: c.$primary;
+                    }
+                }
+                .value {
+                    margin: 0;
+                    display: inline-block; //for width to work
+                    width: 14em * $font-width-ratio;
+
+                    font-family: f.$mono;
+                }
+            }
+        }
+        
+
+        .slider {
+            width: $slider-width;
+            height: $slider-height;
+            margin: 0 auto;
+
+            left: calc(60px - $slider-width / 2);
+
+            input {
+                margin: 0;
+
+                width: 100%;
+                height: 100%;
+
+
+                @mixin thumb {
+                    width: 20px;
+                    height: 20px;
+                    background-color: c.$secondary;
+                    border-radius: 10px;
+                    border: none;
+                }
+                @mixin track {
+                    width: 100%;
+                    height: 5px;
+                    background-color: c.$mute;
+                    border-radius: 5px;
+                    border: none;
+                }
+                @mixin progress {
+
+                }
+                @mixin hover {
+                    transition: background-color 0.2s;
+                    background-color: c.$primary;
+                }
+                @mixin active {
+                    background-color: c.$primary;
+                }
+
+
+                &:hover { 
+                    cursor: grab; 
+                    &::-moz-range-thumb { @include hover; }
+                    &::-webkit-slider-thumb { @include hover; }
+                    &::-ms-thumb { @include hover; }
+                }
+                &:active { 
+                    cursor: grabbing; 
+                    &::-moz-range-thumb { @include active; }
+                    &::-webkit-slider-thumb { @include active; }
+                    &::-ms-thumb { @include active; }
+                }
+            
+                &::-moz-range-thumb { @include thumb; }
+                &::-webkit-slider-thumb { @include thumb; }
+                &::-ms-thumb { @include thumb; }
+
+                &::-moz-range-track { @include track; }
+                &::-webkit-slider-runnable-track { @include track; }
+                &::-ms-track { @include track; }
+
+                &::-moz-range-progress { @include progress; }
+                &::-webkit-slider-runnable-progress { @include progress; }
+                &::-ms-fill-lower { @include progress; }
+            }   
+        }
+    }
+
+
+    .layer {
+        position: relative;
+        width: $layer-width;
+        height: $layer-height;
+        margin: 0;
+
+        .rotor {
+            position: absolute;
+            top: calc($layer-height / 2 - $circle-size / 2);
+
+            .circle {
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                box-shadow: 0 0 10px c.$mute;
+
+                transition: transform 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+                &:active {
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+}
+
+@for $l from 1 through 9 {
+    .TColor .layer[lightness="#{$l}"] {
+
+        @if $l == 1 {
+            display: inline-block;
+        } @else {
+            display: none;
+        }
+
+        .rotor {
+
+            &[saturation="0"] {
+                left: calc($layer-width / 2 - $circle-size / 2);
+            }
+
+
+            @for $s from 1 through m.floor(m.div((6 - abs($l - 5)), 2)) {
+
+                $x: 2 * $s - ($l % 2);
+
+                $r: $s * $rotor-radius + m.floor(calc($x / 2)) * $rotor-shift;
+                $n: 6 * $x;
+                $rs: $rotor-shift; @if $x == 1 { $rs: 0px; }
+                $t: 80s * $s;
+
+                &[saturation="#{$s}"] {
+
+                    $dir: normal;
+                    @if ($s+$l) % 2 == 1 {
+                        $dir: reverse;
+                    }
+
+                    &:nth-child(even) {
+                        left: calc($layer-width / 2 - $circle-size / 2 - ($r - $rs));
+                        transform-origin: calc($r - $rs + $circle-size / 2);
+                    }
+                    &:nth-child(odd) {
+                        left: calc($layer-width / 2 - $circle-size / 2 - $r);
+                        transform-origin: calc($r + $circle-size / 2);
+                    }
+
+                    @for $c from 1 through $n {
+                        &:nth-child(#{$c} of [saturation="#{$s}"]) {
+
+                            $a: calc(360deg / $n * ($c - 1));
+                            @include rotation($a,$t,$dir);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

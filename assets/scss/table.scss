@@ -4,7 +4,7 @@
 table {
     display: block;
 
-    // max-width: 93%;
+    max-width: 93%;
     margin: 2em 2em;
 
     th, td {
@@ -14,7 +14,6 @@ table {
         border-bottom: 1px solid c.$primary;
         th {
             font-weight: bold;
-            
         }
     }
     tbody tr {

@@ -5,11 +5,7 @@
     {{ partialCached "head.html" . }}
 </head>
 <body class="home">
-    <header>
-        {{ range .Pages }}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-        {{ end }}
-    </header>
+    {{ partialCached "header.html" . }}
     <main>
         <h1>{{ .Title }}</h1>
         {{ .Content }}

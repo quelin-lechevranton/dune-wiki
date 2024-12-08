@@ -8,50 +8,21 @@ body>header {
     top: 0;
     padding: 1.5em 0;
     margin-bottom: 2em;
-
     z-index: 1;
 
     background-color: c.$background;
     border-bottom: c.$mute 1px solid;
     box-shadow: 0 0 10px c.$mute;
 
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
     ol {
+        // display: inline-block;
         display: flex; // remove whitespace between items
+        justify-content: center;
+        gap: 2em;
         align-items: baseline; // align text baseline
-    }
-
-    .breadcrumb {
-        width: s.$content_width;
-        margin: 0 auto;
-
-        li {
-            display: inline;
-            transition: color 0.2s;
-        }
-
-        li.ancestor a {
-        // li.ancestor:hover~li.current {
-
-            color: c.$secondary;
-            &:hover {
-                color: c.$primary;
-            }
-        }
-
-        li.ancestor::after {
-            margin: 0 .5em;
-            content: "";
-            display: inline-block;
-
-            background-color: c.$secondary;
-            mask-image: url("/dune-wiki/img/chevron-right.svg");
-            mask-size: 1em;
-
-            position: relative;
-            top: 0.1em;
-
-            width: 1em;
-            height: 1em;
-        }
     }
 }

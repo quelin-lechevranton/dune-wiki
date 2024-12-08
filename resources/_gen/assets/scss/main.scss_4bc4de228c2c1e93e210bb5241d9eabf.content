@@ -33,7 +33,7 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol, ul, li {
   list-style: none;
 }
 
@@ -108,11 +108,6 @@ em {
   font-weight: lighter;
   src: url("/dune-wiki/fonts/JetBrainsMono-LightItalic.woff2") format("woff2");
 }
-body.home header {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
 body.home main {
   width: 750px;
   margin: 100px auto 0 auto;
@@ -134,18 +129,27 @@ body.home main h1 {
   }
 }
 section.pages {
-  margin-top: 2em;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
 }
+section.pages h2 {
+  margin: 0;
+}
+section.pages h2 .subtitle {
+  font-size: 19.2px;
+  font-weight: 300;
+  font-style: italic;
+  width: 70%;
+}
 section.pages a {
   display: block;
-  padding: 1em;
-  border-radius: 1em;
+  padding: 24px;
+  border-radius: 24px;
   border: 2.4px solid #e6e7e9;
   transition: border-color 0.2s;
+  min-height: 72px;
   position: relative;
   opacity: 0;
 }
@@ -243,7 +247,16 @@ section.pages a:before {
   content: none;
 }
 section.pages a:hover {
-  border: 2.4px solid rgb(157, 50, 181);
+  border: 2.4px solid #8d2d94;
+}
+section.pages a img {
+  height: 72px;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border-radius: 12px;
+  filter: opacity(0.5);
+  z-index: -1;
 }
 
 body > header {
@@ -256,36 +269,15 @@ body > header {
   background-color: white;
   border-bottom: #e6e7e9 1px solid;
   box-shadow: 0 0 10px #e6e7e9;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
 body > header ol {
   display: flex;
+  justify-content: center;
+  gap: 2em;
   align-items: baseline;
-}
-body > header .breadcrumb {
-  width: 750px;
-  margin: 0 auto;
-}
-body > header .breadcrumb li {
-  display: inline;
-  transition: color 0.2s;
-}
-body > header .breadcrumb li.ancestor a {
-  color: #8a8e91;
-}
-body > header .breadcrumb li.ancestor a:hover {
-  color: black;
-}
-body > header .breadcrumb li.ancestor::after {
-  margin: 0 0.5em;
-  content: "";
-  display: inline-block;
-  background-color: #8a8e91;
-  mask-image: url("/dune-wiki/img/chevron-right.svg");
-  mask-size: 1em;
-  position: relative;
-  top: 0.1em;
-  width: 1em;
-  height: 1em;
 }
 
 .toc .toc-title {
@@ -311,11 +303,11 @@ body > header .breadcrumb li.ancestor::after {
   overflow-y: hidden;
   transition: max-height 0.2s;
 }
-.toc nav li a {
-  transition: font-weight 0.2s, color 0.2s;
-}
 .toc nav li.active > a {
   font-weight: bold;
+}
+.toc nav li a {
+  transition: font-weight 0.2s, color 0.2s;
 }
 .toc nav li a:has(~ ol)::after {
   content: "";
@@ -334,11 +326,44 @@ body > header .breadcrumb li.ancestor::after {
   transform: rotate(-180deg);
 }
 
+.breadcrumb {
+  position: absolute;
+  left: 0;
+}
+.breadcrumb li {
+  display: inline;
+  transition: color 0.2s;
+}
+.breadcrumb li.ancestor a {
+  color: #8a8e91;
+}
+.breadcrumb li.ancestor a:hover {
+  color: black;
+}
+.breadcrumb li.ancestor::after {
+  margin: 0 0.5em;
+  content: "";
+  display: inline-block;
+  background-color: #8a8e91;
+  mask-image: url("/dune-wiki/img/chevron-right.svg");
+  mask-size: 1em;
+  position: relative;
+  top: 0.1em;
+  width: 1em;
+  height: 1em;
+}
+
 h1 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 1em;
   text-align: center;
+}
+h1 .subtitle {
+  margin-top: 0.5em;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
 }
 
 h2 {
@@ -360,24 +385,24 @@ h4 {
   font-weight: bold;
 }
 
-h2, h3 {
+h2:has(a.repo), h3:has(a.repo) {
   position: relative;
   display: flex;
   align-items: center;
 }
-h2 a.repo, h3 a.repo {
+h2:has(a.repo) a.repo, h3:has(a.repo) a.repo {
   position: absolute;
   left: -3rem;
 }
-h2 a.repo svg, h3 a.repo svg {
+h2:has(a.repo) a.repo svg, h3:has(a.repo) a.repo svg {
   width: 2rem;
 }
-h2 a.repo svg path, h3 a.repo svg path {
+h2:has(a.repo) a.repo svg path, h3:has(a.repo) a.repo svg path {
   transition: fill 0.2s;
   fill: black;
 }
-h2 a.repo svg:hover path, h3 a.repo svg:hover path {
-  fill: rgb(157, 50, 181);
+h2:has(a.repo) a.repo svg:hover path, h3:has(a.repo) a.repo svg:hover path {
+  fill: #8d2d94;
 }
 
 blockquote {
@@ -386,6 +411,33 @@ blockquote {
   border-left: #8a8e91 0.2em solid;
   background-color: #e6e7e9;
   border-radius: 0 1em 1em 0;
+}
+
+a:not(.repo) {
+  position: relative;
+}
+a:not(.repo)::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  bottom: -0.1rem;
+  left: 2.5%;
+  width: 95%;
+  height: 0.1rem;
+  background-color: #8d2d94;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: scaleX(0);
+}
+a:not(.repo):hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+code {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #e6e7e9;
+  padding: 0.1em 0.2em;
+  border-radius: 0.2em;
 }
 
 div.highlight {
@@ -498,19 +550,19 @@ div.highlight pre:hover button.copy path {
   color: #8a8e91;
 } /* Comment */
 .highlight .err {
-  color: #f33538;
+  color: #e04842;
 } /* Error */
 .highlight .k {
-  color: #992299;
+  color: #8d2d94;
 } /* Keyword */
 .highlight .l {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal */
 .highlight .n {
   color: black;
 } /* Name */
 .highlight .o {
-  color: #229999;
+  color: #4b9798;
 } /* Operator */
 .highlight .p {
   color: black;
@@ -534,7 +586,7 @@ div.highlight pre:hover button.copy path {
   color: #8a8e91;
 } /* Comment.Special */
 .highlight .gd {
-  color: #f33538;
+  color: #e04842;
 } /* Generic.Deleted */
 .highlight .ge {
   font-style: italic;
@@ -544,7 +596,7 @@ div.highlight pre:hover button.copy path {
   font-weight: bold;
 } /* Generic.Heading */
 .highlight .gi {
-  color: #229922;
+  color: #4b9737;
 } /* Generic.Inserted */
 .highlight .gp {
   color: #8a8e91;
@@ -554,161 +606,162 @@ div.highlight pre:hover button.copy path {
   font-weight: bold;
 } /* Generic.Strong */
 .highlight .gu {
-  color: #229999;
+  color: #4b9798;
   font-weight: bold;
 } /* Generic.Subheading */
 .highlight .kc {
-  color: #992299;
+  color: #8d2d94;
 } /* Keyword.Constant */
 .highlight .kd {
-  color: #992299;
+  color: #8d2d94;
 } /* Keyword.Declaration */
 .highlight .kn {
-  color: #229999;
+  color: #4b9798;
 } /* Keyword.Namespace */
 .highlight .kp {
-  color: #992299;
+  color: #8d2d94;
 } /* Keyword.Pseudo */
 .highlight .kr {
-  color: #992299;
+  color: #8d2d94;
 } /* Keyword.Reserved */
 .highlight .kt {
-  color: #dd9922;
+  color: #d3b63f;
 } /* Keyword.Type */
 .highlight .ld {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.Date */
 .highlight .m {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number */
 .highlight .s {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String */
 .highlight .na {
-  color: #224499;
+  color: #2a4394;
 } /* Name.Attribute */
 .highlight .nb {
-  color: #dd9922;
+  color: #d3b63f;
 } /* Name.Builtin */
 .highlight .nc {
-  color: #dd9922;
+  color: #d3b63f;
 } /* Name.Class */
 .highlight .no {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Constant */
 .highlight .nd {
-  color: #229999;
+  color: #4b9798;
 } /* Name.Decorator */
 .highlight .ni {
   color: black;
 } /* Name.Entity */
 .highlight .ne {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Exception */
 .highlight .nf {
-  color: #224499;
+  color: #2a4394;
 } /* Name.Function */
 .highlight .nl {
   color: black;
 } /* Name.Label */
 .highlight .nn {
-  color: #dd9922;
+  color: #d3b63f;
 } /* Name.Namespace */
 .highlight .nx {
-  color: #224499;
+  color: #2a4394;
 } /* Name.Other */
 .highlight .py {
   color: black;
 } /* Name.Property */
 .highlight .nt {
-  color: #229999;
+  color: #4b9798;
 } /* Name.Tag */
 .highlight .nv {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Variable */
 .highlight .ow {
-  color: #229999;
+  color: #4b9798;
 } /* Operator.Word */
 .highlight .w {
   color: black;
 } /* Text.wspace */
 .highlight .mb {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Bin */
 .highlight .mf {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Float */
 .highlight .mh {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Hex */
 .highlight .mi {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Integer */
 .highlight .mo {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Oct */
 .highlight .sa {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Affix */
 .highlight .sb {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Backtick */
 .highlight .sc {
   color: black;
 } /* Literal.String.Char */
 .highlight .dl {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Delimiter */
 .highlight .sd {
   color: #8a8e91;
 } /* Literal.String.Doc */
 .highlight .s2 {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Double */
 .highlight .se {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.String.Escape */
 .highlight .sh {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Heroc */
 .highlight .si {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.String.Interpol */
 .highlight .sx {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Other */
 .highlight .sr {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Regex */
 .highlight .s1 {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Single */
 .highlight .ss {
-  color: #229922;
+  color: #4b9737;
 } /* Literal.String.Symbol */
 .highlight .bp {
   color: black;
 } /* Name.Builtin.Pseudo */
 .highlight .fm {
-  color: #224499;
+  color: #2a4394;
 } /* Name.Function.Magic */
 .highlight .vc {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Variable.Class */
 .highlight .vg {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Variable.Global */
 .highlight .vi {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Variable.Instance */
 .highlight .vm {
-  color: #f33538;
+  color: #e04842;
 } /* Name.Variable.Magic */
 .highlight .il {
-  color: #eb8d2f;
+  color: #e29141;
 } /* Literal.Number.Integer.Long */
 table {
   display: block;
+  max-width: 93%;
   margin: 2em 2em;
 }
 table th, table td {
@@ -727,12 +780,2674 @@ table tbody tr:last-child {
   border: none;
 }
 
-:root {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+.TColor {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+.TColor .interface {
+  position: absolute;
+  top: 105px;
+  right: 10px;
+  width: 180px;
+  height: 340px;
+  text-align: center;
+}
+.TColor .interface a::before {
+  content: none;
+}
+.TColor .interface a svg {
+  width: 2rem;
+}
+.TColor .interface a svg path {
+  transition: fill 0.2s;
+  fill: #8a8e91;
+}
+.TColor .interface a svg:hover path {
+  fill: black;
+}
+.TColor .interface .screen {
+  width: 180px;
+  height: 100px;
+  margin: 1em 0 2em 0;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
+  line-height: 100px;
+  font-size: 150%;
+  font-weight: 700;
+  box-shadow: 0 0 10px #e6e7e9;
+}
+.TColor .interface .screen:hover {
+  cursor: pointer;
+}
+.TColor .interface .legend {
+  width: 100%;
+  text-align: center;
+}
+.TColor .interface .legend div {
+  margin-bottom: 0.5em;
+}
+.TColor .interface .legend div .tag {
+  display: inline-block;
+  width: 2.7em;
+  font-style: italic;
+  background-color: #8a8e91;
+  color: white;
+  border-radius: 0.3em;
+}
+.TColor .interface .legend div .tag:hover {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: black;
+}
+.TColor .interface .legend div .value {
+  margin: 0;
+  display: inline-block;
+  width: 8.4em;
+  font-family: "JetBrains Mono", monospace;
+}
+.TColor .interface .slider {
+  width: 144px;
+  height: 50px;
+  margin: 0 auto;
+  left: -12px;
+}
+.TColor .interface .slider input {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.TColor .interface .slider input:hover {
+  cursor: grab;
+}
+.TColor .interface .slider input:hover::-moz-range-thumb {
+  transition: background-color 0.2s;
+  background-color: black;
+}
+.TColor .interface .slider input:hover::-webkit-slider-thumb {
+  transition: background-color 0.2s;
+  background-color: black;
+}
+.TColor .interface .slider input:hover::-ms-thumb {
+  transition: background-color 0.2s;
+  background-color: black;
+}
+.TColor .interface .slider input:active {
+  cursor: grabbing;
+}
+.TColor .interface .slider input:active::-moz-range-thumb {
+  background-color: black;
+}
+.TColor .interface .slider input:active::-webkit-slider-thumb {
+  background-color: black;
+}
+.TColor .interface .slider input:active::-ms-thumb {
+  background-color: black;
+}
+.TColor .interface .slider input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #8a8e91;
+  border-radius: 10px;
+  border: none;
+}
+.TColor .interface .slider input::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #8a8e91;
+  border-radius: 10px;
+  border: none;
+}
+.TColor .interface .slider input::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #8a8e91;
+  border-radius: 10px;
+  border: none;
+}
+.TColor .interface .slider input::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  background-color: #e6e7e9;
+  border-radius: 5px;
+  border: none;
+}
+.TColor .interface .slider input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background-color: #e6e7e9;
+  border-radius: 5px;
+  border: none;
+}
+.TColor .interface .slider input::-ms-track {
+  width: 100%;
+  height: 5px;
+  background-color: #e6e7e9;
+  border-radius: 5px;
+  border: none;
+}
+.TColor .layer {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  margin: 0;
+}
+.TColor .layer .rotor {
+  position: absolute;
+  top: 252.5px;
+}
+.TColor .layer .rotor .circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #e6e7e9;
+  transition: transform 0.2s;
+}
+.TColor .layer .rotor .circle:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.TColor .layer .rotor .circle:active {
+  transform: scale(1.15);
 }
 
-body {
+.TColor .layer[lightness="1"] {
+  display: inline-block;
+}
+.TColor .layer[lightness="1"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="1"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite normal;
+}
+
+.TColor .layer[lightness="2"] {
+  display: none;
+}
+.TColor .layer[lightness="2"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 162.5px;
+  transform-origin: 112.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite reverse;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-30deg 80s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite reverse;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-90deg 80s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite reverse;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-150deg 80s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(7 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite reverse;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(8 of [saturation="1"]) {
+  animation: rotation-210deg 80s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(9 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite reverse;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(10 of [saturation="1"]) {
+  animation: rotation-270deg 80s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(11 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite reverse;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="2"] .rotor[saturation="1"]:nth-child(12 of [saturation="1"]) {
+  animation: rotation-330deg 80s linear infinite reverse;
+}
+
+.TColor .layer[lightness="3"] {
+  display: none;
+}
+.TColor .layer[lightness="3"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite normal;
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(even) {
+  left: 144.5px;
+  transform-origin: 130.5px;
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(odd) {
+  left: 108.5px;
+  transform-origin: 166.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(1 of [saturation="2"]) {
+  animation: rotation-0deg 160s linear infinite reverse;
+}
+@keyframes rotation-20deg {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(2 of [saturation="2"]) {
+  animation: rotation-20deg 160s linear infinite reverse;
+}
+@keyframes rotation-40deg {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(3 of [saturation="2"]) {
+  animation: rotation-40deg 160s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(4 of [saturation="2"]) {
+  animation: rotation-60deg 160s linear infinite reverse;
+}
+@keyframes rotation-80deg {
+  from {
+    transform: rotate(80deg);
+  }
+  to {
+    transform: rotate(440deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(5 of [saturation="2"]) {
+  animation: rotation-80deg 160s linear infinite reverse;
+}
+@keyframes rotation-100deg {
+  from {
+    transform: rotate(100deg);
+  }
+  to {
+    transform: rotate(460deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(6 of [saturation="2"]) {
+  animation: rotation-100deg 160s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(7 of [saturation="2"]) {
+  animation: rotation-120deg 160s linear infinite reverse;
+}
+@keyframes rotation-140deg {
+  from {
+    transform: rotate(140deg);
+  }
+  to {
+    transform: rotate(500deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(8 of [saturation="2"]) {
+  animation: rotation-140deg 160s linear infinite reverse;
+}
+@keyframes rotation-160deg {
+  from {
+    transform: rotate(160deg);
+  }
+  to {
+    transform: rotate(520deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(9 of [saturation="2"]) {
+  animation: rotation-160deg 160s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(10 of [saturation="2"]) {
+  animation: rotation-180deg 160s linear infinite reverse;
+}
+@keyframes rotation-200deg {
+  from {
+    transform: rotate(200deg);
+  }
+  to {
+    transform: rotate(560deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(11 of [saturation="2"]) {
+  animation: rotation-200deg 160s linear infinite reverse;
+}
+@keyframes rotation-220deg {
+  from {
+    transform: rotate(220deg);
+  }
+  to {
+    transform: rotate(580deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(12 of [saturation="2"]) {
+  animation: rotation-220deg 160s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(13 of [saturation="2"]) {
+  animation: rotation-240deg 160s linear infinite reverse;
+}
+@keyframes rotation-260deg {
+  from {
+    transform: rotate(260deg);
+  }
+  to {
+    transform: rotate(620deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(14 of [saturation="2"]) {
+  animation: rotation-260deg 160s linear infinite reverse;
+}
+@keyframes rotation-280deg {
+  from {
+    transform: rotate(280deg);
+  }
+  to {
+    transform: rotate(640deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(15 of [saturation="2"]) {
+  animation: rotation-280deg 160s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(16 of [saturation="2"]) {
+  animation: rotation-300deg 160s linear infinite reverse;
+}
+@keyframes rotation-320deg {
+  from {
+    transform: rotate(320deg);
+  }
+  to {
+    transform: rotate(680deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(17 of [saturation="2"]) {
+  animation: rotation-320deg 160s linear infinite reverse;
+}
+@keyframes rotation-340deg {
+  from {
+    transform: rotate(340deg);
+  }
+  to {
+    transform: rotate(700deg);
+  }
+}
+.TColor .layer[lightness="3"] .rotor[saturation="2"]:nth-child(18 of [saturation="2"]) {
+  animation: rotation-340deg 160s linear infinite reverse;
+}
+
+.TColor .layer[lightness="4"] {
+  display: none;
+}
+.TColor .layer[lightness="4"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 162.5px;
+  transform-origin: 112.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite reverse;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-30deg 80s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite reverse;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-90deg 80s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite reverse;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-150deg 80s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(7 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite reverse;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(8 of [saturation="1"]) {
+  animation: rotation-210deg 80s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(9 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite reverse;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(10 of [saturation="1"]) {
+  animation: rotation-270deg 80s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(11 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite reverse;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="1"]:nth-child(12 of [saturation="1"]) {
+  animation: rotation-330deg 80s linear infinite reverse;
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(even) {
+  left: 108.5px;
+  transform-origin: 166.5px;
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(odd) {
+  left: 72.5px;
+  transform-origin: 202.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(1 of [saturation="2"]) {
+  animation: rotation-0deg 160s linear infinite normal;
+}
+@keyframes rotation-15deg {
+  from {
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(375deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(2 of [saturation="2"]) {
+  animation: rotation-15deg 160s linear infinite normal;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(3 of [saturation="2"]) {
+  animation: rotation-30deg 160s linear infinite normal;
+}
+@keyframes rotation-45deg {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(4 of [saturation="2"]) {
+  animation: rotation-45deg 160s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(5 of [saturation="2"]) {
+  animation: rotation-60deg 160s linear infinite normal;
+}
+@keyframes rotation-75deg {
+  from {
+    transform: rotate(75deg);
+  }
+  to {
+    transform: rotate(435deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(6 of [saturation="2"]) {
+  animation: rotation-75deg 160s linear infinite normal;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(7 of [saturation="2"]) {
+  animation: rotation-90deg 160s linear infinite normal;
+}
+@keyframes rotation-105deg {
+  from {
+    transform: rotate(105deg);
+  }
+  to {
+    transform: rotate(465deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(8 of [saturation="2"]) {
+  animation: rotation-105deg 160s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(9 of [saturation="2"]) {
+  animation: rotation-120deg 160s linear infinite normal;
+}
+@keyframes rotation-135deg {
+  from {
+    transform: rotate(135deg);
+  }
+  to {
+    transform: rotate(495deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(10 of [saturation="2"]) {
+  animation: rotation-135deg 160s linear infinite normal;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(11 of [saturation="2"]) {
+  animation: rotation-150deg 160s linear infinite normal;
+}
+@keyframes rotation-165deg {
+  from {
+    transform: rotate(165deg);
+  }
+  to {
+    transform: rotate(525deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(12 of [saturation="2"]) {
+  animation: rotation-165deg 160s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(13 of [saturation="2"]) {
+  animation: rotation-180deg 160s linear infinite normal;
+}
+@keyframes rotation-195deg {
+  from {
+    transform: rotate(195deg);
+  }
+  to {
+    transform: rotate(555deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(14 of [saturation="2"]) {
+  animation: rotation-195deg 160s linear infinite normal;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(15 of [saturation="2"]) {
+  animation: rotation-210deg 160s linear infinite normal;
+}
+@keyframes rotation-225deg {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    transform: rotate(585deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(16 of [saturation="2"]) {
+  animation: rotation-225deg 160s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(17 of [saturation="2"]) {
+  animation: rotation-240deg 160s linear infinite normal;
+}
+@keyframes rotation-255deg {
+  from {
+    transform: rotate(255deg);
+  }
+  to {
+    transform: rotate(615deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(18 of [saturation="2"]) {
+  animation: rotation-255deg 160s linear infinite normal;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(19 of [saturation="2"]) {
+  animation: rotation-270deg 160s linear infinite normal;
+}
+@keyframes rotation-285deg {
+  from {
+    transform: rotate(285deg);
+  }
+  to {
+    transform: rotate(645deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(20 of [saturation="2"]) {
+  animation: rotation-285deg 160s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(21 of [saturation="2"]) {
+  animation: rotation-300deg 160s linear infinite normal;
+}
+@keyframes rotation-315deg {
+  from {
+    transform: rotate(315deg);
+  }
+  to {
+    transform: rotate(675deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(22 of [saturation="2"]) {
+  animation: rotation-315deg 160s linear infinite normal;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(23 of [saturation="2"]) {
+  animation: rotation-330deg 160s linear infinite normal;
+}
+@keyframes rotation-345deg {
+  from {
+    transform: rotate(345deg);
+  }
+  to {
+    transform: rotate(705deg);
+  }
+}
+.TColor .layer[lightness="4"] .rotor[saturation="2"]:nth-child(24 of [saturation="2"]) {
+  animation: rotation-345deg 160s linear infinite normal;
+}
+
+.TColor .layer[lightness="5"] {
+  display: none;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite normal;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(even) {
+  left: 144.5px;
+  transform-origin: 130.5px;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(odd) {
+  left: 108.5px;
+  transform-origin: 166.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(1 of [saturation="2"]) {
+  animation: rotation-0deg 160s linear infinite reverse;
+}
+@keyframes rotation-20deg {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(2 of [saturation="2"]) {
+  animation: rotation-20deg 160s linear infinite reverse;
+}
+@keyframes rotation-40deg {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(3 of [saturation="2"]) {
+  animation: rotation-40deg 160s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(4 of [saturation="2"]) {
+  animation: rotation-60deg 160s linear infinite reverse;
+}
+@keyframes rotation-80deg {
+  from {
+    transform: rotate(80deg);
+  }
+  to {
+    transform: rotate(440deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(5 of [saturation="2"]) {
+  animation: rotation-80deg 160s linear infinite reverse;
+}
+@keyframes rotation-100deg {
+  from {
+    transform: rotate(100deg);
+  }
+  to {
+    transform: rotate(460deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(6 of [saturation="2"]) {
+  animation: rotation-100deg 160s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(7 of [saturation="2"]) {
+  animation: rotation-120deg 160s linear infinite reverse;
+}
+@keyframes rotation-140deg {
+  from {
+    transform: rotate(140deg);
+  }
+  to {
+    transform: rotate(500deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(8 of [saturation="2"]) {
+  animation: rotation-140deg 160s linear infinite reverse;
+}
+@keyframes rotation-160deg {
+  from {
+    transform: rotate(160deg);
+  }
+  to {
+    transform: rotate(520deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(9 of [saturation="2"]) {
+  animation: rotation-160deg 160s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(10 of [saturation="2"]) {
+  animation: rotation-180deg 160s linear infinite reverse;
+}
+@keyframes rotation-200deg {
+  from {
+    transform: rotate(200deg);
+  }
+  to {
+    transform: rotate(560deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(11 of [saturation="2"]) {
+  animation: rotation-200deg 160s linear infinite reverse;
+}
+@keyframes rotation-220deg {
+  from {
+    transform: rotate(220deg);
+  }
+  to {
+    transform: rotate(580deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(12 of [saturation="2"]) {
+  animation: rotation-220deg 160s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(13 of [saturation="2"]) {
+  animation: rotation-240deg 160s linear infinite reverse;
+}
+@keyframes rotation-260deg {
+  from {
+    transform: rotate(260deg);
+  }
+  to {
+    transform: rotate(620deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(14 of [saturation="2"]) {
+  animation: rotation-260deg 160s linear infinite reverse;
+}
+@keyframes rotation-280deg {
+  from {
+    transform: rotate(280deg);
+  }
+  to {
+    transform: rotate(640deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(15 of [saturation="2"]) {
+  animation: rotation-280deg 160s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(16 of [saturation="2"]) {
+  animation: rotation-300deg 160s linear infinite reverse;
+}
+@keyframes rotation-320deg {
+  from {
+    transform: rotate(320deg);
+  }
+  to {
+    transform: rotate(680deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(17 of [saturation="2"]) {
+  animation: rotation-320deg 160s linear infinite reverse;
+}
+@keyframes rotation-340deg {
+  from {
+    transform: rotate(340deg);
+  }
+  to {
+    transform: rotate(700deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="2"]:nth-child(18 of [saturation="2"]) {
+  animation: rotation-340deg 160s linear infinite reverse;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(even) {
+  left: 54.5px;
+  transform-origin: 220.5px;
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(odd) {
+  left: 18.5px;
+  transform-origin: 256.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(1 of [saturation="3"]) {
+  animation: rotation-0deg 240s linear infinite normal;
+}
+@keyframes rotation-12deg {
+  from {
+    transform: rotate(12deg);
+  }
+  to {
+    transform: rotate(372deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(2 of [saturation="3"]) {
+  animation: rotation-12deg 240s linear infinite normal;
+}
+@keyframes rotation-24deg {
+  from {
+    transform: rotate(24deg);
+  }
+  to {
+    transform: rotate(384deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(3 of [saturation="3"]) {
+  animation: rotation-24deg 240s linear infinite normal;
+}
+@keyframes rotation-36deg {
+  from {
+    transform: rotate(36deg);
+  }
+  to {
+    transform: rotate(396deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(4 of [saturation="3"]) {
+  animation: rotation-36deg 240s linear infinite normal;
+}
+@keyframes rotation-48deg {
+  from {
+    transform: rotate(48deg);
+  }
+  to {
+    transform: rotate(408deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(5 of [saturation="3"]) {
+  animation: rotation-48deg 240s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(6 of [saturation="3"]) {
+  animation: rotation-60deg 240s linear infinite normal;
+}
+@keyframes rotation-72deg {
+  from {
+    transform: rotate(72deg);
+  }
+  to {
+    transform: rotate(432deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(7 of [saturation="3"]) {
+  animation: rotation-72deg 240s linear infinite normal;
+}
+@keyframes rotation-84deg {
+  from {
+    transform: rotate(84deg);
+  }
+  to {
+    transform: rotate(444deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(8 of [saturation="3"]) {
+  animation: rotation-84deg 240s linear infinite normal;
+}
+@keyframes rotation-96deg {
+  from {
+    transform: rotate(96deg);
+  }
+  to {
+    transform: rotate(456deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(9 of [saturation="3"]) {
+  animation: rotation-96deg 240s linear infinite normal;
+}
+@keyframes rotation-108deg {
+  from {
+    transform: rotate(108deg);
+  }
+  to {
+    transform: rotate(468deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(10 of [saturation="3"]) {
+  animation: rotation-108deg 240s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(11 of [saturation="3"]) {
+  animation: rotation-120deg 240s linear infinite normal;
+}
+@keyframes rotation-132deg {
+  from {
+    transform: rotate(132deg);
+  }
+  to {
+    transform: rotate(492deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(12 of [saturation="3"]) {
+  animation: rotation-132deg 240s linear infinite normal;
+}
+@keyframes rotation-144deg {
+  from {
+    transform: rotate(144deg);
+  }
+  to {
+    transform: rotate(504deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(13 of [saturation="3"]) {
+  animation: rotation-144deg 240s linear infinite normal;
+}
+@keyframes rotation-156deg {
+  from {
+    transform: rotate(156deg);
+  }
+  to {
+    transform: rotate(516deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(14 of [saturation="3"]) {
+  animation: rotation-156deg 240s linear infinite normal;
+}
+@keyframes rotation-168deg {
+  from {
+    transform: rotate(168deg);
+  }
+  to {
+    transform: rotate(528deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(15 of [saturation="3"]) {
+  animation: rotation-168deg 240s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(16 of [saturation="3"]) {
+  animation: rotation-180deg 240s linear infinite normal;
+}
+@keyframes rotation-192deg {
+  from {
+    transform: rotate(192deg);
+  }
+  to {
+    transform: rotate(552deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(17 of [saturation="3"]) {
+  animation: rotation-192deg 240s linear infinite normal;
+}
+@keyframes rotation-204deg {
+  from {
+    transform: rotate(204deg);
+  }
+  to {
+    transform: rotate(564deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(18 of [saturation="3"]) {
+  animation: rotation-204deg 240s linear infinite normal;
+}
+@keyframes rotation-216deg {
+  from {
+    transform: rotate(216deg);
+  }
+  to {
+    transform: rotate(576deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(19 of [saturation="3"]) {
+  animation: rotation-216deg 240s linear infinite normal;
+}
+@keyframes rotation-228deg {
+  from {
+    transform: rotate(228deg);
+  }
+  to {
+    transform: rotate(588deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(20 of [saturation="3"]) {
+  animation: rotation-228deg 240s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(21 of [saturation="3"]) {
+  animation: rotation-240deg 240s linear infinite normal;
+}
+@keyframes rotation-252deg {
+  from {
+    transform: rotate(252deg);
+  }
+  to {
+    transform: rotate(612deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(22 of [saturation="3"]) {
+  animation: rotation-252deg 240s linear infinite normal;
+}
+@keyframes rotation-264deg {
+  from {
+    transform: rotate(264deg);
+  }
+  to {
+    transform: rotate(624deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(23 of [saturation="3"]) {
+  animation: rotation-264deg 240s linear infinite normal;
+}
+@keyframes rotation-276deg {
+  from {
+    transform: rotate(276deg);
+  }
+  to {
+    transform: rotate(636deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(24 of [saturation="3"]) {
+  animation: rotation-276deg 240s linear infinite normal;
+}
+@keyframes rotation-288deg {
+  from {
+    transform: rotate(288deg);
+  }
+  to {
+    transform: rotate(648deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(25 of [saturation="3"]) {
+  animation: rotation-288deg 240s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(26 of [saturation="3"]) {
+  animation: rotation-300deg 240s linear infinite normal;
+}
+@keyframes rotation-312deg {
+  from {
+    transform: rotate(312deg);
+  }
+  to {
+    transform: rotate(672deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(27 of [saturation="3"]) {
+  animation: rotation-312deg 240s linear infinite normal;
+}
+@keyframes rotation-324deg {
+  from {
+    transform: rotate(324deg);
+  }
+  to {
+    transform: rotate(684deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(28 of [saturation="3"]) {
+  animation: rotation-324deg 240s linear infinite normal;
+}
+@keyframes rotation-336deg {
+  from {
+    transform: rotate(336deg);
+  }
+  to {
+    transform: rotate(696deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(29 of [saturation="3"]) {
+  animation: rotation-336deg 240s linear infinite normal;
+}
+@keyframes rotation-348deg {
+  from {
+    transform: rotate(348deg);
+  }
+  to {
+    transform: rotate(708deg);
+  }
+}
+.TColor .layer[lightness="5"] .rotor[saturation="3"]:nth-child(30 of [saturation="3"]) {
+  animation: rotation-348deg 240s linear infinite normal;
+}
+
+.TColor .layer[lightness="6"] {
+  display: none;
+}
+.TColor .layer[lightness="6"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 162.5px;
+  transform-origin: 112.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite reverse;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-30deg 80s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite reverse;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-90deg 80s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite reverse;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-150deg 80s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(7 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite reverse;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(8 of [saturation="1"]) {
+  animation: rotation-210deg 80s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(9 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite reverse;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(10 of [saturation="1"]) {
+  animation: rotation-270deg 80s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(11 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite reverse;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="1"]:nth-child(12 of [saturation="1"]) {
+  animation: rotation-330deg 80s linear infinite reverse;
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(even) {
+  left: 108.5px;
+  transform-origin: 166.5px;
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(odd) {
+  left: 72.5px;
+  transform-origin: 202.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(1 of [saturation="2"]) {
+  animation: rotation-0deg 160s linear infinite normal;
+}
+@keyframes rotation-15deg {
+  from {
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(375deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(2 of [saturation="2"]) {
+  animation: rotation-15deg 160s linear infinite normal;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(3 of [saturation="2"]) {
+  animation: rotation-30deg 160s linear infinite normal;
+}
+@keyframes rotation-45deg {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(4 of [saturation="2"]) {
+  animation: rotation-45deg 160s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(5 of [saturation="2"]) {
+  animation: rotation-60deg 160s linear infinite normal;
+}
+@keyframes rotation-75deg {
+  from {
+    transform: rotate(75deg);
+  }
+  to {
+    transform: rotate(435deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(6 of [saturation="2"]) {
+  animation: rotation-75deg 160s linear infinite normal;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(7 of [saturation="2"]) {
+  animation: rotation-90deg 160s linear infinite normal;
+}
+@keyframes rotation-105deg {
+  from {
+    transform: rotate(105deg);
+  }
+  to {
+    transform: rotate(465deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(8 of [saturation="2"]) {
+  animation: rotation-105deg 160s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(9 of [saturation="2"]) {
+  animation: rotation-120deg 160s linear infinite normal;
+}
+@keyframes rotation-135deg {
+  from {
+    transform: rotate(135deg);
+  }
+  to {
+    transform: rotate(495deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(10 of [saturation="2"]) {
+  animation: rotation-135deg 160s linear infinite normal;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(11 of [saturation="2"]) {
+  animation: rotation-150deg 160s linear infinite normal;
+}
+@keyframes rotation-165deg {
+  from {
+    transform: rotate(165deg);
+  }
+  to {
+    transform: rotate(525deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(12 of [saturation="2"]) {
+  animation: rotation-165deg 160s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(13 of [saturation="2"]) {
+  animation: rotation-180deg 160s linear infinite normal;
+}
+@keyframes rotation-195deg {
+  from {
+    transform: rotate(195deg);
+  }
+  to {
+    transform: rotate(555deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(14 of [saturation="2"]) {
+  animation: rotation-195deg 160s linear infinite normal;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(15 of [saturation="2"]) {
+  animation: rotation-210deg 160s linear infinite normal;
+}
+@keyframes rotation-225deg {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    transform: rotate(585deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(16 of [saturation="2"]) {
+  animation: rotation-225deg 160s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(17 of [saturation="2"]) {
+  animation: rotation-240deg 160s linear infinite normal;
+}
+@keyframes rotation-255deg {
+  from {
+    transform: rotate(255deg);
+  }
+  to {
+    transform: rotate(615deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(18 of [saturation="2"]) {
+  animation: rotation-255deg 160s linear infinite normal;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(19 of [saturation="2"]) {
+  animation: rotation-270deg 160s linear infinite normal;
+}
+@keyframes rotation-285deg {
+  from {
+    transform: rotate(285deg);
+  }
+  to {
+    transform: rotate(645deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(20 of [saturation="2"]) {
+  animation: rotation-285deg 160s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(21 of [saturation="2"]) {
+  animation: rotation-300deg 160s linear infinite normal;
+}
+@keyframes rotation-315deg {
+  from {
+    transform: rotate(315deg);
+  }
+  to {
+    transform: rotate(675deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(22 of [saturation="2"]) {
+  animation: rotation-315deg 160s linear infinite normal;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(23 of [saturation="2"]) {
+  animation: rotation-330deg 160s linear infinite normal;
+}
+@keyframes rotation-345deg {
+  from {
+    transform: rotate(345deg);
+  }
+  to {
+    transform: rotate(705deg);
+  }
+}
+.TColor .layer[lightness="6"] .rotor[saturation="2"]:nth-child(24 of [saturation="2"]) {
+  animation: rotation-345deg 160s linear infinite normal;
+}
+
+.TColor .layer[lightness="7"] {
+  display: none;
+}
+.TColor .layer[lightness="7"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite normal;
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(even) {
+  left: 144.5px;
+  transform-origin: 130.5px;
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(odd) {
+  left: 108.5px;
+  transform-origin: 166.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(1 of [saturation="2"]) {
+  animation: rotation-0deg 160s linear infinite reverse;
+}
+@keyframes rotation-20deg {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(2 of [saturation="2"]) {
+  animation: rotation-20deg 160s linear infinite reverse;
+}
+@keyframes rotation-40deg {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(3 of [saturation="2"]) {
+  animation: rotation-40deg 160s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(4 of [saturation="2"]) {
+  animation: rotation-60deg 160s linear infinite reverse;
+}
+@keyframes rotation-80deg {
+  from {
+    transform: rotate(80deg);
+  }
+  to {
+    transform: rotate(440deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(5 of [saturation="2"]) {
+  animation: rotation-80deg 160s linear infinite reverse;
+}
+@keyframes rotation-100deg {
+  from {
+    transform: rotate(100deg);
+  }
+  to {
+    transform: rotate(460deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(6 of [saturation="2"]) {
+  animation: rotation-100deg 160s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(7 of [saturation="2"]) {
+  animation: rotation-120deg 160s linear infinite reverse;
+}
+@keyframes rotation-140deg {
+  from {
+    transform: rotate(140deg);
+  }
+  to {
+    transform: rotate(500deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(8 of [saturation="2"]) {
+  animation: rotation-140deg 160s linear infinite reverse;
+}
+@keyframes rotation-160deg {
+  from {
+    transform: rotate(160deg);
+  }
+  to {
+    transform: rotate(520deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(9 of [saturation="2"]) {
+  animation: rotation-160deg 160s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(10 of [saturation="2"]) {
+  animation: rotation-180deg 160s linear infinite reverse;
+}
+@keyframes rotation-200deg {
+  from {
+    transform: rotate(200deg);
+  }
+  to {
+    transform: rotate(560deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(11 of [saturation="2"]) {
+  animation: rotation-200deg 160s linear infinite reverse;
+}
+@keyframes rotation-220deg {
+  from {
+    transform: rotate(220deg);
+  }
+  to {
+    transform: rotate(580deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(12 of [saturation="2"]) {
+  animation: rotation-220deg 160s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(13 of [saturation="2"]) {
+  animation: rotation-240deg 160s linear infinite reverse;
+}
+@keyframes rotation-260deg {
+  from {
+    transform: rotate(260deg);
+  }
+  to {
+    transform: rotate(620deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(14 of [saturation="2"]) {
+  animation: rotation-260deg 160s linear infinite reverse;
+}
+@keyframes rotation-280deg {
+  from {
+    transform: rotate(280deg);
+  }
+  to {
+    transform: rotate(640deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(15 of [saturation="2"]) {
+  animation: rotation-280deg 160s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(16 of [saturation="2"]) {
+  animation: rotation-300deg 160s linear infinite reverse;
+}
+@keyframes rotation-320deg {
+  from {
+    transform: rotate(320deg);
+  }
+  to {
+    transform: rotate(680deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(17 of [saturation="2"]) {
+  animation: rotation-320deg 160s linear infinite reverse;
+}
+@keyframes rotation-340deg {
+  from {
+    transform: rotate(340deg);
+  }
+  to {
+    transform: rotate(700deg);
+  }
+}
+.TColor .layer[lightness="7"] .rotor[saturation="2"]:nth-child(18 of [saturation="2"]) {
+  animation: rotation-340deg 160s linear infinite reverse;
+}
+
+.TColor .layer[lightness="8"] {
+  display: none;
+}
+.TColor .layer[lightness="8"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 162.5px;
+  transform-origin: 112.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite reverse;
+}
+@keyframes rotation-30deg {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-30deg 80s linear infinite reverse;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite reverse;
+}
+@keyframes rotation-90deg {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-90deg 80s linear infinite reverse;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite reverse;
+}
+@keyframes rotation-150deg {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-150deg 80s linear infinite reverse;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(7 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite reverse;
+}
+@keyframes rotation-210deg {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(8 of [saturation="1"]) {
+  animation: rotation-210deg 80s linear infinite reverse;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(9 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite reverse;
+}
+@keyframes rotation-270deg {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(10 of [saturation="1"]) {
+  animation: rotation-270deg 80s linear infinite reverse;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(11 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite reverse;
+}
+@keyframes rotation-330deg {
+  from {
+    transform: rotate(330deg);
+  }
+  to {
+    transform: rotate(690deg);
+  }
+}
+.TColor .layer[lightness="8"] .rotor[saturation="1"]:nth-child(12 of [saturation="1"]) {
+  animation: rotation-330deg 80s linear infinite reverse;
+}
+
+.TColor .layer[lightness="9"] {
+  display: none;
+}
+.TColor .layer[lightness="9"] .rotor[saturation="0"] {
+  left: 252.5px;
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(even) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(odd) {
+  left: 198.5px;
+  transform-origin: 76.5px;
+}
+@keyframes rotation-0deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(1 of [saturation="1"]) {
+  animation: rotation-0deg 80s linear infinite normal;
+}
+@keyframes rotation-60deg {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(2 of [saturation="1"]) {
+  animation: rotation-60deg 80s linear infinite normal;
+}
+@keyframes rotation-120deg {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(3 of [saturation="1"]) {
+  animation: rotation-120deg 80s linear infinite normal;
+}
+@keyframes rotation-180deg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(4 of [saturation="1"]) {
+  animation: rotation-180deg 80s linear infinite normal;
+}
+@keyframes rotation-240deg {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(5 of [saturation="1"]) {
+  animation: rotation-240deg 80s linear infinite normal;
+}
+@keyframes rotation-300deg {
+  from {
+    transform: rotate(300deg);
+  }
+  to {
+    transform: rotate(660deg);
+  }
+}
+.TColor .layer[lightness="9"] .rotor[saturation="1"]:nth-child(6 of [saturation="1"]) {
+  animation: rotation-300deg 80s linear infinite normal;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
   background-color: white;
   color: black;
 }
@@ -740,6 +3455,7 @@ body {
 main {
   margin: 0 auto;
   width: fit-content;
+  position: relative;
 }
 main .content {
   display: inline-block;
@@ -760,31 +3476,4 @@ main .toc {
   main .toc {
     display: none;
   }
-}
-
-code {
-  font-family: "JetBrains Mono", monospace;
-  background-color: #e6e7e9;
-  padding: 0.1em 0.2em;
-  border-radius: 0.2em;
-}
-
-a:not(.repo) {
-  position: relative;
-}
-a:not(.repo)::before {
-  content: "";
-  opacity: 0;
-  position: absolute;
-  bottom: -0.1rem;
-  left: 2.5%;
-  width: 95%;
-  height: 0.1rem;
-  background-color: rgb(157, 50, 181);
-  transition: opacity 0.2s, transform 0.2s;
-  transform: scaleX(0);
-}
-a:not(.repo):hover::before {
-  opacity: 1;
-  transform: scaleX(1);
 }

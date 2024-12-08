@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>Objects</title>
+        <meta charset="utf-8">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-copy.js" defer></script>
+
+    </head>
+    <body class="single">
+        <header>
+    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumb">
+                <ol>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/larsoft/">LArSoft</a></li>
+                    
+                </ol>
+            </nav>
+            <h1>Objects<div class="subtitle"></div></h1>
+            <section class="content">
+                <h2 id="alllo">
+    ALLLO?
+    
+    
+    
+</h2><h2 id="mrb">
+    MRB
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>command</th>
+          <th>alias</th>
+          <th>arguments</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>mrb newDev</code></td>
+          <td><code>mrb n</code></td>
+          <td><code>-v $VERSION -q $QUALIFIER</code></td>
+      </tr>
+      <tr>
+          <td><code>mrb gitCheckout</code></td>
+          <td><code>mrb g</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>mrb install</code></td>
+          <td><code>mrb i</code></td>
+          <td><code>-j $CORE_NUMBER</code></td>
+      </tr>
+      <tr>
+          <td><code>mrbsetenv</code></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>mrbslp</code></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="installation">
+    Installation
+    
+    
+    
+</h2><p>first load in the container</p>
+<p>{: file=&ldquo;bonjour.cpp&rdquo; }</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">app</span><span class="o">=</span><span class="s1">&#39;/cvmfs/oasis.opensciencegrid.org/mis/apptainer/current/bin/apptainer shell \
+</span></span></span><span class="line"><span class="cl"><span class="s1">    --shell=/bin/bash \
+</span></span></span><span class="line"><span class="cl"><span class="s1">    -B /cvmfs,/etc/hostname,/etc/hosts,/etc/krb5.conf \
+</span></span></span><span class="line"><span class="cl"><span class="s1">    --ipc \
+</span></span></span><span class="line"><span class="cl"><span class="s1">    --pid /cvmfs/singularity.opensciencegrid.org/fermilab/fnal-dev-sl7:latest&#39;</span></span></span></code>
+    </pre>
+</div><p>create <code>install_larsoft.sh</code> in <code>path/to/user/sw/dune_workdir</code> with the following</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span>v09_91_04d00
+</span></span><span class="line"><span class="cl"><span class="nv">QUAL</span><span class="o">=</span>e26
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+</span></span><span class="line"><span class="cl">mrb n -f -v <span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span> -q prof:<span class="si">${</span><span class="nv">QUAL</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> localProducts_larsoft_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_prof_<span class="si">${</span><span class="nv">QUAL</span><span class="si">}</span>/setup
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$MRB_SOURCE</span>
+</span></span><span class="line"><span class="cl">mrb g -t <span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span> dunesw
+</span></span><span class="line"><span class="cl">mrb g -t <span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span> protoduneana
+</span></span><span class="line"><span class="cl">mrb g -t <span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span> dunereco</span></span></code>
+    </pre>
+</div><p>you can now source larsoft on startup with</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl"><span class="nb">source</span> /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /path/to/localProducts_larsoft_v09_91_04d00_prof_e26/setup
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mrbsetenv <span class="o">&amp;&amp;</span> mrbslp</span></span></code>
+    </pre>
+</div><p>and compile with</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$MRB_BUILDDIR</span>
+</span></span><span class="line"><span class="cl">mrbsetenv <span class="o">&amp;&amp;</span> mrb i -j8 <span class="o">&amp;&amp;</span> mrbslp</span></span></code>
+    </pre>
+</div><h2 id="fhicl-utilities">
+    FHiCL Utilities
+    
+    
+    
+</h2><p><code>find_fhicl.sh</code></p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Erreur: no fcl file&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span> 
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -z <span class="si">${</span><span class="nv">FHICL_FILE_PATH</span><span class="p">+x</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Erreur: FHICL_FILE_PATH is not set&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span> 
+</span></span><span class="line"><span class="cl"><span class="nv">SEARCH_PATHS</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$FHICL_FILE_PATH</span> <span class="p">|</span> sed <span class="s1">&#39;s/:/\n/g&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> THIS_PATH in <span class="nv">$SEARCH_PATHS</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -d <span class="nv">$THIS_PATH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        find <span class="nv">$THIS_PATH</span> -name <span class="nv">$1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code>
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl">fhicl-dump file.fcl</span></span></code>
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl">lar -c eventdump.fcl -s myfile.root -n <span class="m">1</span></span></span></code>
+    </pre>
+</div><p>DUNE event display ?</p>
+<h2 id="generation">
+    Generation
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>PDVD</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>x</td>
+          <td><code>-340-&gt;340</code></td>
+      </tr>
+      <tr>
+          <td>y</td>
+          <td><code>-337-&gt;337</code></td>
+      </tr>
+      <tr>
+          <td>z</td>
+          <td><code>0-&gt;200</code></td>
+      </tr>
+      <tr>
+          <td>θxz</td>
+          <td><code>atan(Px/Pz)</code> : <code>180-&gt;360</code></td>
+      </tr>
+      <tr>
+          <td>θyz</td>
+          <td><code>atan(Py/PTy)=acos(Py/P)</code> : <code>-90-&gt;90</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="module">
+    Module
+    
+    
+    
+</h2><p>bla_module.cc using EDAnalyzer.h</p>
+<p>blabla.fcl</p>
+<p>compilation avec mrb</p>
+<p>run avec lar -c blabla.fcl</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="bash"><span class="line"><span class="cl">fhicl-dump --help
+</span></span><span class="line"><span class="cl">lar --print-available module
+</span></span><span class="line"><span class="cl">lar --prin-description <span class="s2">&#34;modulename&#34;</span>
+</span></span><span class="line"><span class="cl">nohup lar ?? &gt;<span class="p">&amp;</span>amp<span class="p">;</span> pg.out
+</span></span><span class="line"><span class="cl">pgrep lar</span></span></code>
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="n">Constructor</span> <span class="p">(</span><span class="n">fhicl</span><span class="o">::</span><span class="n">ParameterSet</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">fcl</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type_t</span> <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">type_t</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;parameterNameInFhicl&#34;</span><span class="p">,</span><span class="n">x_default</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// if the parameter is a sequence: type_t = vector&lt;...&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// if the parameter is a table: type_t = struct {...}
+</span></span></span></code>
+    </pre>
+</div><h2 id="geotypes">
+    GeoTypes
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>typename</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>geo::Length_t</code></td>
+          <td><code>double</code></td>
+      </tr>
+      <tr>
+          <td><code>geo::Point_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1PositionVector3D.html"><code>PositionVector3D</code></a></td>
+      </tr>
+      <tr>
+          <td><code>geo::Vector_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1DisplacementVector3D.html"><code>DisplacementVector3D</code></a></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="data-products">
+    Data products
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>simb::MCTruth</code></td>
+          <td>information about the generation (before G4)</td>
+      </tr>
+      <tr>
+          <td><code>simb::MCParticle</code></td>
+          <td>all particle information: one instance by <code>MC::Truth</code> then one by G4</td>
+      </tr>
+      <tr>
+          <td><code>sim::SimEnergyDeposit</code></td>
+          <td>G4</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>raw::Digit</code></td>
+          <td>ADC count wrt time ticks on one channel</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>recob::Wire</code></td>
+          <td>deconvolved signal of <code>Digit</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Hit</code></td>
+          <td>gaussian fit on <code>Wire</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Cluster</code></td>
+          <td><code>Hit</code> coincidence on multiple wires of one plane</td>
+      </tr>
+      <tr>
+          <td><code>recob::SpacePoint</code></td>
+          <td><code>Cluster</code> coincidence on all three planes</td>
+      </tr>
+      <tr>
+          <td><code>recob::PFParticle</code></td>
+          <td>collection of <code>Cluster</code> produced by one reconstructed particle</td>
+      </tr>
+      <tr>
+          <td><code>recob::Track</code></td>
+          <td>track reconstruction on appropriate hits from a track-like <code>PFParticle</code></td>
+      </tr>
+      <tr>
+          <td><code>anab::Calorimetry</code></td>
+          <td>calorimetric measurement for each plane and each <code>Track</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Shower</code></td>
+          <td>shower reconstruction on hits from a shower-like <code>PFParticle</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="truth--particles">
+    Truth &amp; Particles
+    
+    
+    
+</h2><h3 id="trajectory">
+    Trajectory
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>ftrajectory</code></td>
+          <td><code>vector&lt;pair&lt;TLorentzVector, TLorentzVector&gt;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Position(i)</code></td>
+          <td><code>ftrajectory[i].first</code></td>
+      </tr>
+      <tr>
+          <td><code>Momentum(i)</code></td>
+          <td><code>ftrajectory[i].second</code></td>
+      </tr>
+      <tr>
+          <td><code>TotalLength()</code></td>
+          <td><code>(double)</code> sum of the distances between adjacent positions</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="particle">
+    Particle
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fpdgCode</code></td>
+          <td><code>int</code></td>
+      </tr>
+      <tr>
+          <td><code>ftrajectory</code></td>
+          <td><code>simb::MCTrajectory</code></td>
+      </tr>
+      <tr>
+          <td><code>fdaughters</code></td>
+          <td><code>set&lt;int&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>PdgCode()</code></td>
+          <td><code>fpdgCode</code></td>
+      </tr>
+      <tr>
+          <td><code>Position(i)</code></td>
+          <td><code>ftrajectory.Position(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Momentum(i)</code></td>
+          <td><code>ftrajectory.Momentum(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Daugther(i)</code></td>
+          <td>ith daughter&rsquo;s ID</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="truth">
+    Truth
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fPartList</code></td>
+          <td><code>vector&lt;simb::MCParticle&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>GetParticle(i)</code></td>
+          <td><code>fPartList[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>GetNeutrino(i)</code></td>
+          <td><code>fMCNeutrino</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="simenergydeposits">
+    SimEnergyDeposits
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>trackID</code></td>
+          <td>same as <code>origTrackID</code>: track ID of the generated particle at the origine of the deposited energy</td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>GetParticle(i)</code></td>
+          <td><code>fPartList[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>GetNeutrino(i)</code></td>
+          <td><code>fMCNeutrino</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="clusters">
+    Clusters
+    
+    
+    
+</h2><h2 id="pfparticles">
+    PFParticles
+    
+    
+    
+</h2><h2 id="tracks">
+    Tracks
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Track.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><h3 id="user-defined-types">
+    User-defined Types
+    
+    <a class="repo" target="_blank" href="dummy"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>typename</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Point_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1PositionVector3D.html"><code>PositionVector3D</code></a></td>
+      </tr>
+      <tr>
+          <td><code>Vector_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1DisplacementVector3D.html"><code>DisplacementVector3D</code></a></td>
+      </tr>
+      <tr>
+          <td><code>TrajectoryPoint_t</code></td>
+          <td><code>struct {P_t position; V_t momentum; V_t direction() return momentum.Unit();}</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="trajectories">
+    Trajectories
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fPositions</code></td>
+          <td><code>vector&lt;Point_t&gt;</code> position at each point of the trajectory</td>
+      </tr>
+      <tr>
+          <td><code>fMomenta</code></td>
+          <td><code>vector&lt;Vector_t&gt;</code> momentum at each point of the trajectory</td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>NPoints()</code></td>
+          <td><code>fPositions.size()</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstPoint()</code></td>
+          <td><code>0</code></td>
+      </tr>
+      <tr>
+          <td><code>LastPoint()</code></td>
+          <td><code>NPoints()-1</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>LocationAtPoint(i)</code></td>
+          <td><code>fPositions[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>MomentumVectorAtPoint(i)</code></td>
+          <td><code>fMomenta[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>MomentumAtPoint(i)</code></td>
+          <td><code>fMomenta[i].R()</code></td>
+      </tr>
+      <tr>
+          <td><code>DirectionAtPoint(i)</code></td>
+          <td><code>fMomenta[i]/fMomenta[i].R()</code></td>
+      </tr>
+      <tr>
+          <td><code>TrajectoryPoint(i)</code></td>
+          <td><code>(TrajectoryPoint_t) {fPositions[i],fMomenta[i]}</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Length()</code></td>
+          <td>sum of the distances between adjacent points</td>
+      </tr>
+      <tr>
+          <td><code>Start()</code></td>
+          <td><code>LocationAtPoint(FirstPoint())</code></td>
+      </tr>
+      <tr>
+          <td><code>End()</code></td>
+          <td><code>LocationAtPoint(LastPoint())</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="track-trajectories">
+    Track Trajectories
+    
+    
+    
+</h3><p><code>class TrackTrajectory : private recob::Trajectory {...};</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>protected</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>NextValidPoint(i)</code></td>
+          <td><code>size_t</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstValidPoint()</code></td>
+          <td><code>NextValidPoint(0)</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tracks-1">
+    Tracks
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Track.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>protected</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fTraj</code></td>
+          <td><code>TrackTrajectory</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>FirstValidPoint()</code></td>
+          <td><code>fTraj.FirstValidPoint()</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstPoint()</code></td>
+          <td><code>fTraj.FirstPoint()</code></td>
+      </tr>
+      <tr>
+          <td><code>LocationAtPoint(i)</code></td>
+          <td><code>fTraj.LocationAtPoint(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Start()</code></td>
+          <td><code>fTraj.Start()</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="calorimetry">
+    Calorimetry
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fdEdx</code></td>
+          <td><code>vector&lt;float&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>fResidualRange</code></td>
+          <td><code>vector&lt;float&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>fRange</code></td>
+          <td><code>float</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>dEdx()</code></td>
+          <td><code>fdEdx</code></td>
+      </tr>
+      <tr>
+          <td><code>dQdx()</code></td>
+          <td><code>fdQdx</code></td>
+      </tr>
+      <tr>
+          <td><code>ResidualRange()</code></td>
+          <td><code>fResidualRange</code></td>
+      </tr>
+      <tr>
+          <td><code>Range()</code></td>
+          <td><code>fRange</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="showers">
+    Showers
+    
+    
+    
+</h2><h2 id="truth-reco-associations">
+    Truth Reco Associations
+    
+    
+    
+</h2><p>{: label=&ldquo;TERMINAL&rdquo; line-number=&ldquo;5&rdquo; }</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">ServiceHandle</span><span class="o">&lt;</span><span class="n">cheat</span><span class="o">::</span><span class="n">BackTrackerService</span><span class="o">&gt;</span> <span class="n">bt_serv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">ServiceHandle</span><span class="o">&lt;</span><span class="n">cheat</span><span class="o">::</span><span class="n">ParticleInventoryService</span><span class="o">&gt;</span> <span class="n">pi_serv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="k">const</span> <span class="n">clockData</span> <span class="o">=</span> <span class="n">art</span><span class="o">::</span><span class="n">ServiceHandle</span><span class="o">&lt;</span><span class="n">detinfo</span><span class="o">::</span><span class="n">DetectorClocksService</span><span class="o">&gt;</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">DataFor</span><span class="p">(</span><span class="n">evt</span><span class="p">);</span></span></span></code>
+    </pre>
+</div><h3 id="protoduneanautilities">
+    protoduneana/Utilities
+    
+    
+    
+</h3><h4 id="test1">
+    test1
+    
+    
+    
+</h4><h4 id="test2">
+    test2
+    
+    
+    
+</h4><h2 id="truth-object-associations">
+    Truth Object Associations
+    
+    
+    
+</h2><h2 id="reco-object-associations">
+    Reco Object Associations
+    
+    
+    
+</h2><h3 id="findmanyp">
+    FindManyP
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">art</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">recob</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;&gt;</span> <span class="k">const</span> <span class="n">vh_pfp</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">getValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">tag_pfp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;&gt;</span> <span class="n">vp_pfp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill_ptr_vector</span><span class="p">(</span><span class="n">vp_pfp</span><span class="p">,</span><span class="n">vh_pfp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FindManyP</span><span class="o">&lt;</span><span class="n">Track</span><span class="o">&gt;</span> <span class="k">const</span> <span class="n">fmp_track</span><span class="p">(</span><span class="n">vp_pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_track</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">FindManyP</span><span class="o">&lt;</span><span class="n">SpacePoint</span><span class="o">&gt;</span> <span class="k">const</span> <span class="n">fmp_point</span><span class="p">(</span><span class="n">vp_pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_point</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">p_pfp</span> <span class="p">:</span> <span class="n">vp_pfp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">Track</span><span class="o">&gt;&gt;</span> <span class="n">vp_track</span> <span class="o">=</span> <span class="n">fmp_track</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">p_pfp</span><span class="p">.</span><span class="n">key</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">vp_track</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Ptr</span><span class="o">&lt;</span><span class="n">Track</span><span class="o">&gt;</span> <span class="n">p_track</span> <span class="o">=</span> <span class="n">vp_track</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">SpacePoint</span><span class="o">&gt;&gt;</span> <span class="n">vp_point</span> <span class="o">=</span> <span class="n">fmp_point</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">p_pfp</span><span class="p">.</span><span class="n">key</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">SpacePoint</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">p_point</span> <span class="p">:</span> <span class="n">vp_point</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><h3 id="dunerecoanautils">
+    dunereco/AnaUtils
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">danaEvt</span><span class="o">=</span><span class="n">dune_ana</span><span class="o">::</span><span class="n">DUNEAnaEventUtils</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">danaPFP</span><span class="o">=</span><span class="n">dune_ana</span><span class="o">::</span><span class="n">DUNEAnaPFParticleUtils</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;&gt;</span> <span class="k">const</span> <span class="n">vp_pfp</span> <span class="o">=</span> <span class="n">danaEvt</span><span class="o">::</span><span class="n">GetPFParticles</span><span class="p">(</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">PFP</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">p_pfp</span> <span class="p">:</span> <span class="n">vp_pfp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">danaPFP</span><span class="o">::</span><span class="n">IsTrack</span><span class="p">(</span><span class="n">p_pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">,</span><span class="n">label_tack</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Ptr</span><span class="o">&lt;</span><span class="n">Track</span><span class="o">&gt;</span> <span class="k">const</span> <span class="n">p_trk</span> <span class="o">=</span> <span class="n">danaPFP</span><span class="o">::</span><span class="n">GetTrack</span><span class="p">(</span><span class="n">p_pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">,</span><span class="n">label_trk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">SpacePoint</span><span class="o">&gt;&gt;</span> <span class="k">const</span> <span class="n">vp_point</span> <span class="o">=</span> <span class="n">danaPFP</span><span class="o">::</span><span class="n">GetSpacePoints</span><span class="p">(</span><span class="n">p_pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_point</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">SpacePoint</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">p_point</span> <span class="p">:</span> <span class="n">vp_point</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><h3 id="protoduneanautilities-1">
+    protoduneana/Utilities
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="n">protoana</span><span class="o">::</span><span class="n">ProtoDUNEPFParticleUtils</span> <span class="n">pfpUtils</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">ValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">PFParticle</span><span class="o">&gt;&gt;</span> <span class="k">const</span> <span class="n">vh_pfp</span> <span class="o">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">getValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">PFParticle</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">tag_pfp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">recob</span><span class="o">::</span><span class="n">PFParticle</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">pfp</span> <span class="p">:</span> <span class="o">*</span><span class="n">vh_pfp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">IsPFParticleTracklike</span><span class="p">(</span><span class="n">pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">,</span><span class="n">label_track</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="n">recob</span><span class="o">::</span><span class="n">Track</span><span class="o">*</span> <span class="n">trk</span> <span class="o">=</span> <span class="n">pfpUtils</span><span class="p">.</span><span class="n">GetPFParticleTrack</span><span class="p">(</span><span class="n">pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">,</span><span class="n">label_track</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">SpacePoint</span><span class="o">*&gt;</span> <span class="n">v_spt</span> <span class="o">=</span> <span class="n">pfpUtils</span><span class="p">.</span><span class="n">GetPFParticleSpacePoints</span><span class="p">(</span><span class="n">pfp</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">label_pfp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">recob</span><span class="o">::</span><span class="n">SpacePoint</span><span class="o">*</span> <span class="nl">spt</span> <span class="p">:</span> <span class="n">v_spt</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><h2 id="heading">
+    ???
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="cpp"><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">Track</span><span class="o">&gt;</span> <span class="n">ptrack</span><span class="p">(</span><span class="n">trackListHandle</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">recob</span><span class="o">::</span><span class="n">Track</span><span class="o">&amp;</span> <span class="n">track</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptrack</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">simb</span><span class="o">::</span><span class="n">MCParticle</span><span class="o">*</span> <span class="n">daughter1</span> <span class="o">=</span> <span class="n">pi_serv</span><span class="o">-&gt;</span><span class="n">TrackIdToParticle_P</span><span class="p">((</span><span class="n">particleP1</span><span class="o">-&gt;</span><span class="n">Daughter</span><span class="p">(</span><span class="n">i_daugther</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">Hit</span><span class="o">&gt;&gt;</span> <span class="n">h_hit</span><span class="o">=</span> <span class="cm">/* ... */</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">h_hit</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">art</span><span class="o">::</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">recob</span><span class="o">::</span><span class="n">Hit</span><span class="o">&gt;</span> <span class="n">p_hit</span><span class="p">(</span><span class="n">h_hit</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">simb</span><span class="o">::</span><span class="n">MCParticle</span> <span class="o">*</span><span class="n">particleP</span> <span class="o">=</span> <span class="n">truthUtil</span><span class="p">.</span><span class="n">GetMCParticleFromRecoTrack</span><span class="p">(</span><span class="n">track</span><span class="p">,</span><span class="n">evt</span><span class="p">,</span><span class="n">fTrackModuleLabel</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">particleP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">art</span><span class="o">::</span><span class="n">Ptr</span><span class="o">&lt;</span><span class="n">simb</span><span class="o">::</span><span class="n">MCTruth</span><span class="o">&gt;</span> <span class="n">mcP</span><span class="o">=</span><span class="n">pi_serv</span><span class="o">-&gt;</span><span class="n">TrackIdToMCTruth_P</span><span class="p">(</span><span class="n">particleP</span><span class="o">-&gt;</span><span class="n">TrackId</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mcP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">99999</span></span></span></code>
+    </pre>
+</div><h3 id="anautils-who-gets-who">
+    <code>AnaUtils</code> Who Gets Who
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>From</th>
+          <th>Get</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Hit</code></td>
+          <td><code>SpacePoints</code></td>
+      </tr>
+      <tr>
+          <td><code>Cluster</code></td>
+          <td><code>Hits</code></td>
+      </tr>
+      <tr>
+          <td><code>SpacePoint</code></td>
+          <td><code>Hits</code></td>
+      </tr>
+      <tr>
+          <td><code>Track</code></td>
+          <td><code>Hits</code> <code>SpacePoints</code> <code>PFParticle</code></td>
+      </tr>
+      <tr>
+          <td><code>Shower</code></td>
+          <td><code>Hits</code> <code>SpacePoints</code> <code>PFParticle</code></td>
+      </tr>
+      <tr>
+          <td><code>PFParticle</code></td>
+          <td><code>Hits</code> <code>SpacePoints</code> <code>Track</code> <code>Shower</code> <code>Slice</code> <code>Vertex</code> <code>ChildParticles</code> <code>...</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="metacat">
+    MetaCat
+    
+    
+    
+</h2><p><code>metacat query &quot;files where 025086 in core.runs and core.data_tier=raw limit 10&quot;</code></p>
+<p><code>export METACAT_AUTH_SERVER_URL=https://metacat.fnal.gov:8143/auth/dune</code></p>
+<p><code>export METACAT_SERVER_URL=https://metacat.fnal.gov:9443/dune_meta_prod/appi</code></p>
+<h2 id="pandora">
+    Pandora
+    
+    
+    
+</h2><p>cf. 9th_uk_larsoft_workshop/debugging_reconstruction</p>
+<p>list of Pandora algorithm - class association: <a href="https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArContent.cc">https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArContent.cc</a></p>
+<p>then parameter list in class initialization: (e.g) <a href="https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArTwoDReco/LArClusterAssociation/HitWidthClusterMergingAlgorithm.cc">https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArTwoDReco/LArClusterAssociation/HitWidthClusterMergingAlgorithm.cc</a>
+here: <code>m_minClusterSparseness(0.3f)</code> can be changed in</p>
+<p><code>PandoraSettings_*.xml</code> as follows:</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">xml</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="xml"><span class="line"><span class="cl"><span class="nt">&lt;algorithm</span> <span class="na">type =</span> <span class="s">&#34;LArHitWidthClusterMerging&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;MinClusterSparseness&gt;</span>0.2<span class="nt">&lt;/MinClusterSparseness&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/algorithm&gt;</span></span></span></code>
+    </pre>
+</div><h2 id="debugging">
+    DEBUGGING
+    
+    
+    
+</h2><p>Make sure the good fhicl files are being included. For that be sure the directory of the fhicl file you want to include is in the begining of the FHICL_FILE_PATH environment variable in case another fhicl file exists with the same name.</p>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ol>
+    <li><a href="#alllo">ALLLO?</a></li>
+    <li><a href="#mrb">MRB</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#fhicl-utilities">FHiCL Utilities</a></li>
+    <li><a href="#generation">Generation</a></li>
+    <li><a href="#module">Module</a></li>
+    <li><a href="#geotypes">GeoTypes</a></li>
+    <li><a href="#data-products">Data products</a></li>
+    <li><a href="#truth--particles">Truth &amp; Particles</a>
+      <ol>
+        <li><a href="#trajectory">Trajectory</a></li>
+        <li><a href="#particle">Particle</a></li>
+        <li><a href="#truth">Truth</a></li>
+      </ol>
+    </li>
+    <li><a href="#simenergydeposits">SimEnergyDeposits</a></li>
+    <li><a href="#clusters">Clusters</a></li>
+    <li><a href="#pfparticles">PFParticles</a></li>
+    <li><a href="#tracks">Tracks</a>
+      <ol>
+        <li><a href="#user-defined-types">User-defined Types</a></li>
+        <li><a href="#trajectories">Trajectories</a></li>
+        <li><a href="#track-trajectories">Track Trajectories</a></li>
+        <li><a href="#tracks-1">Tracks</a></li>
+      </ol>
+    </li>
+    <li><a href="#calorimetry">Calorimetry</a></li>
+    <li><a href="#showers">Showers</a></li>
+    <li><a href="#truth-reco-associations">Truth Reco Associations</a>
+      <ol>
+        <li><a href="#protoduneanautilities">protoduneana/Utilities</a></li>
+      </ol>
+    </li>
+    <li><a href="#truth-object-associations">Truth Object Associations</a></li>
+    <li><a href="#reco-object-associations">Reco Object Associations</a>
+      <ol>
+        <li><a href="#findmanyp">FindManyP</a></li>
+        <li><a href="#dunerecoanautils">dunereco/AnaUtils</a></li>
+        <li><a href="#protoduneanautilities-1">protoduneana/Utilities</a></li>
+      </ol>
+    </li>
+    <li><a href="#heading">???</a>
+      <ol>
+        <li><a href="#anautils-who-gets-who"><code>AnaUtils</code> Who Gets Who</a></li>
+      </ol>
+    </li>
+    <li><a href="#metacat">MetaCat</a></li>
+    <li><a href="#pandora">Pandora</a></li>
+    <li><a href="#debugging">DEBUGGING</a></li>
+  </ol>
+</nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

@@ -15,18 +15,31 @@ $border-size: .1* f.$xl;
 }
 
 section.pages {
-    margin-top: 2em;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
 
+    h2 {
+        margin: 0;
+        
+        .subtitle {
+            font-size: f.$l;
+            // color: c.$secondary;
+            font-weight: 300;
+            font-style: italic;
+            width: 70%;
+        }
+    }
+
     a {
         display: block;
-        padding: 1em;
-        border-radius: 1em;
+        padding: f.$xl;
+        border-radius: f.$xl;
         border: $border-size solid c.$mute;
         transition: border-color .2s;
+
+        min-height: 3 * f.$xl;
 
         position: relative;
         opacity: 0;
@@ -38,10 +51,22 @@ section.pages {
         }
 
         &:before {
-            content: none;
+            content: none; //deactivate underlining
         }
         &:hover {
             border: $border-size solid c.$accent;
+        }
+
+        img {
+            height: 3 * f.$xl;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+
+            border-radius: calc(f.$xl / 2);
+
+            filter: opacity(.5);
+            z-index: -1;
         }
     }
 }

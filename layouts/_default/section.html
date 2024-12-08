@@ -7,12 +7,26 @@
     <body>
         {{ partial "header.html" . }}
         <main class="section">
+            <nav class="breadcrumb">
+                <ol>
+                    {{ range .Ancestors.Reverse }}
+                    <li class="ancestor"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ol>
+            </nav>
+            <h1>{{ .Title }}<div class="subtitle">{{ .Params.subtitle }}</div></h1>
             <section class="content">
-                <h1>{{ .Title }}</h1>
                 {{ .Content }}
                 <section class="pages">
                     {{ range .Pages }}
-                    <a href="{{ .Permalink }}"><h2>{{ .LinkTitle }}</h2>{{ .Summary}}</a>
+                    <a href="{{ .Permalink }}">
+                        <h2>
+                            {{ .LinkTitle }}
+                            <div class="subtitle">{{ .Params.subtitle }}</div>
+                        </h2>
+                        <img src="{{ .Params.image }}">
+                        {{/*  {{ .Summary }}  */}}
+                    </a>
                     {{ end }}
                 </section>
             </section>

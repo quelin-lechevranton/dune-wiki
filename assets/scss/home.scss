@@ -3,12 +3,6 @@
 @use 'sizes' as s; 
 
 body.home {
-
-    header {
-        display: flex;
-        justify-content: center;
-        gap: 2em;
-    }
     main {
         width: s.$content_width;
         margin: 100px auto 0 auto;

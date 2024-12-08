@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>art</title>
+        <meta charset="utf-8">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-copy.js" defer></script>
+
+    </head>
+    <body class="single">
+        <header>
+    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumb">
+                <ol>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
+                    
+                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+                    
+                </ol>
+            </nav>
+            <h1>art<div class="subtitle">event-processing framework</div></h1>
+            <section class="content">
+                <p><code>echo $CANVAS_DIR</code></p>
+<p><a href="https://github.com/art-framework-suite">art</a>
+<a href="https://code-doc.larsoft.org/docs/latest/html/classart_1_1FindManyP_3_01ProdB_00_01void_01_4.html#ac1e790b58c8294a72b4341181759cb38">fmp</a>
+<a href="https://github.com/art-framework-suite/canvas/blob/develop/canvas/Persistency/Common/Ptr.h">ptr</a>
+<a href="https://github.com/art-framework-suite/art/tree/5f69f17aba136b0c10a3fc3d9ee1ce3d651ec9e2/art/Persistency/Common">???</a></p>
+<h2 id="inputtag">
+    InputTag
+    
+    
+    
+</h2><h3 id="private-members">
+    private members
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InputTag</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//(...)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">label_</span><span class="p">{};</span>       <span class="c1">//it.label()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">instance_</span><span class="p">{};</span>    <span class="c1">//it.instance()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">process_</span><span class="p">{};</span>     <span class="c1">//it.process()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span></span></span></code>
+    </pre>
+</div><h3 id="constructor">
+    Constructor
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">InputTag</span><span class="o">::</span><span class="n">InputTag</span><span class="p">(</span><span class="n">string</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//     InputTag it(&#34;label::process&#34;);  -&gt; it.instance(): &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     InputTag it(&#34;label:instance&#34;);  -&gt; it.process(): &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     InputTag it(&#34;label&#34;);           -&gt; it.instance(), it.process(): &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">InputTag</span><span class="o">::</span><span class="n">InputTag</span><span class="p">(</span><span class="s">&#34;label&#34;</span><span class="p">,</span><span class="s">&#34;instance&#34;</span><span class="p">);</span></span></span></code>
+    </pre>
+</div><h3 id="examples-constructor-calls">
+    Examples: constructor calls
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"></code>
+    </pre>
+</div><h2 id="handles">
+    Handles
+    
+    
+    
+</h2><ul>
+<li><code>gallery::</code> &ldquo;version simplifié des objets art pour des macros&rdquo;</li>
+<li><code>art::</code> &ldquo;à utiliser pour écrire un module LArSoft&rdquo;</li>
+</ul>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">myModule</span><span class="o">::</span><span class="n">analyze</span><span class="p">(</span><span class="k">const</span> <span class="n">art</span><span class="o">::</span><span class="n">Event</span><span class="o">&amp;</span> <span class="n">ev</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* my analysis */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><p><a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/Handle.h"><code>Handle.h</code></a></p>
+<blockquote>
+<p>Handle: Non-owning &ldquo;smart pointer&rdquo; for reference to EDProducts and their Provenances.</p>
+<p>ValidHandle: A Handle that can not be invalid, and thus does not check for validity upon dereferencing.</p>
+<p>Handles can have:</p>
+<ul>
+<li>Product and Provenance pointers both null;</li>
+<li>Both pointers valid</li>
+</ul>
+<p>ValidHandles must have Product and Provenance pointers valid.</p>
+</blockquote>
+<p><code>Handle</code> private members <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/Handle.h#L97"><code>Handle.h#L97</code></a></p>
+<p><code>ValidHandle</code> private members <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/Handle.h#L287"><code>Handle.h#L287</code></a></p>
+<p><code>ev.getValidHandle</code> herited from <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/ProductRetriever.h#L266"><code>ProductRetriever.h#L266</code></a></p>
+<p><code>ev.getHandle</code> herited from <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/ProductRetriever.h#L250"><code>ProductRetriever.h#L250</code></a></p>
+<p><code>getByLabel_</code> herited from <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/ProductRetriever.cc#L201"><code>ProductRetriever.h#L201</code></a></p>
+<p>Constructor: <code>Handle(GroupQueryResult)</code> <a href="https://github.com/art-framework-suite/art/blob/develop/art/Framework/Principal/Handle.h#L142"><code>Handle.h#L142</code></a></p>
+<p><code>ev.getByLabel</code> herited from <a href="https://github.com/art-framework-suite/art/tree/develop/art/Framework/Principal/ProductRetriever.h#L442"><code>ProductRetriever.h#L442</code></a></p>
+<h3 id="examples">
+    Examples
+    
+    
+    
+</h3><h4 id="in-a-module">
+    in a module
+    
+    
+    
+</h4>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">myModule</span><span class="o">::</span><span class="n">analyzer</span><span class="p">(</span><span class="k">const</span> <span class="n">art</span><span class="o">::</span><span class="n">Event</span><span class="o">&amp;</span> <span class="n">ev</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">myLabel</span><span class="o">=</span><span class="s">&#34;label&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">myInstance</span><span class="o">=</span><span class="s">&#34;instance&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">art</span><span class="o">::</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">myType</span><span class="o">&gt;&gt;</span> <span class="n">myHandle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ev</span><span class="p">.</span><span class="n">getByLabel</span><span class="p">(</span><span class="n">myLabel</span><span class="p">,</span><span class="n">myInstance</span><span class="p">,</span><span class="n">myHandle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">myHandle</span><span class="p">.</span><span class="n">isValid</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="n">myType</span> <span class="nl">myObj</span> <span class="p">:</span> <span class="o">*</span><span class="n">myHandle</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* analysis */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">myModule</span><span class="o">::</span><span class="n">analyzer</span><span class="p">(</span><span class="k">const</span> <span class="n">art</span><span class="o">::</span><span class="n">Event</span><span class="o">&amp;</span> <span class="n">ev</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">art</span><span class="o">::</span><span class="n">InputTag</span> <span class="n">myTag</span><span class="p">(</span><span class="s">&#34;label:instance&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">art</span><span class="o">::</span><span class="n">ValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">myType</span><span class="o">&gt;&gt;</span> <span class="n">myValidHandle</span><span class="o">=</span><span class="n">ev</span><span class="p">.</span><span class="n">getValidHandle</span><span class="p">(</span><span class="n">myTag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">myValidHandle</span><span class="p">.</span><span class="n">product</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myType</span> <span class="n">myObj</span> <span class="o">=</span> <span class="n">myValidHandle</span><span class="p">.</span><span class="n">product</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//myType myObj = myValidHandle-&gt;at(i)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//myType myObj = (*myValidHandle)[i]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//myType myObj = myValidHandle()-&gt;at(i) (not in gallery::)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
+</span></span><span class="line"><span class="cl">        <span class="cm">/* analysis */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><h4 id="in-a-macro">
+    in a macro
+    
+    
+    
+</h4>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">C&#43;&#43;</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">gallery</span><span class="o">::</span><span class="n">Event</span> <span class="n">ev</span><span class="p">({</span><span class="s">&#34;file.root&#34;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">InputTag</span> <span class="n">myTag</span><span class="p">(</span><span class="s">&#34;label:instance&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">gallery</span><span class="o">::</span><span class="n">ValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">myType</span><span class="o">&gt;&gt;</span> <span class="n">myValidHandle</span><span class="o">=</span><span class="n">ev</span><span class="p">.</span><span class="n">getValidHandle</span><span class="p">(</span><span class="n">myTag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">myValidHandle</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myType</span> <span class="n">myObj</span> <span class="o">=</span> <span class="n">myValidHandle</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* analysis */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+    </pre>
+</div><p><a href="https://github.com/art-framework-suite/canvas/blob/develop/canvas/Persistency/Common/Ptr.h"><code>Ptr.h</code></a></p>
+<blockquote>
+<p>a Ptr is a persistent smart pointer to an item in a collection</p>
+</blockquote>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ol>
+    <li><a href="#inputtag">InputTag</a>
+      <ol>
+        <li><a href="#private-members">private members</a></li>
+        <li><a href="#constructor">Constructor</a></li>
+        <li><a href="#examples-constructor-calls">Examples: constructor calls</a></li>
+      </ol>
+    </li>
+    <li><a href="#handles">Handles</a>
+      <ol>
+        <li><a href="#examples">Examples</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

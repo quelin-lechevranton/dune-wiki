@@ -6,12 +6,19 @@ h1 {
     font-weight: bold;
     margin-bottom: 1em;
     text-align: center;
+
+    .subtitle {
+        margin-top: .5em;
+        font-size: f.$xl;
+        // color: c.$secondary;
+        font-weight: 300;
+        font-style: italic;
+    }
 }
 h2 {
     font-size: f.$xl;
     font-weight: bold;
     margin: 1em 0;
-    // text-indent: 1em;
 
     &:nth-child(1) {
         margin-top: 0; // remove top margin from first h2
@@ -21,14 +28,13 @@ h3 {
     font-size: f.$l;
     font-weight: bold;
     margin: 1em 0;
-    // text-indent: 2em;
 }
 h4 {
     font-weight: bold;
 }
 
 
-h2, h3 {
+h2:has(a.repo), h3:has(a.repo) {
     position: relative;
 
     // verticaly center img

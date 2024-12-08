@@ -1,10 +1,8 @@
 <header>
-    <nav class="breadcrumb">
-        <ol>
-            {{ range .Ancestors.Reverse }}
-            <li class="ancestor"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-            {{ end }}
-            <li class="current">{{ .LinkTitle }}</a></li>
-        </ol>
-    </nav>
+    <li><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
+    <ol>
+        {{ range .Site.Home.Pages }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+    </ol>
 </header>

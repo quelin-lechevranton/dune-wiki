@@ -2,81 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dune-wiki on Dune Wiki</title>
-    <link>https://quelin-lechevranton.github.io/dune-wiki/</link>
+    <link>http://localhost:1313/dune-wiki/</link>
     <description>Recent content in dune-wiki on Dune Wiki</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quelin-lechevranton.github.io/dune-wiki/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/dune-wiki/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/basic/</link>
+      <title>art</title>
+      <link>http://localhost:1313/dune-wiki/analysis/larsoft/art/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/basic/</guid>
-      <description>&lt;h1 id=&#34;for-testing-purposes&#34;&gt;&#xA;    for testing purposes&#xA;    &#xA;    &#xA;    &#xA;&lt;/h1&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/art/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/art/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/larsoft/art/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
-      <title>Detector Properties</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/detector/</link>
+      <title>bash</title>
+      <link>http://localhost:1313/dune-wiki/analysis/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/detector/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/dune-wiki/analysis/cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Detector Properties</title>
+      <link>http://localhost:1313/dune-wiki/physics/detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/physics/detector/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Deep Underground Neutrino Experiement</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/dune/</link>
+      <link>http://localhost:1313/dune-wiki/physics/dune/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/dune/</guid>
+      <guid>http://localhost:1313/dune-wiki/physics/dune/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
-      <title>Fermilab Hierarchical Configuration Language</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/fhicl/</link>
+      <title>FHiCL</title>
+      <link>http://localhost:1313/dune-wiki/analysis/larsoft/fhicl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/fhicl/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/larsoft/fhicl/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Installation</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/larsoft/installation/</link>
+      <link>http://localhost:1313/dune-wiki/analysis/larsoft/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/larsoft/installation/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/larsoft/installation/</guid>
       <description>Instruction for a local LArSoft installation</description>
     </item>
     <item>
-      <title>Liquid Argon Software</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/larsoft/</link>
+      <title>LArSoft</title>
+      <link>http://localhost:1313/dune-wiki/analysis/larsoft/larsoft/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/larsoft/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/larsoft/larsoft/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Neutrino Physics</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/nu/</link>
+      <link>http://localhost:1313/dune-wiki/physics/nu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/nu/</guid>
+      <guid>http://localhost:1313/dune-wiki/physics/nu/</guid>
       <description>&amp;hellip;</description>
     </item>
     <item>
       <title>Objects</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/larsoft/objects/</link>
+      <link>http://localhost:1313/dune-wiki/analysis/larsoft/objects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/larsoft/objects/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/larsoft/objects/</guid>
       <description>classes and methods of LArSoft objects</description>
     </item>
     <item>
-      <title>ROOT: CERN data analysis framework</title>
-      <link>https://quelin-lechevranton.github.io/dune-wiki/dune/root/</link>
+      <title>pyROOT</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/pyroot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quelin-lechevranton.github.io/dune-wiki/dune/root/</guid>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/pyroot/</guid>
       <description>&amp;hellip;</description>
+    </item>
+    <item>
+      <title>ROOT</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/root/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/root/</guid>
+      <description>&amp;hellip;</description>
+    </item>
+    <item>
+      <title>TColor</title>
+      <link>http://localhost:1313/dune-wiki/analysis/root/tcolor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dune-wiki/analysis/root/tcolor/</guid>
+      <description>TColor color wheel widget</description>
     </item>
   </channel>
 </rss>

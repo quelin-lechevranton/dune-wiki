@@ -2,36 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/</loc>
-    <lastmod>2024-11-24T15:51:49+01:00</lastmod>
+    <loc>http://localhost:1313/dune-wiki/analysis/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/larsoft/</loc>
-    <lastmod>2024-11-24T15:51:49+01:00</lastmod>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/art/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/basic/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/bash/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/art/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/cpp/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/categories/</loc>
+    <loc>http://localhost:1313/dune-wiki/physics/detector/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/detector/</loc>
+    <loc>http://localhost:1313/dune-wiki/physics/dune/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/fhicl/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/dune/</loc>
+    <loc>http://localhost:1313/dune-wiki/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/fhicl/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/installation/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/larsoft/installation/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/larsoft/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/larsoft/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/nu/</loc>
+    <loc>http://localhost:1313/dune-wiki/physics/nu/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/larsoft/objects/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/objects/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/dune/root/</loc>
+    <loc>http://localhost:1313/dune-wiki/physics/</loc>
   </url><url>
-    <loc>https://quelin-lechevranton.github.io/dune-wiki/tags/</loc>
+    <loc>http://localhost:1313/dune-wiki/analysis/root/pyroot/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/root/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/root/root/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/root/tcolor/</loc>
   </url>
 </urlset>

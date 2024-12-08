@@ -3,20 +3,30 @@
     <head>
         <title>{{ .Title }}</title>
         {{ partialCached "head.html" . }}
-        <script src="/dune-wiki/js/toc.js"></script>
-        <script src="/dune-wiki/js/code-copy.js"></script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-copy.js" defer></script>
+
     </head>
     <body class="single">
-        {{ partial "header.html" . }}
+        {{ partialCached "header.html" . }}
         <main>
-            <h1>{{ .Title }}</h1>
+            <nav class="breadcrumb">
+                <ol>
+                    {{ range .Ancestors.Reverse }}
+                    <li class="ancestor"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ol>
+            </nav>
+            <h1>{{ .Title }}<div class="subtitle">{{ .Params.subtitle }}</div></h1>
             <section class="content">
                 {{ .Content }}
             </section>
+            {{ if not .Params.notoc }}
             <nav class="toc">
                 <div class="toc-title">Contents</div>
                 {{ .TableOfContents }}
             </nav>
+            {{ end }}
         </main>
     </body>
 </html>

@@ -9,38 +9,30 @@
 
 @use 'header';
 @use 'toc';
+@use 'breadcrumb';
 
 @use 'heading';
 @use 'blockquote';
+@use 'anchor';
 @use 'code';
 @use 'table';
 
-:root {
+@use 'tcolor';
+
+
+html {
+    // --accent: c.$accent;
+
     font-family: 'Inter', sans-serif;
     font-size: f.$m;
-}
-
-
-body {
     background-color: c.$background;
     color: c.$primary;
-
-    // display: flex;
 }
 
 main {
     margin: 0 auto;
-    // display: flex;
-    // justify-content: center;
     width: fit-content;
-
-    // align-items: center;
-
-    // width: $content_width + $toc_width;
-
-    // @media screen and (max-width: 1100px) {
-    //     width: $content_width;
-    // }
+    position: relative;
 
     .content {
         display: inline-block;
@@ -63,38 +55,5 @@ main {
         @media screen and (max-width: 1100px) {
             display: none;
         }
-    }
-}
-
-
-code {
-    font-family: f.$mono;
-    background-color: c.$mute;
-    padding: 0.1em .2em;
-    border-radius: .2em;
-}
-a:not(.repo) {
-    // transition: text-decoration .2s;
-    // &:hover {
-    //     text-decoration: underline;
-    // }
-    position: relative;
-
-    &::before {
-        content: '';
-        opacity: 0;
-        position: absolute;
-        bottom: -.1rem;
-        left: 2.5%;
-        width: 95%;
-        height: .1rem;
-        background-color: c.$accent;
-        transition: opacity .2s, transform .2s;
-
-        transform: scaleX(0);
-    }
-    &:hover::before {
-        opacity: 1;
-        transform: scaleX(1);
     }
 }

@@ -1,19 +1,26 @@
 $white: white;
 $grey: #e6e7e9;
 $gray: #8a8e91;;
-// $black: #454547;
 $black: black;
-$red: #f33538;
-$orange: #eb8d2f;
-$yellow: #dd9922;
-$green: #229922;
-$magenta: #992299;
-$cyan: #229999;
-$blue: #224499;
+$red: #e04842ff;
+$orange: #e29141ff;
+$yellow: #d3b63fff;
+$green: #4b9737ff;
+$magenta: #8d2d94ff;
+$cyan: #4b9798ff;
+$blue: #2a4394ff;
 
 // accent colors
 $primary: $black;
-$accent: rgb(157, 50, 181);
+$accent: $magenta;
 $secondary: $gray;
 $mute: $grey;
 $background: $white;
+
+// code colors
+$code-text: $black;
+$code-mute: $gray;
+$code-border: $grey;
+$code-background: $white;
+$code-shadow: $grey;
+$code-button: #ed6a5d #f4be4f #61c553;

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     const preCodes = document.querySelectorAll('pre.chroma');
     preCodes.forEach((pre) => {
         const text = pre.querySelector('code').textContent;
@@ -15,4 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     });
-});
+// });

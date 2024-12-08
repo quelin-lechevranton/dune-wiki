@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.toc li');
-    const headings = document.querySelectorAll('h2, h3');
+const items = document.querySelectorAll('.toc li');
+const headings = document.querySelectorAll('h2, h3');
 
+if (items) {
     let positions = [];
     function computePositions() {
         let p = Array.from(headings , (h) => h.getBoundingClientRect().top + window.scrollY);
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activateItem(items[i]);
         listExpansion(getList(i));
     }
-    
+
     updateToc();
     window.addEventListener('scroll', updateToc);
 
@@ -90,5 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     toc.addEventListener('click', scrollToward);
-
-});
+}
