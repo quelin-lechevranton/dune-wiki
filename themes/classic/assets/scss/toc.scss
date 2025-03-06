@@ -11,9 +11,9 @@
     nav {
         font-size: f.$s;
 
-        ol>li {
+        ul>li {
             text-indent: .5em;
-            &>ol>li {
+            &>ul>li {
                 text-indent: 1.5em;
             }
         }
@@ -21,7 +21,7 @@
         li {
             line-height: 2;
 
-            ol {
+            ul {
                 max-height: 0;
                 overflow-y: hidden;
                 transition: max-height .2s;
@@ -32,7 +32,7 @@
             }
             a {
                 transition: font-weight .2s, color .2s;
-                &:has(~ol)::after {
+                &:has(~ul)::after {
                     content: "";
                     display: inline-block;
 
@@ -49,7 +49,7 @@
 
                     transition: transform 0.2s;
                 }
-                &:has(~ol.expanded)::after {
+                &:has(~ul.expanded)::after {
                     transform: rotate(-180deg);
                 }
             }

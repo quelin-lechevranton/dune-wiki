@@ -13,7 +13,6 @@ if (items) {
         }
         positions = p;
     }
-
     function whichCurrentItem() {
         const scroll = window.scrollY + window.innerHeight / 3;
         if (window.scrollY < 50) return 0;
@@ -30,17 +29,15 @@ if (items) {
         item.classList.add('active');
         currentItem = item;
     }
-
     function getList(i) {
         const item = items[i];
-        if (item.lastElementChild.tagName == 'OL') {
+        if (item.lastElementChild.tagName == 'UL') {
             return item.lastElementChild;
         } else if (item.parentElement.parentElement.tagName != 'NAV') {
             return item.parentElement;
         }
         return null;
     }
-
     let currentList = null;
     function listExpansion(list) {
         if (list === currentList) return;
@@ -54,7 +51,6 @@ if (items) {
         }
         currentList = list;
     }
-
     computePositions();
     document.addEventListener('resize', computePositions);
 
