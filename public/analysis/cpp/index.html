@@ -4,24 +4,32 @@
         <title>C&#43;&#43;</title>
         <meta charset="utf-8">
 
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 
-
-
-
 <link rel="stylesheet" href="/dune-wiki/css/style.css">
 
-        <script src="/dune-wiki/js/toc.js" defer></script>
-        <script src="/dune-wiki/js/code-copy.js" defer></script>
 
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
     </head>
     <body class="single">
         <header>
-    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    
     <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
         
         <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
         
@@ -30,23 +38,418 @@
     </ol>
 </header>
         <main>
-            <nav class="breadcrumb">
-                <ol>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
-                    
-                </ol>
-            </nav>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li></ol>
+</nav>
+            
             <h1>C&#43;&#43;<div class="subtitle">some useful tools</div></h1>
             <section class="content">
-                
+                <blockquote>
+<p><em>The C++ Programming Language</em></p>
+<p>by Bjarne Stroustrup,</p>
+<p>3rd &amp; 4th Edition</p>
+</blockquote>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;stdio.h&gt;</span></span></span></code>
+        
+    </pre>
+</div><h2 id="heading">
+    ??
+    
+    
+    
+</h2><p><code>.cc</code> <code>.cxx</code> <code>.hxx</code> <code>.h.in</code> <code>.so</code> <code>.gdml</code></p>
+<h2 id="a-tour-of-c">
+    A tour of C
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span>(answer) {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;y&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;n&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> error;
+</span></span><span style="display:flex;"><span>}</span></span></code>
+        
+    </pre>
+</div><h2 id="4-type-declaration">
+    4. Type Declaration
+    
+    
+    
+</h2><h3 id="built-in-types">
+    built-in types
+    
+    
+    
+</h3><h4 id="arithmetic-types">
+    arithmetic types
+    
+    
+    
+</h4><ul>
+<li>floating-point
+<ul>
+<li><code>float</code></li>
+<li><code>double</code></li>
+</ul>
+</li>
+<li>integral types
+<ul>
+<li><code>bool</code></li>
+<li><code>char</code></li>
+<li>integers
+<ul>
+<li><code>int</code></li>
+<li><code>short</code></li>
+<li><code>long</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="addresses">
+    addresses
+    
+    
+    
+</h4><ul>
+<li>pointers</li>
+<li>arrays</li>
+<li>references</li>
+</ul>
+<h4 id="user-defined">
+    user-defined
+    
+    
+    
+</h4><ul>
+<li>enumeration types</li>
+<li>data structures and classes</li>
+</ul>
+<h3 id="characters">
+    characters
+    
+    
+    
+</h3><p><code>char</code>: almost universally on 8 bits (256).</p>
+<p>character set is a variation of ISO-646 (eg. ASCII) but not standardized.</p>
+<p>signed char: -127 to 127</p>
+<p>unsigned char: 0 255</p>
+<p>wchar_t: should hold every possible character (implementation dependant)</p>
+<h3 id="zero">
+    zero
+    
+    
+    
+</h3>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">:</span> NUL (null<span style="color:#f92672">-</span>character <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span><span style="color:#f92672">:</span> false
+</span></span><span style="display:flex;"><span>pointer: NULL</span></span></code>
+        
+    </pre>
+</div><blockquote>
+<p>4.3.1</p>
+</blockquote>
+<h2 id="5-pointers-arrays-and-structures">
+    5. Pointers, Arrays and Structures
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> p;         <span style="color:#75715e">//pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> a[];        <span style="color:#75715e">//array: array bound must be a const type (cf. vectors)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> s <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abc&#34;</span>;  <span style="color:#75715e">//string literal: const char[4] (can be converted to char*)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> s <span style="color:#f92672">=</span><span style="color:#e6db74">L</span><span style="color:#e6db74">&#34;abc&#34;</span>; <span style="color:#75715e">//const wchar_t[4]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">&amp;</span> r<span style="color:#f92672">=</span>i;       <span style="color:#75715e">//reference: now r==i and &amp;r==&amp;i, the value has not been copied
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incr</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">&amp;</span> x) {x<span style="color:#f92672">++</span>;}    <span style="color:#75715e">//side effect function: incr(i);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incp</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> p) {<span style="color:#f92672">++*</span>p;}   <span style="color:#75715e">//more clear that it as side effects: incr(&amp;i);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//arrays: aggregate of elements of same type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//structures: aggregate of elements of arbitrary types
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">date_struct</span> { <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> day; <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> month; <span style="color:#66d9ef">signed</span> <span style="color:#66d9ef">int</span> year;};
+</span></span><span style="display:flex;"><span>date_struct birthday,christmas<span style="color:#f92672">=</span>{<span style="color:#ae81ff">25</span>,<span style="color:#e6db74">&#34;decembre&#34;</span>,<span style="color:#ae81ff">2023</span>}; 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f1</span>() {
+</span></span><span style="display:flex;"><span>    birthday.day<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>; birthday.month<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;avril&#34;</span>; birthday.year<span style="color:#f92672">=</span><span style="color:#ae81ff">2001</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>date_struct<span style="color:#f92672">*</span> pxmas<span style="color:#f92672">=&amp;</span>christmas;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f2</span>() {
+</span></span><span style="display:flex;"><span>    pxmas<span style="color:#f92672">-&gt;</span>year<span style="color:#f92672">=</span><span style="color:#ae81ff">2024</span>; (<span style="color:#f92672">*</span>pxmas).year<span style="color:#f92672">=</span><span style="color:#ae81ff">2024</span>; <span style="color:#75715e">//those are equivalent
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">S</span>; S<span style="color:#f92672">*</span> pS; S <span style="color:#a6e22e">fS</span>(); <span style="color:#75715e">//but S a; pS-&gt;..; fs(); are wrong since the size allocation is unknown yet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*NAMSPACE******************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> square {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> m2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">double</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> m <span style="color:#f92672">=</span> <span style="color:#66d9ef">double</span>;
+</span></span><span style="display:flex;"><span>    m2 <span style="color:#a6e22e">area</span>(<span style="color:#66d9ef">double</span> c) {<span style="color:#66d9ef">return</span> c<span style="color:#f92672">*</span>c;}
+</span></span><span style="display:flex;"><span>    m <span style="color:#a6e22e">perimeter</span>(<span style="color:#66d9ef">double</span> c) {<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>c;}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>square<span style="color:#f92672">::</span>m side <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>square<span style="color:#f92672">::</span>m2 A <span style="color:#f92672">=</span> square<span style="color:#f92672">::</span>area(side);
+</span></span><span style="display:flex;"><span>square<span style="color:#f92672">::</span>m2 area_sum (<span style="color:#66d9ef">double</span> c1, <span style="color:#66d9ef">double</span> c2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> square<span style="color:#f92672">::</span>area;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">area</span>(c1) <span style="color:#f92672">+</span> area(c2);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#a6e22e">area_and_perimeter</span> (<span style="color:#66d9ef">double</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> square;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> area(c) <span style="color:#f92672">+</span> perimeter(c);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*CLASSE*****************10*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">date</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> y,m,d; <span style="color:#75715e">//those are private member accessed via: today.y, only inside the class body
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> date today; <span style="color:#75715e">//this is a private but static member: it has the same value for all object of this class. it can be accessed directly, ie. not through an object, via: date::today
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> today_is(<span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span>    date(<span style="color:#66d9ef">int</span> Y<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">int</span> M<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">int</span> D<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>); <span style="color:#75715e">//constructor: it initialize a class, function with the name of the class. why no return type has been specified?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//default are set to 0 so that if no argument is provided in declaration the date is today
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//this is a public function available everywhere ?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">year</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> y;} <span style="color:#75715e">//make the private member y accessible in public via: today.year(). the const indicates the compiler that this functions doesn&#39;t modify the object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    date<span style="color:#f92672">&amp;</span> add_year(<span style="color:#66d9ef">int</span> n) {y<span style="color:#f92672">+=</span>n; <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>;}; <span style="color:#75715e">//add a year to the object. not const. this is a pointer to the object for which the member function is invoked. 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//every reference to a non-static member within a class relies on an implicit use of this: y and this-&gt;y are the same
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>date date<span style="color:#f92672">::</span>today(<span style="color:#ae81ff">2024</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> date<span style="color:#f92672">::</span>today_is(<span style="color:#66d9ef">int</span> Y, <span style="color:#66d9ef">int</span> M, <span style="color:#66d9ef">int</span> D) {
+</span></span><span style="display:flex;"><span>    date<span style="color:#f92672">::</span>today <span style="color:#f92672">=</span> date(Y,M,D);
+</span></span><span style="display:flex;"><span>} <span style="color:#75715e">//don&#39;t repeat the static, already set in the prototype, static variable makes no sense in the core part of the program
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>date<span style="color:#f92672">::</span>date (<span style="color:#66d9ef">int</span> Y, <span style="color:#66d9ef">int</span> M, <span style="color:#66d9ef">int</span> D) {
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> Y <span style="color:#f92672">?</span> Y : today.y; 
+</span></span><span style="display:flex;"><span>    m <span style="color:#f92672">=</span> M <span style="color:#f92672">?</span> M : today.m;
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> D <span style="color:#f92672">?</span> D : today.d;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>date bday <span style="color:#f92672">=</span> date (<span style="color:#ae81ff">2001</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>); <span style="color:#75715e">//decalartion of the object birthday from the class date
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>date <span style="color:#a6e22e">bday</span>(<span style="color:#ae81ff">2001</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>); <span style="color:#75715e">//those are equivalents
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>date hui; 
+</span></span><span style="display:flex;"><span>date hoy<span style="color:#f92672">=</span>hui; <span style="color:#75715e">//by default this means the copy of each members 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> by <span style="color:#f92672">=</span> bday.year();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//read until: 10.2.7.2 excl.
+</span></span></span></code>
+        
+    </pre>
+</div><h2 id="23-templates">
+    23. Templates
+    
+    
+    
+</h2><p>Definition, for all type <code>C</code></p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> C<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">String</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*...*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> size;
+</span></span><span style="display:flex;"><span>    C<span style="color:#f92672">*</span> ptr;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">JapChar</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*...*/</span>
+</span></span><span style="display:flex;"><span>};</span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span>String<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span> ASCII_str;
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">wchar_t</span><span style="color:#f92672">&gt;</span> Unicode_str;
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">&lt;</span>JapChar<span style="color:#f92672">&gt;</span> Japanese_str;</span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { <span style="color:#75715e">// count the occurrences of each word on input
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> m;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (String<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span> buf; cin<span style="color:#f92672">&gt;&gt;</span>buf;)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">++</span>m[buf]; <span style="color:#75715e">// ... write out result ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code>
+        
+    </pre>
+</div><p>In the standard library</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> string <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>basic_string<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>;</span></span></code>
+        
+    </pre>
+</div><blockquote>
+<p>23.2.1</p>
+</blockquote>
+<h2 id="-vectors">
+    ?. Vectors
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">S</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*...*/</span>
+</span></span><span style="display:flex;"><span>    S(args);
+</span></span><span style="display:flex;"><span>    S(S<span style="color:#f92672">&amp;</span> s);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>S<span style="color:#f92672">&gt;</span> ss;
+</span></span><span style="display:flex;"><span>ss.emplace_back(args); <span style="color:#75715e">//only uses S(args)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ss.push_back(S(args)); <span style="color:#75715e">//uses S(args) then S(S&amp; s)
+</span></span></span></code>
+        
+    </pre>
+</div>
             </section>
             
             <nav class="toc">
                 <div class="toc-title">Contents</div>
-                <nav id="TableOfContents"></nav>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">??</a></li>
+    <li><a href="#a-tour-of-c">A tour of C</a></li>
+    <li><a href="#4-type-declaration">4. Type Declaration</a>
+      <ul>
+        <li><a href="#built-in-types">built-in types</a></li>
+        <li><a href="#characters">characters</a></li>
+        <li><a href="#zero">zero</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-pointers-arrays-and-structures">5. Pointers, Arrays and Structures</a></li>
+    <li><a href="#23-templates">23. Templates</a></li>
+    <li><a href="#-vectors">?. Vectors</a></li>
+  </ul>
+</nav>
             </nav>
             
         </main>

@@ -1,0 +1,13 @@
+<div class="post-links">
+    <ul>
+        {{ with .Params.indico }}
+        <li><img src="/dune-wiki/img/indico.svg"><a target="_blank" href="{{ . }}">indico</a></li>
+        {{ end }}
+        {{ with .Params.code }}
+        <li><img src="/dune-wiki/img/code.svg"><a target="_blank" href="{{ . }}">code</a></li>
+        {{ end }}
+        {{ with .Params.data }}
+        <li><img src="/dune-wiki/img/data.svg"><a target="_blank" href="{{ . }}">data</a></li>
+        {{ end }}
+    </ul>
+</div>

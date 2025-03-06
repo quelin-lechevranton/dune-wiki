@@ -1,9 +1,36 @@
 ---
 title: FHiCL
 subtitle: Fermilab Hierarchical Configuration Language
-image: /dune-wiki/img/section/fnal.svg
+image: fnal.svg
 summary: "..."
 ---
+
+## FHiCL Utilities
+
+`find_fhicl.sh`
+
+```bash
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Erreur: no fcl file"
+    exit 1
+fi 
+if [ -z ${FHICL_FILE_PATH+x} ]; then
+    echo "Erreur: FHICL_FILE_PATH is not set"
+    exit 2
+fi 
+SEARCH_PATHS=$(echo $FHICL_FILE_PATH | sed 's/:/\n/g')
+for THIS_PATH in $SEARCH_PATHS; do
+    if [ -d $THIS_PATH ]; then
+        find $THIS_PATH -name $1
+    fi
+done
+```
+
+```bash
+fhicl-dump file.fcl
+```
 
 ```flc
 # https://indico.ph.ed.ac.uk/event/130/contributions/1737/attachments/1083/1506/Simulation_Tutorial_LArSoft_Workshop_2022.pdf

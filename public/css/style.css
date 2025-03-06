@@ -129,6 +129,7 @@ body.home main h1 {
   }
 }
 section.pages {
+  margin: 1em 0;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -142,6 +143,12 @@ section.pages h2 .subtitle {
   font-weight: 300;
   font-style: italic;
   width: 70%;
+}
+section.pages h2 .date {
+  margin-left: 0.5em;
+  font-size: 19.2px;
+  color: #8a8e91;
+  font-weight: 300;
 }
 section.pages a {
   display: block;
@@ -247,14 +254,14 @@ section.pages a:before {
   content: none;
 }
 section.pages a:hover {
-  border: 2.4px solid #8d2d94;
+  border: 2.4px solid var(--accent);
 }
 section.pages a img {
   height: 72px;
   position: absolute;
-  top: 1em;
-  right: 1em;
-  border-radius: 12px;
+  top: 24px;
+  right: 24px;
+  border-radius: 6px;
   filter: opacity(0.5);
   z-index: -1;
 }
@@ -287,7 +294,6 @@ body > header ol {
 }
 .toc nav {
   font-size: 14.4px;
-  animation: unrollIn 0.2s;
 }
 .toc nav ol > li {
   text-indent: 0.5em;
@@ -326,22 +332,22 @@ body > header ol {
   transform: rotate(-180deg);
 }
 
-.breadcrumb {
+.breadcrumbs {
   position: absolute;
   left: 0;
 }
-.breadcrumb li {
+.breadcrumbs li {
   display: inline;
   transition: color 0.2s;
 }
-.breadcrumb li.ancestor a {
+.breadcrumbs li.ancestor a {
   color: #8a8e91;
 }
-.breadcrumb li.ancestor a:hover {
+.breadcrumbs li.ancestor a:hover {
   color: black;
 }
-.breadcrumb li.ancestor::after {
-  margin: 0 0.5em;
+.breadcrumbs li.ancestor::after {
+  margin: 0 0.2em;
   content: "";
   display: inline-block;
   background-color: #8a8e91;
@@ -351,6 +357,14 @@ body > header ol {
   top: 0.1em;
   width: 1em;
   height: 1em;
+}
+
+div.date {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  color: #8a8e91;
+  margin-top: 0.1em;
 }
 
 h1 {
@@ -393,6 +407,7 @@ h2:has(a.repo), h3:has(a.repo) {
 h2:has(a.repo) a.repo, h3:has(a.repo) a.repo {
   position: absolute;
   left: -3rem;
+  bottom: -0.3rem;
 }
 h2:has(a.repo) a.repo svg, h3:has(a.repo) a.repo svg {
   width: 2rem;
@@ -402,7 +417,7 @@ h2:has(a.repo) a.repo svg path, h3:has(a.repo) a.repo svg path {
   fill: black;
 }
 h2:has(a.repo) a.repo svg:hover path, h3:has(a.repo) a.repo svg:hover path {
-  fill: #8d2d94;
+  fill: var(--accent);
 }
 
 blockquote {
@@ -420,11 +435,11 @@ a:not(.repo)::before {
   content: "";
   opacity: 0;
   position: absolute;
-  bottom: -0.1rem;
+  bottom: -0.1em;
   left: 2.5%;
   width: 95%;
-  height: 0.1rem;
-  background-color: #8d2d94;
+  height: 1.92px;
+  background-color: var(--accent);
   transition: opacity 0.2s, transform 0.2s;
   transform: scaleX(0);
 }
@@ -436,8 +451,10 @@ a:not(.repo):hover::before {
 code {
   font-family: "JetBrains Mono", monospace;
   background-color: #e6e7e9;
-  padding: 0.1em 0.2em;
   border-radius: 0.2em;
+}
+code:not([class]) {
+  padding: 0 0.2em;
 }
 
 div.highlight {
@@ -765,7 +782,7 @@ table {
   margin: 2em 2em;
 }
 table th, table td {
-  padding: 0.5em;
+  padding: 0.3em 0.5em;
 }
 table thead {
   border-bottom: 1px solid black;
@@ -3445,6 +3462,13 @@ table tbody tr:last-child {
   animation: rotation-300deg 80s linear infinite normal;
 }
 
+.jsroot {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  margin: 19.2px 0;
+}
+
 html {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -3461,7 +3485,7 @@ main .content {
   display: inline-block;
   width: 750px;
   min-width: 600px;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 main .toc {
   display: inline-block;

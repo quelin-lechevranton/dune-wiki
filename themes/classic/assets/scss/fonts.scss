@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    src: url('/dune-wiki/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    src: url('/dune-wiki/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: bold;
+    src: url('/dune-wiki/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: bold;
+    src: url('/dune-wiki/fonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: lighter;
+    src: url('/dune-wiki/fonts/JetBrainsMono-Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic; 
+    font-weight: lighter;
+    src: url('/dune-wiki/fonts/JetBrainsMono-LightItalic.woff2') format('woff2');
+}
+
+$mono: 'JetBrains Mono', monospace;
+
+$m: 16px;
+$xs: $m * 0.7;
+$s: $m * 0.9;
+$l: $m * 1.2;
+$xl: $m * 1.5;
+$xxl: $m * 2;
+$xxxl: $m * 5;

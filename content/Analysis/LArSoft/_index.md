@@ -1,5 +1,7 @@
 ---
 title: LArSoft
 subtitle: Liquid Argon Software
-image: /dune-wiki/img/section/larsoft.png
+image: larsoft.png
 ---
+
+MRB? ART? LARSOFT? ROOT?

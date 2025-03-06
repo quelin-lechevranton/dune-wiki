@@ -1,0 +1,11 @@
+@use 'colors' as c;
+
+div.date {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+
+    color: c.$secondary;
+    margin-top: .1em; // align with breadcrumbs
+
+}

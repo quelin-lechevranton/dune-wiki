@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>jsROOT</title>
+        <meta charset="utf-8">
+
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
+    </head>
+    <body class="single">
+        <header>
+    
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li></ol>
+</nav>
+            
+            <div class="date">14.12.24</div>
+            
+            <h1>jsROOT<div class="subtitle">some tests</div></h1>
+            <section class="content">
+                <div class="jsroot" id="c2d_0"></div>
+<script type='module'>
+    import { openFile, draw } from 'https://root.cern/js/latest/modules/main.mjs';
+    let file = await openFile('/dune-wiki/root/pdvd_Mitrees_out.root');
+    let obj = await file.readObject('checks\/c2d_0');
+    draw('c2d_0', obj, 'colz');
+</script>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents"></nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

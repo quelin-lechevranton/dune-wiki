@@ -1,0 +1,65 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+
+h1 {
+    font-size: f.$xxl;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+
+    .subtitle {
+        margin-top: .5em;
+        font-size: f.$xl;
+        // color: c.$secondary;
+        font-weight: 300;
+        font-style: italic;
+    }
+}
+h2 {
+    font-size: f.$xl;
+    font-weight: bold;
+    margin: 1em 0;
+
+    &:nth-child(1) {
+        margin-top: 0; // remove top margin from first h2
+    }
+}
+h3 {
+    font-size: f.$l;
+    font-weight: bold;
+    margin: 1em 0;
+}
+h4 {
+    font-weight: bold;
+}
+
+
+h2:has(a.repo), h3:has(a.repo) {
+    position: relative;
+
+    // verticaly center img
+    display: flex;
+    align-items: center;
+
+    a.repo {
+        position: absolute;
+        left: -3rem;
+        bottom: -.3rem;
+
+        svg {
+            width: 2rem;
+
+            path {
+                transition: fill .2s;
+                fill: c.$primary;
+            }
+
+            &:hover {
+                path {
+                    // fill: c.$accent;
+                    fill: var(--accent);
+                }
+            }
+        }
+    }
+}

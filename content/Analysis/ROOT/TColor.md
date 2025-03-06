@@ -1,7 +1,8 @@
 ---
 title: TColor
-summary: TColor color wheel widget
-notoc: true
+subtitle: color wheel widget
+image: tcolor.svg
+layout: widget
 ---
 
 {{< tcolor >}}

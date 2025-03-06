@@ -1,7 +1,8 @@
 ---
-title: Deep Underground Neutrino Experiement
-linkTitle: DUNE
+title: DUNE
+subtitle: Deep Underground Neutrino Experiment
 summary: "..."
+image: dune.svg
 ---
 
 

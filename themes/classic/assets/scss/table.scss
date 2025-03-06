@@ -1,0 +1,25 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+
+table {
+    display: block;
+
+    max-width: 93%;
+    margin: 2em 2em;
+
+    th, td {
+        padding: .3em .5em;
+    }
+    thead {
+        border-bottom: 1px solid c.$primary;
+        th {
+            font-weight: bold;
+        }
+    }
+    tbody tr {
+        border-bottom: 1px solid c.$mute;
+    }
+    tbody tr:last-child{
+        border: none;
+    }
+}

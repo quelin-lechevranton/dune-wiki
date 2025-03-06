@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>Michel Energy</title>
+        <meta charset="utf-8">
+
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
+    </head>
+    <body class="single">
+        <header>
+    
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li></ol>
+</nav>
+            
+            <div class="date">15.01.24</div>
+            
+            <h1>Michel Energy<div class="subtitle">cosmics simulation in PD-VD</div></h1>
+            <section class="content">
+                <div class="post-links">
+    <ul>
+        
+        <li><img src="/dune-wiki/img/indico.svg"><a target="_blank" href="https://indico.fnal.gov/event/67725/">indico</a></li>
+        
+        
+        <li><img src="/dune-wiki/img/code.svg"><a target="_blank" href="https://github.com/quelin-lechevranton/michel-module/commit/d44b4526aebc16561ae06dbb09031414867d2380">code</a></li>
+        
+        
+        <li><img src="/dune-wiki/img/data.svg"><a target="_blank" href="dummy">data</a></li>
+        
+    </ul>
+</div>
+<div class="jsroot" id="e43"></div>
+<script type='module'>
+    import { openFile, draw } from 'https://root.cern/js/latest/modules/main.mjs';
+    let file = await openFile('/dune-wiki/root/c2d_e43_µ12_100_r20.root');
+    let obj = await file.readObject('e43');
+    draw('e43', obj, 'colz');
+</script>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents"></nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

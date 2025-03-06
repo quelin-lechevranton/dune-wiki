@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ .Title }}</title>
+        {{ partialCached "head.html" . }}
+        {{ if eq .Title "TColor" }}
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
+        {{ end }}
+    </head>
+    <body class="single">
+        {{ partialCached "header.html" . }}
+        <main>
+            {{ partial "breadcrumbs.html" . }}
+            <h1>{{ .Title }}<div class="subtitle">{{ .Params.subtitle }}</div></h1>
+            <section class="content">
+                {{ .Content }}
+            </section>
+        </main>
+    </body>
+</html>

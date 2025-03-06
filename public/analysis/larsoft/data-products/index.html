@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>Data Products</title>
+        <meta charset="utf-8">
+
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
+    </head>
+    <body class="single">
+        <header>
+    
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/larsoft/">LArSoft</a></li></ol>
+</nav>
+            
+            <h1>Data Products<div class="subtitle">classes and methods of LArSoft objects</div></h1>
+            <section class="content">
+                <h2 id="data-products">
+    Data products
+    
+    
+    
+</h2><p><a href="https://indico.fnal.gov/event/20453/contributions/57771/attachments/36174/44057/larsofttutorial1.pdf">cf. practical guide</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>simb::MCTruth</code></td>
+          <td>information about the generation (before G4)</td>
+      </tr>
+      <tr>
+          <td><code>simb::MCParticle</code></td>
+          <td>all particle information: one instance by <code>MC::Truth</code> then one by G4</td>
+      </tr>
+      <tr>
+          <td><code>sim::SimEnergyDeposit</code></td>
+          <td>G4</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>raw::Digit</code></td>
+          <td>ADC count and time ticks on one channel</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>object</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>recob::Wire</code></td>
+          <td>deconvolved signal of <code>Digit</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Hit</code></td>
+          <td>gaussian fit on <code>Wire</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Cluster</code></td>
+          <td><code>Hit</code> coincidence on multiple wires of one plane</td>
+      </tr>
+      <tr>
+          <td><code>recob::SpacePoint</code></td>
+          <td><code>Cluster</code> coincidence on all three planes</td>
+      </tr>
+      <tr>
+          <td><code>recob::PFParticle</code></td>
+          <td>collection of <code>Cluster</code> produced by one reconstructed particle</td>
+      </tr>
+      <tr>
+          <td><code>recob::Track</code></td>
+          <td>track reconstruction on appropriate hits from a track-like <code>PFParticle</code></td>
+      </tr>
+      <tr>
+          <td><code>anab::Calorimetry</code></td>
+          <td>calorimetric measurement for each plane and each <code>Track</code></td>
+      </tr>
+      <tr>
+          <td><code>recob::Shower</code></td>
+          <td>shower reconstruction on hits from a shower-like <code>PFParticle</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="librairies">
+    Librairies
+    
+    
+    
+</h2><p>Once LArSoft in sourced, all include paths of LArSoft <code>C++</code> librairies are stored in environment variable ending in <code>INC</code>. try:</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>env | grep _INC<span style="color:#f92672">=</span></span></span></code>
+        
+    </pre>
+</div><h2 id="module">
+    Module
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>cetskelgen -v -d . -e beginJob -e endJob analyzer test::AnalyseEvents</span></span></code>
+        
+    </pre>
+</div><p>bla_module.cc using EDAnalyzer.h</p>
+<p>blabla.fcl</p>
+<p>compilation avec mrb</p>
+<p>run avec lar -c blabla.fcl</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>fhicl-dump --help
+</span></span><span style="display:flex;"><span>lar --print-available module
+</span></span><span style="display:flex;"><span>lar --prin-description <span style="color:#e6db74">&#34;modulename&#34;</span>
+</span></span><span style="display:flex;"><span>nohup lar ?? &gt;&amp;amp; pg.out
+</span></span><span style="display:flex;"><span>nohup lar -c ?? &gt; nohup.out 2&gt; nohup.err &lt; /dev/null &amp;
+</span></span><span style="display:flex;"><span>pgrep lar</span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span>Constructor (fhicl<span style="color:#f92672">::</span>ParameterSet <span style="color:#66d9ef">const</span> <span style="color:#f92672">&amp;</span> fcl) {
+</span></span><span style="display:flex;"><span>    type_t x <span style="color:#f92672">=</span> p.get<span style="color:#f92672">&lt;</span>type_t<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;parameterNameInFhicl&#34;</span>,x_default);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// if the parameter is a sequence: type_t = vector&lt;...&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// if the parameter is a table: type_t = struct {...}
+</span></span></span></code>
+        
+    </pre>
+</div><h2 id="truth--particles">
+    Truth &amp; Particles
+    
+    
+    
+</h2><h3 id="ide-and-trackide">
+    IDE and TrackIDE
+    
+    
+    
+</h3><p><a href="https://github.com/LArSoft/lardataobj/blob/1371f7532ca8e6f3e330024640aa4556a4894dbf/lardataobj/Simulation/SimChannel.h#L26">trackIDE</a>
+<a href="https://github.com/LArSoft/lardataobj/blob/1371f7532ca8e6f3e330024640aa4556a4894dbf/lardataobj/RawData/RawDigit.h#L4">rawDigit</a></p>
+<p><a href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/Simulation/SimChannel.h"><code>Simulation/SimChannel.h</code></a></p>
+<p>those are structures</p>
+<p><code>sim::TrackIDE</code> G4 track id and ionization energy</p>
+<p><code>sim::IDE</code> :</p>
+<blockquote>
+<p>Ionization information consists of both energy and number of electrons.
+It is of paramount importance to understand what each field stores:</p>
+<ul>
+<li>position: where the ionization occurred (from Geant4 simulation)</li>
+<li>track ID: Geant4 track ID of the ionizing particle</li>
+<li>energy: amount of energy released by ionization (from Geant4 simulation)</li>
+<li>electrons: amount of electrons reaching the readout channel</li>
+</ul>
+</blockquote>
+<h3 id="monte-carlo-trajectories">
+    Monte Carlo Trajectories
+    
+    <a class="repo" target="_blank" href="https://github.com/NuSoftHEP/nusimdata/blob/develop/nusimdata/SimulationBase/MCTrajectory.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>ftrajectory</code></td>
+          <td><code>vector&lt;pair&lt;TLorentzVector, TLorentzVector&gt;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Position(i)</code></td>
+          <td><code>ftrajectory[i].first</code></td>
+      </tr>
+      <tr>
+          <td><code>Momentum(i)</code></td>
+          <td><code>ftrajectory[i].second</code></td>
+      </tr>
+      <tr>
+          <td><code>TotalLength()</code></td>
+          <td><code>(double)</code> sum of the distances between adjacent positions</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="monte-carlo-particles">
+    Monte Carlo Particles
+    
+    <a class="repo" target="_blank" href="https://github.com/NuSoftHEP/nusimdata/blob/develop/nusimdata/SimulationBase/MCParticle.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><p><code>!mcp</code> ??</p>
+<p><code>Process()</code> and <code>EndProcess()</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fpdgCode</code></td>
+          <td><code>int</code></td>
+      </tr>
+      <tr>
+          <td><code>ftrajectory</code></td>
+          <td><code>simb::MCTrajectory</code></td>
+      </tr>
+      <tr>
+          <td><code>fdaughters</code></td>
+          <td><code>set&lt;int&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>PdgCode()</code></td>
+          <td><code>fpdgCode</code></td>
+      </tr>
+      <tr>
+          <td><code>Position(i)</code></td>
+          <td><code>ftrajectory.Position(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Momentum(i)</code></td>
+          <td><code>ftrajectory.Momentum(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Daugther(i)</code></td>
+          <td><code>i</code>-th daughter&rsquo;s ID</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="monte-carlo-truth">
+    Monte Carlo Truth
+    
+    <a class="repo" target="_blank" href="https://github.com/NuSoftHEP/nusimdata/blob/develop/nusimdata/SimulationBase/MCTruth.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fPartList</code></td>
+          <td><code>vector&lt;simb::MCParticle&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>GetParticle(i)</code></td>
+          <td><code>fPartList[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>GetNeutrino(i)</code></td>
+          <td><code>fMCNeutrino</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="simenergydeposits">
+    SimEnergyDeposits
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/Simulation/SimEnergyDeposit.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>trackID</code></td>
+          <td>same as <code>origTrackID</code>: track ID of the generated particle at the origine of the deposited energy</td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>GetParticle(i)</code></td>
+          <td><code>fPartList[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>GetNeutrino(i)</code></td>
+          <td><code>fMCNeutrino</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="wires">
+    Wires
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Wire.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fChannel</code></td>
+          <td><code>raw::ChannelID_t</code></td>
+      </tr>
+      <tr>
+          <td><code>fView</code></td>
+          <td><code>geo::View_t</code></td>
+      </tr>
+      <tr>
+          <td><code>fSignalROI</code></td>
+          <td><code>lar::sparse_vector&lt;float&gt;</code> <a href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/Utilities/sparse_vector.h"><code>sparse_vector.h</code></a></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Channel()</code></td>
+          <td><code>fChannel</code></td>
+      </tr>
+      <tr>
+          <td><code>View()</code></td>
+          <td><code>fView</code></td>
+      </tr>
+      <tr>
+          <td><code>NSignal()</code></td>
+          <td><code>fSignalROI.size()</code></td>
+      </tr>
+      <tr>
+          <td><code>Signal()</code></td>
+          <td><code>(vector&lt;float&gt;) {fSignalROI.begin(), fSignalROI.end()}</code></td>
+      </tr>
+      <tr>
+          <td><code>SignalROI()</code></td>
+          <td><code>fSignalROI</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="hits">
+    Hits
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Hit.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fChannel</code></td>
+          <td><code>raw::ChannelID_t</code></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th><code>recob::Hit</code></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Channel()</code></td>
+          <td><code>(raw::ChannelID_t)</code></td>
+      </tr>
+      <tr>
+          <td><code>PeakTime()</code></td>
+          <td><code>(float)</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="clusters">
+    Clusters
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Cluster.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><h2 id="pfparticles">
+    PFParticles
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/PFParticle.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><h2 id="tracks">
+    Tracks
+    
+    
+    
+</h2><h3 id="tracking-types">
+    Tracking Types
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/TrackingTypes.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>typename</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Point_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1PositionVector3D.html"><code>PositionVector3D</code></a></td>
+      </tr>
+      <tr>
+          <td><code>Vector_t</code></td>
+          <td><a href="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1DisplacementVector3D.html"><code>DisplacementVector3D</code></a></td>
+      </tr>
+      <tr>
+          <td><code>TrajectoryPoint_t</code></td>
+          <td><code>struct {P_t position; V_t momentum; V_t direction() return momentum.Unit();}</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="trajectories">
+    Trajectories
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Trajectory.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>private</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fPositions</code></td>
+          <td><code>vector&lt;Point_t&gt;</code> position at each point of the trajectory</td>
+      </tr>
+      <tr>
+          <td><code>fMomenta</code></td>
+          <td><code>vector&lt;Vector_t&gt;</code> momentum at each point of the trajectory</td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>NPoints()</code></td>
+          <td><code>fPositions.size()</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstPoint()</code></td>
+          <td><code>0</code></td>
+      </tr>
+      <tr>
+          <td><code>LastPoint()</code></td>
+          <td><code>NPoints()-1</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>LocationAtPoint(i)</code></td>
+          <td><code>fPositions[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>MomentumVectorAtPoint(i)</code></td>
+          <td><code>fMomenta[i]</code></td>
+      </tr>
+      <tr>
+          <td><code>MomentumAtPoint(i)</code></td>
+          <td><code>fMomenta[i].R()</code></td>
+      </tr>
+      <tr>
+          <td><code>DirectionAtPoint(i)</code></td>
+          <td><code>fMomenta[i]/fMomenta[i].R()</code></td>
+      </tr>
+      <tr>
+          <td><code>TrajectoryPoint(i)</code></td>
+          <td><code>(TrajectoryPoint_t) {fPositions[i],fMomenta[i]}</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Length()</code></td>
+          <td>sum of the distances between adjacent points</td>
+      </tr>
+      <tr>
+          <td><code>Start()</code></td>
+          <td><code>LocationAtPoint(FirstPoint())</code></td>
+      </tr>
+      <tr>
+          <td><code>End()</code></td>
+          <td><code>LocationAtPoint(LastPoint())</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="track-trajectories">
+    Track Trajectories
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/TrackTrajectory.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><p><code>class TrackTrajectory : private recob::Trajectory</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>protected</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>NextValidPoint(i)</code></td>
+          <td><code>size_t</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstValidPoint()</code></td>
+          <td><code>NextValidPoint(0)</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tracks-1">
+    Tracks
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Track.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>protected</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fTraj</code></td>
+          <td><code>TrackTrajectory</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>FirstValidPoint()</code></td>
+          <td><code>fTraj.FirstValidPoint()</code></td>
+      </tr>
+      <tr>
+          <td><code>FirstPoint()</code></td>
+          <td><code>fTraj.FirstPoint()</code></td>
+      </tr>
+      <tr>
+          <td><code>LocationAtPoint(i)</code></td>
+          <td><code>fTraj.LocationAtPoint(i)</code></td>
+      </tr>
+      <tr>
+          <td><code>Start()</code></td>
+          <td><code>fTraj.Start()</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="calorimetry">
+    Calorimetry
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/AnalysisBase/Calorimetry.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>members</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>public</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>fdEdx</code></td>
+          <td><code>vector&lt;float&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>fResidualRange</code></td>
+          <td><code>vector&lt;float&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>fRange</code></td>
+          <td><code>float</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>dEdx()</code></td>
+          <td><code>fdEdx</code></td>
+      </tr>
+      <tr>
+          <td><code>dQdx()</code></td>
+          <td><code>fdQdx</code></td>
+      </tr>
+      <tr>
+          <td><code>ResidualRange()</code></td>
+          <td><code>fResidualRange</code></td>
+      </tr>
+      <tr>
+          <td><code>Range()</code></td>
+          <td><code>fRange</code></td>
+      </tr>
+      <tr>
+          <td><code>...</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="showers">
+    Showers
+    
+    <a class="repo" target="_blank" href="https://github.com/LArSoft/lardataobj/blob/develop/lardataobj/RecoBase/Shower.h"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h2><h2 id="truth-reco-associations">
+    Truth Reco Associations
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span>art<span style="color:#f92672">::</span>ServiceHandle<span style="color:#f92672">&lt;</span>cheat<span style="color:#f92672">::</span>BackTrackerService<span style="color:#f92672">&gt;</span> bt_serv;
+</span></span><span style="display:flex;"><span>art<span style="color:#f92672">::</span>ServiceHandle<span style="color:#f92672">&lt;</span>cheat<span style="color:#f92672">::</span>ParticleInventoryService<span style="color:#f92672">&gt;</span> pi_serv;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span> clockData <span style="color:#f92672">=</span> art<span style="color:#f92672">::</span>ServiceHandle<span style="color:#f92672">&lt;</span>detinfo<span style="color:#f92672">::</span>DetectorClocksService<span style="color:#f92672">&gt;</span>()<span style="color:#f92672">-&gt;</span>DataFor(evt);</span></span></code>
+        
+    </pre>
+</div><h3 id="utilities">
+    Utilities
+    
+    <a class="repo" target="_blank" href="https://github.com/DUNE/protoduneana/blob/develop/protoduneana/Utilities"><svg viewBox="0 0 98 96" width="98" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></svg></a>
+    
+    
+    
+</h3><h2 id="metacat">
+    MetaCat
+    
+    
+    
+</h2><p><code>metacat query &quot;files where 025086 in core.runs and core.data_tier=raw limit 10&quot;</code></p>
+<p><code>export METACAT_AUTH_SERVER_URL=https://metacat.fnal.gov:8143/auth/dune</code></p>
+<p><code>export METACAT_SERVER_URL=https://metacat.fnal.gov:9443/dune_meta_prod/appi</code></p>
+<h2 id="pandora">
+    Pandora
+    
+    
+    
+</h2><p>cf. 9th_uk_larsoft_workshop/debugging_reconstruction</p>
+<p>list of Pandora algorithm - class association: <a href="https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArContent.cc">https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArContent.cc</a></p>
+<p>then parameter list in class initialization: (e.g) <a href="https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArTwoDReco/LArClusterAssociation/HitWidthClusterMergingAlgorithm.cc">https://github.com/PandoraPFA/LArContent/blob/master/larpandoracontent/LArTwoDReco/LArClusterAssociation/HitWidthClusterMergingAlgorithm.cc</a>
+here: <code>m_minClusterSparseness(0.3f)</code> can be changed in</p>
+<p><code>PandoraSettings_*.xml</code> as follows:</p>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">xml</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;algorithm</span> <span style="color:#a6e22e">type =</span> <span style="color:#e6db74">&#34;LArHitWidthClusterMerging&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;MinClusterSparseness&gt;</span>0.2<span style="color:#f92672">&lt;/MinClusterSparseness&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/algorithm&gt;</span></span></span></code>
+        
+    </pre>
+</div><h2 id="debugging">
+    DEBUGGING
+    
+    
+    
+</h2><p>Make sure the good fhicl files are being included. For that be sure the directory of the fhicl file you want to include is in the begining of the FHICL_FILE_PATH environment variable in case another fhicl file exists with the same name.</p>
+
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#data-products">Data products</a></li>
+    <li><a href="#librairies">Librairies</a></li>
+    <li><a href="#module">Module</a></li>
+    <li><a href="#truth--particles">Truth &amp; Particles</a>
+      <ul>
+        <li><a href="#ide-and-trackide">IDE and TrackIDE</a></li>
+        <li><a href="#monte-carlo-trajectories">Monte Carlo Trajectories</a></li>
+        <li><a href="#monte-carlo-particles">Monte Carlo Particles</a></li>
+        <li><a href="#monte-carlo-truth">Monte Carlo Truth</a></li>
+      </ul>
+    </li>
+    <li><a href="#simenergydeposits">SimEnergyDeposits</a></li>
+    <li><a href="#wires">Wires</a></li>
+    <li><a href="#hits">Hits</a></li>
+    <li><a href="#clusters">Clusters</a></li>
+    <li><a href="#pfparticles">PFParticles</a></li>
+    <li><a href="#tracks">Tracks</a>
+      <ul>
+        <li><a href="#tracking-types">Tracking Types</a></li>
+        <li><a href="#trajectories">Trajectories</a></li>
+        <li><a href="#track-trajectories">Track Trajectories</a></li>
+        <li><a href="#tracks-1">Tracks</a></li>
+      </ul>
+    </li>
+    <li><a href="#calorimetry">Calorimetry</a></li>
+    <li><a href="#showers">Showers</a></li>
+    <li><a href="#truth-reco-associations">Truth Reco Associations</a>
+      <ul>
+        <li><a href="#utilities">Utilities</a></li>
+      </ul>
+    </li>
+    <li><a href="#metacat">MetaCat</a></li>
+    <li><a href="#pandora">Pandora</a></li>
+    <li><a href="#debugging">DEBUGGING</a></li>
+  </ul>
+</nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

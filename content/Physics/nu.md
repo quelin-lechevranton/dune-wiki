@@ -5,21 +5,7 @@ summary: "..."
 math: true
 ---
 
-<!-- ![event_number_mu_to_e](Figures/event_number_mutoe.png)
-
-![event_number_mu_to_mu](Figures/event_number_mutomu.png) -->
-
 > \(N=\phi\varepsilon \sigma N_T P(\nu_\mu\to\nu_e)\)
-
-this is a definition
-: definition
-
-Term to define
-: This is the definition of the term
-: This is another definition
-
-Another term
-: Yet another definition
 
 ## Physics
 

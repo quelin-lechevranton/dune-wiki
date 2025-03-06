@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ .Title }}</title>
+        {{ partialCached "head.html" . }}
+    </head>
+    <body>
+        {{ partial "header.html" . }}
+        <main class="section">
+            {{ partial "breadcrumbs.html" . }}
+            <h1>{{ .Title }}<div class="subtitle">{{ .Params.subtitle }}</div></h1>
+            <section class="content">
+                {{ .Content }}
+                <section class="pages">
+                    {{ range .Pages }}
+                    <a href="{{ .Permalink }}">
+                        <h2>
+                            {{ .LinkTitle }}
+                            {{- with .Date -}}
+                            <span class="date">{{ .Format "2.01.06" }}</span>
+                            {{- end -}}
+                            <div class="subtitle">{{ .Params.subtitle }}</div>
+                        </h2>
+                        {{ with .Params.image }}
+                        <img src="/dune-wiki/img/section/{{ . }}">
+                        {{ end }}
+                        {{/*  {{ .Summary }}  */}}
+                    </a>
+                    {{ end }}
+                </section>
+            </section>
+        </main>
+    </body>
+</html>

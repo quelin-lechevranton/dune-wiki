@@ -5,7 +5,7 @@ summary: "..."
 
 ## ?
 
-```C++
+```cpp
 TF1 f1("f1","formula",parameters); 
 TF1 *f1=new TF1("f1","formula",parameters);
 
@@ -13,7 +13,7 @@ R__ADD_INCLUDE_PATH("...")
 ReadFileList(n_file,"path/to/file.list")
 ```
 
-```C++
+```cpp
 TCanvas* c = new TCanvas("c","c");
 c->cd();
 for ( int i=0; i!=255; i++) { 
@@ -33,7 +33,7 @@ for ( int i=0; i!=255; i++) {
 
 ## Arborescence LArSoft in ROOT
 
-```C++
+```cpp
 $ root path/to/file.root
 root[] new TBrowser
 root[] Events / ns::class_some_module_name / nm::class_some_module_name.obj / a / b / c
@@ -41,7 +41,7 @@ root[] Events / ns::class_some_module_name / nm::class_some_module_name.obj / a 
 
 ## Draw with ROOT
 
-```C++
+```cpp
 $ root
 root[] TFile *_file0 = TFile::Open("path/to/file")
 root[] _file0->cd()
@@ -51,7 +51,7 @@ root[] Events->Draw("ns::class_some_module_name.obj.a.b.c","...","","")
 
 ## Access in macro C
 
-```C++
+```cpp
 gallery::Event ev("path/to/file.root");
 art::InputTag module_tag(some:module:name);
 auto const obj_list = ev.getValidHandle<vector<ns::class>>(module_tag);
@@ -62,7 +62,7 @@ obj.a() #only access to the methods (leaves with a red bang ! on it, leaves with
 
 ## Examples
 
-```C++
+```cpp
 f1.SetParameter(parameter_id,parameter_value);
 
 Events -> GetListOfBranches() -> ls() //print list of branches in the tree Events
@@ -122,7 +122,7 @@ TBranchElement <- TBranche <- TNamed <-
 
 ## File Navigation
 
-```C++
+```cpp
 TFile file("file.root");
 TObject* obj = file.Get("path/to/obj");
 TTree* tree = file.Get<TTree>("path/to/obj");
@@ -130,7 +130,7 @@ TTree* tree = (TTree*) file.Get("path/to/obj");
 TTree* tree; file.GetObject("path/to/obj",tree);
 ```
 
-```C++
+```cpp
 $ root file.root
 root[] _file0->cd()
 (bool) true
@@ -155,7 +155,7 @@ OBJ: TObjArray TObjArray An array of objects : ??
  OBJ: TBranchElement // (...)
 ```
 
-```C++
+```cpp
 TFile* file=TFile::Open("file.root");
 TTree* tt= (TTree*) file->Get("tdf/tt"); //Get() returns a TObject*
 
@@ -173,7 +173,7 @@ for (int i=0; i< tt->GetEntries(); i++) {
 
 ## `TColor` {root="https://root.cern.ch/doc/master/classTColor.html"}
 
-```C++
+```cpp
 typedef short Color_t;
 enum { kWhite=0, kBlack=1, kRed=632, kGreen=416 } //and so on
 // 2 also gives red
@@ -225,14 +225,14 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1
 
 [`TChain::TChain()`](https://root.cern.ch/doc/master/classTChain.html#a53f013071a6d8ebef98a19fefacb4160)
 
-```C++
+```cpp
 int a;            //pourquoi pas un pointer??
 vector<int>* b;
 tree->SetBranchAddress("branch_a", &a);
 tree->SetBranchAddress("branch_b", &b);
 ```
 
-```C++
+```cpp
 TChain c("a/c");
 TChain d("a/d");
 c.AddFriend("a/d");
@@ -249,17 +249,17 @@ c.Draw("v1:d.v2","","");
 
 ### Constructors
 
-```C++
+```cpp
 ROOT::RDataFrame rdf("treename","file.root");
 ```
 
 ### Filter()
 
-```C++
+```cpp
 ROOT::RDF::RInterface<ROOT::Detail::RDF::RJittedFilter, void> &
 ```
 
-```C++
+```cpp
 bool condition (/**/) {/**/};
 rdf.Filter("condition(fX)");
 
@@ -270,3 +270,34 @@ rdf.Filter("condition(fX)");
 
 
 ## TGraph2D
+
+
+## RVec
+
+```cpp
+root [1] namespace rv = ROOT:: VecOps;
+root [2] double summing(rv::RVec<double> v) { double s=0, p=0; rv::Map(rv::Sort(v), [&s, &p](auto x){ if (x != p) s+=x; p=x; return 0; }); return s; };
+root [3] rv::RVec<double> ww = { 122,352,364,4,3756,385,6734,75,6,56,56,6,6,665,6,56,56,56,56,56,56,56,56,63,6,63,63,663,63,36,663,66,63,36,3,636,663,663,663,663,663,663,663 }
+(ROOT::VecOps::RVec<double> &) { 122.00000, 352.00000, 364.00000, 4.0000000, 3756.0000, 385.00000, 6734.0000, 75.000000, 6.0000000, 56. 000000, 56.000000, 6.0000000, 6.0000000, 6.0000000, 56.000000, 56.000000, 56.000000, 56.000000, 56.000000, 56.000000, 56.000000, 56.000000, 63.000000, 6.0000000, 63.000000, 63.000000, 663.00000, 63.000000, 36.0000000, 66.000000, 63.000000, 36.000000, 3.0000000, 636.00000, 663.00000, 663.00000, 663.00000, 663.00000, 663.00000, 663.00000, 663.00000 }
+root [4] rv::Sum(ww)
+(double) 20106.000
+root [5] summing(ww)
+(double) 13986.000
+```
+
+```cpp
+root [O] namespace rv = ROOT:: VecOps;
+root [1] rv::RVec<double> w = {124, 35,26,423, 62,524,67,4,86,4} ;
+root [2] double p =-1;
+root [3] rv::Sum(rv::Map(w, [](auto x){ return x != p ? X : 0; }))
+(double) 1355.0000
+root [4] double s=0;
+root [5] rv::Map(w, [](auto x){ if (x#p) s+=x; return 0; })
+(ROOT::VecOps::decltype(MapImpl(std::get<std::tuple_size<tuple<RVec<double> &, (lambda) &> >::value - 1>(t), std::get<OUL>(t)))) { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+root [6] s
+(double) 1355.0000
+```
+
+```cpp
+double s=0; { double p=-1; rv::Map(rv::Sort(v), [&p,&s] (auto x){ if(x!=p) s+=x; p=x; return 0; });}
+```

@@ -4,21 +4,30 @@
         <title>LArSoft</title>
         <meta charset="utf-8">
 
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 
-
-
-
 <link rel="stylesheet" href="/dune-wiki/css/style.css">
 
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
     </head>
     <body>
         <header>
-    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    
     <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
         
         <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
         
@@ -27,62 +36,64 @@
     </ol>
 </header>
         <main class="section">
-            <nav class="breadcrumb">
-                <ol>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
-                    
-                </ol>
-            </nav>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li></ol>
+</nav>
             <h1>LArSoft<div class="subtitle">Liquid Argon Software</div></h1>
             <section class="content">
-                
+                <p>MRB? ART? LARSOFT? ROOT?</p>
+
                 <section class="pages">
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/larsoft/art/">
                         <h2>
-                            art
-                            <div class="subtitle">event-processing framework</div>
+                            art<div class="subtitle">event-processing framework</div>
                         </h2>
+                        
                         <img src="/dune-wiki/img/section/art.png">
+                        
+                        
+                    </a>
+                    
+                    <a href="http://localhost:1313/dune-wiki/analysis/larsoft/data-products/">
+                        <h2>
+                            Data Products<div class="subtitle">classes and methods of LArSoft objects</div>
+                        </h2>
+                        
+                        
+                    </a>
+                    
+                    <a href="http://localhost:1313/dune-wiki/analysis/larsoft/detector/">
+                        <h2>
+                            Detector<div class="subtitle">detector properties and geometry information</div>
+                        </h2>
+                        
                         
                     </a>
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/larsoft/fhicl/">
                         <h2>
-                            FHiCL
-                            <div class="subtitle">Fermilab Hierarchical Configuration Language</div>
+                            FHiCL<div class="subtitle">Fermilab Hierarchical Configuration Language</div>
                         </h2>
+                        
                         <img src="/dune-wiki/img/section/fnal.svg">
+                        
                         
                     </a>
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/larsoft/installation/">
                         <h2>
-                            Installation
-                            <div class="subtitle"></div>
+                            Installation<div class="subtitle">instructions for a local LArSoft installation</div>
                         </h2>
-                        <img src="">
+                        
                         
                     </a>
                     
-                    <a href="http://localhost:1313/dune-wiki/analysis/larsoft/larsoft/">
+                    <a href="http://localhost:1313/dune-wiki/analysis/larsoft/simulation/">
                         <h2>
-                            LArSoft
-                            <div class="subtitle">Liquid Argon Software</div>
+                            Simulation<div class="subtitle">simulating cosmologic muons</div>
                         </h2>
-                        <img src="/dune-wiki/img/section/larsoft.png">
                         
-                    </a>
-                    
-                    <a href="http://localhost:1313/dune-wiki/analysis/larsoft/objects/">
-                        <h2>
-                            Objects
-                            <div class="subtitle"></div>
-                        </h2>
-                        <img src="">
                         
                     </a>
                     

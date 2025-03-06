@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/dune-wiki/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dune-wiki/livereload" data-no-instant defer></script>
+        <title>Simulation</title>
+        <meta charset="utf-8">
+
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+<link rel="stylesheet" href="/dune-wiki/css/style.css">
+
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
+    </head>
+    <body class="single">
+        <header>
+    
+    <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
+        
+        <li><a href="http://localhost:1313/dune-wiki/physics/">Physics</a></li>
+        
+    </ol>
+</header>
+        <main>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/larsoft/">LArSoft</a></li></ol>
+</nav>
+            
+            <h1>Simulation<div class="subtitle">simulating cosmologic muons</div></h1>
+            <section class="content">
+                <h2 id="generation">
+    Generation
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>PDVD</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>x</td>
+          <td><code>-340-&gt;340</code></td>
+      </tr>
+      <tr>
+          <td>y</td>
+          <td><code>-337-&gt;337</code></td>
+      </tr>
+      <tr>
+          <td>z</td>
+          <td><code>0-&gt;200</code></td>
+      </tr>
+      <tr>
+          <td>θxz</td>
+          <td><code>atan(Px/Pz)</code> : <code>180-&gt;360</code></td>
+      </tr>
+      <tr>
+          <td>θyz</td>
+          <td><code>atan(Py/PTy)=acos(Py/P)</code> : <code>-90-&gt;90</code></td>
+      </tr>
+  </tbody>
+</table>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#34;filename: &#34;</span>
+</span></span><span style="display:flex;"><span>read name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lar -c gen_protodunevd_muon_1GeV.fcl                                            -o pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_gen_out.root
+</span></span><span style="display:flex;"><span>lar -c protodunevd_refactored_g4_stage1.fcl     pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_gen_out.root       -o pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_g4s1_out.root
+</span></span><span style="display:flex;"><span>lar -c protodunevd_refactored_g4_stage2.fcl     pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_g4s1_out.root      -o pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_g4s2_out.root
+</span></span><span style="display:flex;"><span>lar -c protodunevd_refactored_detsim.fcl        pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_g4s2_out.root      -o pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_detsim_out.root
+</span></span><span style="display:flex;"><span>lar -c protodunevd_reco.fcl                     pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_detsim_out.root    -o pdvd_<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>_reco_out.root</span></span></code>
+        
+    </pre>
+</div>
+            </section>
+            
+            <nav class="toc">
+                <div class="toc-title">Contents</div>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#generation">Generation</a></li>
+  </ul>
+</nav>
+            </nav>
+            
+        </main>
+    </body>
+</html>

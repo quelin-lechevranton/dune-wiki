@@ -4,21 +4,30 @@
         <title>ROOT</title>
         <meta charset="utf-8">
 
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 
-
-
-
 <link rel="stylesheet" href="/dune-wiki/css/style.css">
 
+
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
     </head>
     <body>
         <header>
-    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    
     <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
         
         <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
         
@@ -27,15 +36,9 @@
     </ol>
 </header>
         <main class="section">
-            <nav class="breadcrumb">
-                <ol>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
-                    
-                </ol>
-            </nav>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li></ol>
+</nav>
             <h1>ROOT<div class="subtitle">CERN data analysis framework</div></h1>
             <section class="content">
                 
@@ -43,28 +46,27 @@
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/root/pyroot/">
                         <h2>
-                            pyROOT
-                            <div class="subtitle"></div>
+                            pyROOT<div class="subtitle"></div>
                         </h2>
-                        <img src="">
+                        
                         
                     </a>
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/root/root/">
                         <h2>
-                            ROOT
-                            <div class="subtitle"></div>
+                            ROOT<div class="subtitle"></div>
                         </h2>
-                        <img src="">
+                        
                         
                     </a>
                     
                     <a href="http://localhost:1313/dune-wiki/analysis/root/tcolor/">
                         <h2>
-                            TColor
-                            <div class="subtitle"></div>
+                            TColor<div class="subtitle">color wheel widget</div>
                         </h2>
-                        <img src="">
+                        
+                        <img src="/dune-wiki/img/section/tcolor.svg">
+                        
                         
                     </a>
                     

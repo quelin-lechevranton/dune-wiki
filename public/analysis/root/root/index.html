@@ -4,24 +4,32 @@
         <title>ROOT</title>
         <meta charset="utf-8">
 
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 
-
-
-
 <link rel="stylesheet" href="/dune-wiki/css/style.css">
 
-        <script src="/dune-wiki/js/toc.js" defer></script>
-        <script src="/dune-wiki/js/code-copy.js" defer></script>
 
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
     </head>
     <body class="single">
         <header>
-    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    
     <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
         
         <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
         
@@ -30,17 +38,10 @@
     </ol>
 </header>
         <main>
-            <nav class="breadcrumb">
-                <ol>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/root/">ROOT</a></li>
-                    
-                </ol>
-            </nav>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/root/">ROOT</a></li></ol>
+</nav>
+            
             <h1>ROOT<div class="subtitle"></div></h1>
             <section class="content">
                 <h2 id="heading">
@@ -56,18 +57,20 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">TF1</span> <span class="nf">f1</span><span class="p">(</span><span class="s">&#34;f1&#34;</span><span class="p">,</span><span class="s">&#34;formula&#34;</span><span class="p">,</span><span class="n">parameters</span><span class="p">);</span> 
-</span></span><span class="line"><span class="cl"><span class="n">TF1</span> <span class="o">*</span><span class="n">f1</span><span class="o">=</span><span class="k">new</span> <span class="n">TF1</span><span class="p">(</span><span class="s">&#34;f1&#34;</span><span class="p">,</span><span class="s">&#34;formula&#34;</span><span class="p">,</span><span class="n">parameters</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">R__ADD_INCLUDE_PATH</span><span class="p">(</span><span class="s">&#34;...&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">ReadFileList</span><span class="p">(</span><span class="n">n_file</span><span class="p">,</span><span class="s">&#34;path/to/file.list&#34;</span><span class="p">)</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>TF1 <span style="color:#a6e22e">f1</span>(<span style="color:#e6db74">&#34;f1&#34;</span>,<span style="color:#e6db74">&#34;formula&#34;</span>,parameters); 
+</span></span><span style="display:flex;"><span>TF1 <span style="color:#f92672">*</span>f1<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> TF1(<span style="color:#e6db74">&#34;f1&#34;</span>,<span style="color:#e6db74">&#34;formula&#34;</span>,parameters);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>R__ADD_INCLUDE_PATH(<span style="color:#e6db74">&#34;...&#34;</span>)
+</span></span><span style="display:flex;"><span>ReadFileList(n_file,<span style="color:#e6db74">&#34;path/to/file.list&#34;</span>)</span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -77,22 +80,24 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">TCanvas</span><span class="o">*</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TCanvas</span><span class="p">(</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">-&gt;</span><span class="n">cd</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">!=</span><span class="mi">255</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
-</span></span><span class="line"><span class="cl">  <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;#color[&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;]{&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;} &#34;</span><span class="p">;</span> 
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">20</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
-</span></span><span class="line"><span class="cl">    <span class="n">l</span><span class="p">.</span><span class="n">DrawLatex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.</span><span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="mf">255.</span><span class="o">*</span><span class="n">i</span><span class="p">,</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>TCanvas<span style="color:#f92672">*</span> c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TCanvas(<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>);
+</span></span><span style="display:flex;"><span>c<span style="color:#f92672">-&gt;</span>cd();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ( <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">!=</span><span style="color:#ae81ff">255</span>; i<span style="color:#f92672">++</span>) { 
+</span></span><span style="display:flex;"><span>  ss <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;#color[&#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;]{&#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;} &#34;</span>; 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) { 
+</span></span><span style="display:flex;"><span>    l.DrawLatex(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1.</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255.</span><span style="color:#f92672">*</span>i,ss.str().c_str());
+</span></span><span style="display:flex;"><span>    ss.str(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code>
+        
     </pre>
 </div><p><code>TFile file(&quot;file.root&quot;)</code> vs <code>TFile* file=TFile::Open(&quot;file.root&quot;)</code></p>
 <p><code>new TBrowser</code> vs <code>TBrowser b</code></p>
@@ -110,16 +115,18 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="err">$</span> <span class="n">root</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span><span class="p">.</span><span class="n">root</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="k">new</span> <span class="n">TBrowser</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">Events</span> <span class="o">/</span> <span class="n">ns</span><span class="o">::</span><span class="n">class_some_module_name</span> <span class="o">/</span> <span class="n">nm</span><span class="o">::</span><span class="n">class_some_module_name</span><span class="p">.</span><span class="n">obj</span> <span class="o">/</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="o">/</span> <span class="n">c</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> root path<span style="color:#f92672">/</span>to<span style="color:#f92672">/</span>file.root
+</span></span><span style="display:flex;"><span>root[] <span style="color:#66d9ef">new</span> TBrowser
+</span></span><span style="display:flex;"><span>root[] Events <span style="color:#f92672">/</span> ns<span style="color:#f92672">::</span>class_some_module_name <span style="color:#f92672">/</span> nm<span style="color:#f92672">::</span>class_some_module_name.obj <span style="color:#f92672">/</span> a <span style="color:#f92672">/</span> b <span style="color:#f92672">/</span> c</span></span></code>
+        
     </pre>
 </div><h2 id="draw-with-root">
     Draw with ROOT
@@ -134,18 +141,20 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="err">$</span> <span class="n">root</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">TFile</span> <span class="o">*</span><span class="n">_file0</span> <span class="o">=</span> <span class="n">TFile</span><span class="o">::</span><span class="n">Open</span><span class="p">(</span><span class="s">&#34;path/to/file&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">_file0</span><span class="o">-&gt;</span><span class="n">cd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">Events</span><span class="o">-&gt;</span><span class="n">GetListOfBranches</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">ls</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">Events</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;ns::class_some_module_name.obj.a.b.c&#34;</span><span class="p">,</span><span class="s">&#34;...&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">)</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> root
+</span></span><span style="display:flex;"><span>root[] TFile <span style="color:#f92672">*</span>_file0 <span style="color:#f92672">=</span> TFile<span style="color:#f92672">::</span>Open(<span style="color:#e6db74">&#34;path/to/file&#34;</span>)
+</span></span><span style="display:flex;"><span>root[] _file0<span style="color:#f92672">-&gt;</span>cd()
+</span></span><span style="display:flex;"><span>root[] Events<span style="color:#f92672">-&gt;</span>GetListOfBranches()<span style="color:#f92672">-&gt;</span>ls()
+</span></span><span style="display:flex;"><span>root[] Events<span style="color:#f92672">-&gt;</span>Draw(<span style="color:#e6db74">&#34;ns::class_some_module_name.obj.a.b.c&#34;</span>,<span style="color:#e6db74">&#34;...&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)</span></span></code>
+        
     </pre>
 </div><h2 id="access-in-macro-c">
     Access in macro C
@@ -160,20 +169,22 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">gallery</span><span class="o">::</span><span class="n">Event</span> <span class="n">ev</span><span class="p">(</span><span class="s">&#34;path/to/file.root&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">art</span><span class="o">::</span><span class="n">InputTag</span> <span class="n">module_tag</span><span class="p">(</span><span class="nl">some</span><span class="p">:</span><span class="nl">module</span><span class="p">:</span><span class="n">name</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="k">const</span> <span class="n">obj_list</span> <span class="o">=</span> <span class="n">ev</span><span class="p">.</span><span class="n">getValidHandle</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ns</span><span class="o">::</span><span class="k">class</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">module_tag</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">ns</span><span class="o">::</span><span class="k">class</span><span class="err">&amp; </span><span class="nc">obj</span> <span class="o">=</span> <span class="n">obj_list</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="p">.</span><span class="n">a</span><span class="p">()</span> <span class="err">#</span><span class="n">only</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span> <span class="n">methods</span> <span class="p">(</span><span class="n">leaves</span> <span class="n">with</span> <span class="n">a</span> <span class="n">red</span> <span class="n">bang</span> <span class="o">!</span> <span class="n">on</span> <span class="n">it</span><span class="p">,</span> <span class="n">leaves</span> <span class="n">with</span> <span class="n">names</span> <span class="n">like</span> <span class="p">...()),</span> <span class="n">thoses</span> <span class="n">are</span> <span class="n">only</span> <span class="n">seen</span> <span class="n">in</span> <span class="n">TBrowser</span> <span class="k">if</span> <span class="n">larsoft</span> <span class="n">was</span> <span class="n">previously</span> <span class="n">set</span> <span class="n">up</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//how to access the other leaves ???
+        
+        <code class="cpp"><span style="display:flex;"><span>gallery<span style="color:#f92672">::</span>Event ev(<span style="color:#e6db74">&#34;path/to/file.root&#34;</span>);
+</span></span><span style="display:flex;"><span>art<span style="color:#f92672">::</span>InputTag module_tag(some:module:name);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span> obj_list <span style="color:#f92672">=</span> ev.getValidHandle<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>ns<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span><span style="color:#f92672">&gt;&gt;</span>(module_tag);
+</span></span><span style="display:flex;"><span>ns<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010">&amp; </span><span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> obj_list<span style="color:#f92672">-&gt;</span>at(index);
+</span></span><span style="display:flex;"><span>obj.a() <span style="color:#960050;background-color:#1e0010">#</span>only access to the methods (leaves with a red bang <span style="color:#f92672">!</span> on it, leaves with names like ...()), thoses are only seen in TBrowser <span style="color:#66d9ef">if</span> larsoft was previously set up
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//how to access the other leaves ???
 </span></span></span></code>
+        
     </pre>
 </div><h2 id="examples">
     Examples
@@ -188,21 +199,23 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">f1</span><span class="p">.</span><span class="n">SetParameter</span><span class="p">(</span><span class="n">parameter_id</span><span class="p">,</span><span class="n">parameter_value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Events</span> <span class="o">-&gt;</span> <span class="n">GetListOfBranches</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ls</span><span class="p">()</span> <span class="c1">//print list of branches in the tree Events
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Events</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;varY:varX&gt;&gt;hXY(nBinX,minX,maxX,nBinY,minY,maxY)&#34;</span><span class="p">,</span><span class="s">&#34;condition&#34;</span><span class="p">,</span><span class="s">&#34;drawing_option&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">Events</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;anab::Calorimetrys_pandoraStdcalo__Reco.obj.fdEdx:(anab::Calorimetrys_pandoraStdcalo__Reco.obj.fRange-anab::Calorimetrys_pandoraStdcalo__Reco.obj.fResidualRange)&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="s">&#34;colZ&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">Events</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;simb::MCParticles_largeant__G4.obj.ftrajectory.ftrajectory.first.fP.fX:simb::MCParticles_largeant__G4.obj.ftrajectory.ftrajectory.first.fP.fY&gt;&gt;hXY(150,-125,25,300,100,400)&#34;</span><span class="p">,</span><span class="s">&#34;simb::MCParticles_largeant__G4.obj.fpdgCode==13&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">Events</span><span class="o">-&gt;</span><span class="n">sim</span><span class="o">::</span><span class="n">SimEnergyDeposits_largeant_LArG4DetectorServicevolTPCActive_G4Stage1</span><span class="p">.</span><span class="n">obj</span><span class="p">.</span><span class="n">startPos</span><span class="p">.</span><span class="n">fCoordinates</span><span class="p">.</span><span class="n">Theta</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">Events</span><span class="o">-&gt;</span><span class="n">simb</span><span class="o">::</span><span class="n">MCTruths_cosmicgenerator__SinglesGen</span><span class="p">.</span><span class="n">obj</span><span class="p">.</span><span class="n">fPartList</span><span class="p">.</span><span class="n">Py</span><span class="p">()</span><span class="o">/</span><span class="n">simb</span><span class="o">::</span><span class="n">MCTruths_cosmicgenerator__SinglesGen</span><span class="p">.</span><span class="n">obj</span><span class="p">.</span><span class="n">fPartList</span><span class="p">.</span><span class="n">P</span><span class="p">()</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>f1.SetParameter(parameter_id,parameter_value);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Events <span style="color:#f92672">-&gt;</span> GetListOfBranches() <span style="color:#f92672">-&gt;</span> ls() <span style="color:#75715e">//print list of branches in the tree Events
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Events<span style="color:#f92672">-&gt;</span>Draw(<span style="color:#e6db74">&#34;varY:varX&gt;&gt;hXY(nBinX,minX,maxX,nBinY,minY,maxY)&#34;</span>,<span style="color:#e6db74">&#34;condition&#34;</span>,<span style="color:#e6db74">&#34;drawing_option&#34;</span>)
+</span></span><span style="display:flex;"><span>Events<span style="color:#f92672">-&gt;</span>Draw(<span style="color:#e6db74">&#34;anab::Calorimetrys_pandoraStdcalo__Reco.obj.fdEdx:(anab::Calorimetrys_pandoraStdcalo__Reco.obj.fRange-anab::Calorimetrys_pandoraStdcalo__Reco.obj.fResidualRange)&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;colZ&#34;</span>)
+</span></span><span style="display:flex;"><span>Events<span style="color:#f92672">-&gt;</span>Draw(<span style="color:#e6db74">&#34;simb::MCParticles_largeant__G4.obj.ftrajectory.ftrajectory.first.fP.fX:simb::MCParticles_largeant__G4.obj.ftrajectory.ftrajectory.first.fP.fY&gt;&gt;hXY(150,-125,25,300,100,400)&#34;</span>,<span style="color:#e6db74">&#34;simb::MCParticles_largeant__G4.obj.fpdgCode==13&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>Events<span style="color:#f92672">-&gt;</span>sim<span style="color:#f92672">::</span>SimEnergyDeposits_largeant_LArG4DetectorServicevolTPCActive_G4Stage1.obj.startPos.fCoordinates.Theta()
+</span></span><span style="display:flex;"><span>Events<span style="color:#f92672">-&gt;</span>simb<span style="color:#f92672">::</span>MCTruths_cosmicgenerator__SinglesGen.obj.fPartList.Py()<span style="color:#f92672">/</span>simb<span style="color:#f92672">::</span>MCTruths_cosmicgenerator__SinglesGen.obj.fPartList.P()</span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -219,13 +232,15 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="cpp"><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;OpT0&gt;&gt;hT0(50,1.602,1.608)&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span> <span class="mi">50</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">hT0</span><span class="o">-&gt;</span><span class="n">SetLineColor</span><span class="p">(</span><span class="n">kGreen</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">hT0</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&#34;T0 (us)&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">hT0</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&#34;Slices&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="n">hT0</span><span class="o">-&gt;</span><span class="n">SetStats</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="n">c1</span><span class="o">-&gt;</span><span class="n">Modified</span><span class="p">()</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>root [<span style="color:#ae81ff">3</span>] tree<span style="color:#f92672">-&gt;</span>Draw(<span style="color:#e6db74">&#34;OpT0&gt;&gt;hT0(50,1.602,1.608)&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>) <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">4</span>] hT0<span style="color:#f92672">-&gt;</span>SetLineColor(kGreen<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">5</span>] hT0<span style="color:#f92672">-&gt;</span>GetXaxis()<span style="color:#f92672">-&gt;</span>SetTitle(<span style="color:#e6db74">&#34;T0 (us)&#34;</span>)
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">6</span>] hT0<span style="color:#f92672">-&gt;</span>GetYaxis()<span style="color:#f92672">-&gt;</span>SetTitle(<span style="color:#e6db74">&#34;Slices&#34;</span>)
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">7</span>] hT0<span style="color:#f92672">-&gt;</span>SetStats(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">8</span>] c1<span style="color:#f92672">-&gt;</span>Modified()</span></span></code>
+        
     </pre>
 </div><h2 id="classes">
     Classes
@@ -253,7 +268,9 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
         <code class="ROOT"><pre tabindex="0"><code class="language-ROOT" data-lang="ROOT">TNamed &lt;- TObject .</code></pre></code>
+        
     </pre>
 </div><table>
   <thead>
@@ -297,7 +314,9 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
         <code class="ROOT"><pre tabindex="0"><code class="language-ROOT" data-lang="ROOT">TFile &lt;- TDirectoryFile &lt;- TDirectory &lt;- TNamed</code></pre></code>
+        
     </pre>
 </div><p><code>TDirectory</code> has the methods <code>cd()</code>, <code>ls()</code> and <code>pwd()</code> that can be access with <code>.ls</code> and <code>.pwd</code> in <code>Cling</code> for the current <code>TDirectory</code></p>
 
@@ -315,10 +334,12 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
         <code class="ROOT"><pre tabindex="0"><code class="language-ROOT" data-lang="ROOT">TTree &lt;- TNamed &lt;-
       &lt;- TAttLine .
       &lt;- TAttFill .
       &lt;- TAttMarker .</code></pre></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -335,8 +356,10 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
         <code class="ROOT"><pre tabindex="0"><code class="language-ROOT" data-lang="ROOT">TBranchElement &lt;- TBranche &lt;- TNamed &lt;-
                &lt;- TAttFill .</code></pre></code>
+        
     </pre>
 </div><h2 id="file-navigation">
     File Navigation
@@ -351,18 +374,20 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">TFile</span> <span class="nf">file</span><span class="p">(</span><span class="s">&#34;file.root&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TObject</span><span class="o">*</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">file</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">&#34;path/to/obj&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TTree</span><span class="o">*</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">file</span><span class="p">.</span><span class="n">Get</span><span class="o">&lt;</span><span class="n">TTree</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;path/to/obj&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TTree</span><span class="o">*</span> <span class="n">tree</span> <span class="o">=</span> <span class="p">(</span><span class="n">TTree</span><span class="o">*</span><span class="p">)</span> <span class="n">file</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">&#34;path/to/obj&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TTree</span><span class="o">*</span> <span class="n">tree</span><span class="p">;</span> <span class="n">file</span><span class="p">.</span><span class="n">GetObject</span><span class="p">(</span><span class="s">&#34;path/to/obj&#34;</span><span class="p">,</span><span class="n">tree</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>TFile <span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#34;file.root&#34;</span>);
+</span></span><span style="display:flex;"><span>TObject<span style="color:#f92672">*</span> obj <span style="color:#f92672">=</span> file.Get(<span style="color:#e6db74">&#34;path/to/obj&#34;</span>);
+</span></span><span style="display:flex;"><span>TTree<span style="color:#f92672">*</span> tree <span style="color:#f92672">=</span> file.Get<span style="color:#f92672">&lt;</span>TTree<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;path/to/obj&#34;</span>);
+</span></span><span style="display:flex;"><span>TTree<span style="color:#f92672">*</span> tree <span style="color:#f92672">=</span> (TTree<span style="color:#f92672">*</span>) file.Get(<span style="color:#e6db74">&#34;path/to/obj&#34;</span>);
+</span></span><span style="display:flex;"><span>TTree<span style="color:#f92672">*</span> tree; file.GetObject(<span style="color:#e6db74">&#34;path/to/obj&#34;</span>,tree);</span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -372,36 +397,38 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="err">$</span> <span class="n">root</span> <span class="n">file</span><span class="p">.</span><span class="n">root</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">_file0</span><span class="o">-&gt;</span><span class="n">cd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="nb">true</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="p">.</span><span class="n">ls</span> <span class="c1">//alternatively: root[] _file0-&gt;ls()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">TFile</span><span class="o">**</span>
-</span></span><span class="line"><span class="cl"> <span class="n">TFile</span><span class="o">*</span>
-</span></span><span class="line"><span class="cl">  <span class="nl">KEY</span><span class="p">:</span> <span class="n">TDirectoryFile</span> <span class="n">tdf</span><span class="p">;</span><span class="mi">1</span> <span class="nf">tdf</span> <span class="p">(</span><span class="n">tdf</span><span class="p">)</span> <span class="n">folder</span>
-</span></span><span class="line"><span class="cl">  <span class="nl">KEY</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">rootClass</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="p">;</span><span class="n">namecycle</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;</span> <span class="o">&lt;?&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nl">KEY</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">rootClass</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="p">;</span><span class="n">namecycle</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;</span> <span class="o">&lt;?&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="n">tdf</span><span class="o">-&gt;</span><span class="n">cd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="p">.</span><span class="n">pwd</span> <span class="c1">//alternatively: root[] tdf-&gt;pwd()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Current</span> <span class="nl">directory</span><span class="p">:</span> <span class="n">file</span><span class="p">.</span><span class="nl">root</span><span class="p">:</span><span class="o">/</span><span class="n">tdf</span>
-</span></span><span class="line"><span class="cl"><span class="n">Current</span> <span class="nl">style</span><span class="p">:</span>     <span class="n">Modern</span>
-</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="p">[]</span> <span class="p">.</span><span class="n">ls</span> <span class="c1">//alternatively: root[] tdf-&gt;ls()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">TDirectoryFile</span><span class="o">*</span> <span class="n">tdf</span><span class="p">;</span><span class="mi">1</span> <span class="nf">tdf</span> <span class="p">(</span><span class="n">tdf</span><span class="p">)</span> <span class="n">folder</span>
-</span></span><span class="line"><span class="cl">  <span class="nl">KEY</span><span class="p">:</span> <span class="n">TTree</span> <span class="n">tt</span><span class="p">;</span><span class="mi">1</span> <span class="n">tt</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// (...)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">root</span><span class="p">[]</span> <span class="n">tt</span><span class="o">-&gt;</span><span class="n">GetListOfBranched</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">ls</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="nl">OBJ</span><span class="p">:</span> <span class="n">TObjArray</span> <span class="n">TObjArray</span> <span class="n">An</span> <span class="n">array</span> <span class="n">of</span> <span class="nl">objects</span> <span class="p">:</span> <span class="o">??</span>
-</span></span><span class="line"><span class="cl"> <span class="nl">OBJ</span><span class="p">:</span> <span class="n">TBranch</span> <span class="n">var</span> <span class="nl">var</span> <span class="p">:</span> <span class="o">??</span> <span class="n">at</span> <span class="mh">0x4bfcef0</span>
-</span></span><span class="line"><span class="cl"> <span class="nl">OBJ</span><span class="p">:</span> <span class="n">TBranch</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">leaflist</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">??</span> <span class="n">at</span> <span class="o">&lt;</span><span class="n">address</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nl">OBJ</span><span class="p">:</span> <span class="n">TBranchElement</span> <span class="c1">// (...)
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> root file.root
+</span></span><span style="display:flex;"><span>root[] _file0<span style="color:#f92672">-&gt;</span>cd()
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">bool</span>) true
+</span></span><span style="display:flex;"><span>root[] .ls <span style="color:#75715e">//alternatively: root[] _file0-&gt;ls()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>TFile<span style="color:#f92672">**</span>
+</span></span><span style="display:flex;"><span> TFile<span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>  KEY: TDirectoryFile tdf;<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">tdf</span> (tdf) folder
+</span></span><span style="display:flex;"><span>  KEY: <span style="color:#f92672">&lt;</span>rootClass<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>identifier;namecycle<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>identifier<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;?&gt;</span>
+</span></span><span style="display:flex;"><span>  KEY: <span style="color:#f92672">&lt;</span>rootClass<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>identifier;namecycle<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>identifier<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;?&gt;</span>
+</span></span><span style="display:flex;"><span>root[] tdf<span style="color:#f92672">-&gt;</span>cd()
+</span></span><span style="display:flex;"><span>root[] .pwd <span style="color:#75715e">//alternatively: root[] tdf-&gt;pwd()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Current directory: file.root:<span style="color:#f92672">/</span>tdf
+</span></span><span style="display:flex;"><span>Current style:     Modern
+</span></span><span style="display:flex;"><span>root[] .ls <span style="color:#75715e">//alternatively: root[] tdf-&gt;ls()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>TDirectoryFile<span style="color:#f92672">*</span> tdf;<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">tdf</span> (tdf) folder
+</span></span><span style="display:flex;"><span>  KEY: TTree tt;<span style="color:#ae81ff">1</span> tt
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// (...)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>root[] tt<span style="color:#f92672">-&gt;</span>GetListOfBranched()<span style="color:#f92672">-&gt;</span>ls()
+</span></span><span style="display:flex;"><span>OBJ: TObjArray TObjArray An array of objects : <span style="color:#f92672">??</span>
+</span></span><span style="display:flex;"><span> OBJ: TBranch var var : <span style="color:#f92672">??</span> at <span style="color:#ae81ff">0x4bfcef0</span>
+</span></span><span style="display:flex;"><span> OBJ: TBranch <span style="color:#f92672">&lt;</span>identifier<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>leaflist<span style="color:#f92672">&gt;</span> <span style="color:#f92672">:</span> <span style="color:#f92672">??</span> at <span style="color:#f92672">&lt;</span>address<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> OBJ: TBranchElement <span style="color:#75715e">// (...)
 </span></span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -411,25 +438,27 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">TFile</span><span class="o">*</span> <span class="n">file</span><span class="o">=</span><span class="n">TFile</span><span class="o">::</span><span class="n">Open</span><span class="p">(</span><span class="s">&#34;file.root&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TTree</span><span class="o">*</span> <span class="n">tt</span><span class="o">=</span> <span class="p">(</span><span class="n">TTree</span><span class="o">*</span><span class="p">)</span> <span class="n">file</span><span class="o">-&gt;</span><span class="n">Get</span><span class="p">(</span><span class="s">&#34;tdf/tt&#34;</span><span class="p">);</span> <span class="c1">//Get() returns a TObject*
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">tt</span><span class="o">-&gt;</span><span class="n">GetListOfBranches</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">ls</span><span class="p">();</span> <span class="c1">//print in stdout
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">type_t</span><span class="o">*</span> <span class="n">var</span><span class="o">=</span><span class="k">nullptr</span><span class="p">;</span> <span class="c1">//pointers should always be initialized
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">tt</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&#34;b1&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">var</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//TBranch* b1 = tt-&gt;GetBranch(&#34;b1&#34;);
-</span></span></span><span class="line"><span class="cl"><span class="c1">//b1-&gt;SetAddress(&amp;var);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">tt</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">tt</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">//var is now the pointer to the value of b1 for the event #i
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>TFile<span style="color:#f92672">*</span> file<span style="color:#f92672">=</span>TFile<span style="color:#f92672">::</span>Open(<span style="color:#e6db74">&#34;file.root&#34;</span>);
+</span></span><span style="display:flex;"><span>TTree<span style="color:#f92672">*</span> tt<span style="color:#f92672">=</span> (TTree<span style="color:#f92672">*</span>) file<span style="color:#f92672">-&gt;</span>Get(<span style="color:#e6db74">&#34;tdf/tt&#34;</span>); <span style="color:#75715e">//Get() returns a TObject*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>tt<span style="color:#f92672">-&gt;</span>GetListOfBranches()<span style="color:#f92672">-&gt;</span>ls(); <span style="color:#75715e">//print in stdout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>type_t<span style="color:#f92672">*</span> var<span style="color:#f92672">=</span><span style="color:#66d9ef">nullptr</span>; <span style="color:#75715e">//pointers should always be initialized
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>tt<span style="color:#f92672">-&gt;</span>SetBranchAddress(<span style="color:#e6db74">&#34;b1&#34;</span>,<span style="color:#f92672">&amp;</span>var);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//TBranch* b1 = tt-&gt;GetBranch(&#34;b1&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//b1-&gt;SetAddress(&amp;var);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span> tt<span style="color:#f92672">-&gt;</span>GetEntries(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    tt<span style="color:#f92672">-&gt;</span>GetEntries(i); <span style="color:#75715e">//var is now the pointer to the value of b1 for the event #i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code>
+        
     </pre>
 </div><h2 id="tcolor">
     <code>TColor</code>
@@ -446,20 +475,22 @@
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">short</span> <span class="n">Color_t</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="p">{</span> <span class="n">kWhite</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kBlack</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kRed</span><span class="o">=</span><span class="mi">632</span><span class="p">,</span> <span class="n">kGreen</span><span class="o">=</span><span class="mi">416</span> <span class="p">}</span> <span class="c1">//and so on
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 2 also gives red
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Color_t</span> <span class="n">TColor</span><span class="o">::</span><span class="n">GetColor</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">float</span> <span class="n">a</span><span class="p">);</span> <span class="c1">// int [0,255]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Color_t</span> <span class="n">TColor</span><span class="o">::</span><span class="n">GetColor</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">g</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">,</span> <span class="kt">float</span> <span class="n">a</span><span class="p">);</span> <span class="c1">// float [0,1]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Color_t</span> <span class="n">TColor</span><span class="o">::</span><span class="n">GetColor</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">hex</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">short</span> Color_t;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> { kWhite<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, kBlack<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, kRed<span style="color:#f92672">=</span><span style="color:#ae81ff">632</span>, kGreen<span style="color:#f92672">=</span><span style="color:#ae81ff">416</span> } <span style="color:#75715e">//and so on
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 2 also gives red
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Color_t TColor<span style="color:#f92672">::</span>GetColor(<span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> g, <span style="color:#66d9ef">int</span> b, <span style="color:#66d9ef">float</span> a); <span style="color:#75715e">// int [0,255]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Color_t TColor<span style="color:#f92672">::</span>GetColor(<span style="color:#66d9ef">float</span> r, <span style="color:#66d9ef">float</span> g, <span style="color:#66d9ef">float</span> b, <span style="color:#66d9ef">float</span> a); <span style="color:#75715e">// float [0,1]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Color_t TColor<span style="color:#f92672">::</span>GetColor(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>hex);</span></span></code>
+        
     </pre>
 </div><p><a href="https://root.cern.ch/doc/master/RtypesCore_8h_source.html#l00092">RtypesCore.h</a>
 <a href="https://root.cern.ch/doc/master/Rtypes_8h_source.html#l00065">Rtypes.h</a>
@@ -493,6 +524,7 @@
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
         <code class="rootrc"><pre tabindex="0"><code class="language-rootrc" data-lang="rootrc">Gui.DefaultFont:            -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1
 Gui.DefaultFont:            -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1
 Gui.MenuFont:               -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1
@@ -501,6 +533,7 @@ Gui.DocFixedFont:           -Cascadia Mono-medium-r-*-*-16-*-*-*-*-*-iso8859-1
 Gui.DocPropFont:            -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1
 Gui.IconFont:               -Arial-medium-r-*-*-14-*-*-*-*-*-iso8859-1
 Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></pre></code>
+        
     </pre>
 </div><h2 id="rootrdataframe--ttree">
     <code>ROOT::RDataFrame</code> &amp; <code>TTree</code>
@@ -521,17 +554,19 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>            <span class="c1">//pourquoi pas un pointer??
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">tree</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&#34;branch_a&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">tree</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&#34;branch_b&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a;            <span style="color:#75715e">//pourquoi pas un pointer??
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;*</span> b;
+</span></span><span style="display:flex;"><span>tree<span style="color:#f92672">-&gt;</span>SetBranchAddress(<span style="color:#e6db74">&#34;branch_a&#34;</span>, <span style="color:#f92672">&amp;</span>a);
+</span></span><span style="display:flex;"><span>tree<span style="color:#f92672">-&gt;</span>SetBranchAddress(<span style="color:#e6db74">&#34;branch_b&#34;</span>, <span style="color:#f92672">&amp;</span>b);</span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -541,17 +576,19 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">TChain</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;a/c&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">TChain</span> <span class="nf">d</span><span class="p">(</span><span class="s">&#34;a/d&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">.</span><span class="n">AddFriend</span><span class="p">(</span><span class="s">&#34;a/d&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">.</span><span class="n">Draw</span><span class="p">(</span><span class="s">&#34;v1:d.v2&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>TChain <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;a/c&#34;</span>);
+</span></span><span style="display:flex;"><span>TChain <span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;a/d&#34;</span>);
+</span></span><span style="display:flex;"><span>c.AddFriend(<span style="color:#e6db74">&#34;a/d&#34;</span>);
+</span></span><span style="display:flex;"><span>c.Draw(<span style="color:#e6db74">&#34;v1:d.v2&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>);</span></span></code>
+        
     </pre>
 </div><p><a href="https://root.cern/doc/master/classROOT_1_1RDataFrame.html"><code>RDataFrame</code></a></p>
 <p><a href="https://root.cern/doc/master/group__dataframe.html"><strong>dataframe</strong></a></p>
@@ -570,14 +607,16 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">ROOT</span><span class="o">::</span><span class="n">RDataFrame</span> <span class="n">rdf</span><span class="p">(</span><span class="s">&#34;treename&#34;</span><span class="p">,</span><span class="s">&#34;file.root&#34;</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>ROOT<span style="color:#f92672">::</span>RDataFrame rdf(<span style="color:#e6db74">&#34;treename&#34;</span>,<span style="color:#e6db74">&#34;file.root&#34;</span>);</span></span></code>
+        
     </pre>
 </div><h3 id="filter">
     Filter()
@@ -592,14 +631,16 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="n">ROOT</span><span class="o">::</span><span class="n">RDF</span><span class="o">::</span><span class="n">RInterface</span><span class="o">&lt;</span><span class="n">ROOT</span><span class="o">::</span><span class="n">Detail</span><span class="o">::</span><span class="n">RDF</span><span class="o">::</span><span class="n">RJittedFilter</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span> <span class="o">&amp;</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span>ROOT<span style="color:#f92672">::</span>RDF<span style="color:#f92672">::</span>RInterface<span style="color:#f92672">&lt;</span>ROOT<span style="color:#f92672">::</span>Detail<span style="color:#f92672">::</span>RDF<span style="color:#f92672">::</span>RJittedFilter, <span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span></span></span></code>
+        
     </pre>
 </div>
 <div class="highlight">
@@ -609,15 +650,17 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
         <div class="window-button"></div>
         <div class="window-button"></div>
         
-        <div class="code-label">C&#43;&#43;</div>
+        <div class="code-label">cpp</div>
         
     </header>
     
     <pre class="chroma">
         <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
         <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
-        <code class="C&#43;&#43;"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">condition</span> <span class="p">(</span><span class="cm">/**/</span><span class="p">)</span> <span class="p">{</span><span class="cm">/**/</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="n">rdf</span><span class="p">.</span><span class="n">Filter</span><span class="p">(</span><span class="s">&#34;condition(fX)&#34;</span><span class="p">);</span></span></span></code>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">condition</span> (<span style="color:#75715e">/**/</span>) {<span style="color:#75715e">/**/</span>};
+</span></span><span style="display:flex;"><span>rdf.Filter(<span style="color:#e6db74">&#34;condition(fX)&#34;</span>);</span></span></code>
+        
     </pre>
 </div><h2 id="th2">
     TH2
@@ -629,13 +672,91 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
     
     
     
+</h2><h2 id="rvec">
+    RVec
+    
+    
+    
 </h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span>root [<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">namespace</span> rv <span style="color:#f92672">=</span> ROOT<span style="color:#f92672">::</span> VecOps;
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">double</span> summing(rv<span style="color:#f92672">::</span>RVec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> v) { <span style="color:#66d9ef">double</span> s<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, p<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; rv<span style="color:#f92672">::</span>Map(rv<span style="color:#f92672">::</span>Sort(v), [<span style="color:#f92672">&amp;</span>s, <span style="color:#f92672">&amp;</span>p](<span style="color:#66d9ef">auto</span> x){ <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">!=</span> p) s<span style="color:#f92672">+=</span>x; p<span style="color:#f92672">=</span>x; <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; }); <span style="color:#66d9ef">return</span> s; };
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">3</span>] rv<span style="color:#f92672">::</span>RVec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> ww <span style="color:#f92672">=</span> { <span style="color:#ae81ff">122</span>,<span style="color:#ae81ff">352</span>,<span style="color:#ae81ff">364</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3756</span>,<span style="color:#ae81ff">385</span>,<span style="color:#ae81ff">6734</span>,<span style="color:#ae81ff">75</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">665</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">63</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">63</span>,<span style="color:#ae81ff">63</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">63</span>,<span style="color:#ae81ff">36</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">66</span>,<span style="color:#ae81ff">63</span>,<span style="color:#ae81ff">36</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">636</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span>,<span style="color:#ae81ff">663</span> }
+</span></span><span style="display:flex;"><span>(ROOT<span style="color:#f92672">::</span>VecOps<span style="color:#f92672">::</span>RVec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>) { <span style="color:#ae81ff">122.00000</span>, <span style="color:#ae81ff">352.00000</span>, <span style="color:#ae81ff">364.00000</span>, <span style="color:#ae81ff">4.0000000</span>, <span style="color:#ae81ff">3756.0000</span>, <span style="color:#ae81ff">385.00000</span>, <span style="color:#ae81ff">6734.0000</span>, <span style="color:#ae81ff">75.000000</span>, <span style="color:#ae81ff">6.0000000</span>, <span style="color:#ae81ff">56.</span> <span style="color:#ae81ff">000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">6.0000000</span>, <span style="color:#ae81ff">6.0000000</span>, <span style="color:#ae81ff">6.0000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">56.000000</span>, <span style="color:#ae81ff">63.000000</span>, <span style="color:#ae81ff">6.0000000</span>, <span style="color:#ae81ff">63.000000</span>, <span style="color:#ae81ff">63.000000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">63.000000</span>, <span style="color:#ae81ff">36.0000000</span>, <span style="color:#ae81ff">66.000000</span>, <span style="color:#ae81ff">63.000000</span>, <span style="color:#ae81ff">36.000000</span>, <span style="color:#ae81ff">3.0000000</span>, <span style="color:#ae81ff">636.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span>, <span style="color:#ae81ff">663.00000</span> }
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">4</span>] rv<span style="color:#f92672">::</span>Sum(ww)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">double</span>) <span style="color:#ae81ff">20106.000</span>
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">5</span>] summing(ww)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">double</span>) <span style="color:#ae81ff">13986.000</span></span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span>root [O] <span style="color:#66d9ef">namespace</span> rv <span style="color:#f92672">=</span> ROOT<span style="color:#f92672">::</span> VecOps;
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">1</span>] rv<span style="color:#f92672">::</span>RVec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> w <span style="color:#f92672">=</span> {<span style="color:#ae81ff">124</span>, <span style="color:#ae81ff">35</span>,<span style="color:#ae81ff">26</span>,<span style="color:#ae81ff">423</span>, <span style="color:#ae81ff">62</span>,<span style="color:#ae81ff">524</span>,<span style="color:#ae81ff">67</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">86</span>,<span style="color:#ae81ff">4</span>} ;
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">double</span> p <span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">3</span>] rv<span style="color:#f92672">::</span>Sum(rv<span style="color:#f92672">::</span>Map(w, [](<span style="color:#66d9ef">auto</span> x){ <span style="color:#66d9ef">return</span> x <span style="color:#f92672">!=</span> p <span style="color:#f92672">?</span> X : <span style="color:#ae81ff">0</span>; }))
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">double</span>) <span style="color:#ae81ff">1355.0000</span>
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">4</span>] <span style="color:#66d9ef">double</span> s<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">5</span>] rv<span style="color:#f92672">::</span>Map(w, [](<span style="color:#66d9ef">auto</span> x){ <span style="color:#66d9ef">if</span> (x<span style="color:#960050;background-color:#1e0010">#</span>p) s<span style="color:#f92672">+=</span>x; <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; })
+</span></span><span style="display:flex;"><span>(ROOT<span style="color:#f92672">::</span>VecOps<span style="color:#f92672">::</span><span style="color:#66d9ef">decltype</span>(MapImpl(std<span style="color:#f92672">::</span>get<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>tuple_size<span style="color:#f92672">&lt;</span>tuple<span style="color:#f92672">&lt;</span>RVec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>, (lambda) <span style="color:#f92672">&amp;&gt;</span> <span style="color:#f92672">&gt;::</span>value <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>(t), std<span style="color:#f92672">::</span>get<span style="color:#f92672">&lt;</span>OUL<span style="color:#f92672">&gt;</span>(t)))) { <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span> }
+</span></span><span style="display:flex;"><span>root [<span style="color:#ae81ff">6</span>] s
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">double</span>) <span style="color:#ae81ff">1355.0000</span></span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">cpp</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> s<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; { <span style="color:#66d9ef">double</span> p<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>; rv<span style="color:#f92672">::</span>Map(rv<span style="color:#f92672">::</span>Sort(v), [<span style="color:#f92672">&amp;</span>p,<span style="color:#f92672">&amp;</span>s] (<span style="color:#66d9ef">auto</span> x){ <span style="color:#66d9ef">if</span>(x<span style="color:#f92672">!=</span>p) s<span style="color:#f92672">+=</span>x; p<span style="color:#f92672">=</span>x; <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; });}</span></span></code>
+        
+    </pre>
+</div>
             </section>
             
             <nav class="toc">
                 <div class="toc-title">Contents</div>
                 <nav id="TableOfContents">
-  <ol>
+  <ul>
     <li><a href="#heading">?</a></li>
     <li><a href="#arborescence-larsoft-in-root">Arborescence LArSoft in ROOT</a></li>
     <li><a href="#draw-with-root">Draw with ROOT</a></li>
@@ -645,19 +766,20 @@ Gui.StatusFont:             -Arial-medium-r-*-*-16-*-*-*-*-*-iso8859-1</code></p
     <li><a href="#file-navigation">File Navigation</a></li>
     <li><a href="#tcolor"><code>TColor</code></a></li>
     <li><a href="#random-notes">Random Notes</a>
-      <ol>
+      <ul>
         <li><a href="#change-gui-fonts">Change GUI fonts</a></li>
-      </ol>
+      </ul>
     </li>
     <li><a href="#rootrdataframe--ttree"><code>ROOT::RDataFrame</code> &amp; <code>TTree</code></a>
-      <ol>
+      <ul>
         <li><a href="#constructors">Constructors</a></li>
         <li><a href="#filter">Filter()</a></li>
-      </ol>
+      </ul>
     </li>
     <li><a href="#th2">TH2</a></li>
     <li><a href="#tgraph2d">TGraph2D</a></li>
-  </ol>
+    <li><a href="#rvec">RVec</a></li>
+  </ul>
 </nav>
             </nav>
             

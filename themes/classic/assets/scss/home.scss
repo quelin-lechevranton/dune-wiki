@@ -1,0 +1,17 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+@use 'sizes' as s; 
+
+body.home {
+    main {
+        width: s.$content_width;
+        margin: 100px auto 0 auto;
+
+        h1 {
+            font-size: f.$xxxl;
+            font-weight: bold;
+            text-align: center;
+	    // font-family: "Carbon";
+        }
+    }
+}

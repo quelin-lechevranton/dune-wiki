@@ -1,0 +1,10 @@
+@use 'sizes' as s;
+@use 'fonts' as f;
+
+.jsroot {
+    position: relative;
+
+    width: s.$content_width;
+    height: 500px;
+    margin: f.$l 0;
+}

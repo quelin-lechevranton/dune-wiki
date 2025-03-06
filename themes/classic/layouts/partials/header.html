@@ -1,0 +1,8 @@
+<header>
+    {{/*  <li><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>  */}}
+    <ol>
+        {{ range .Site.Home.Pages }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+    </ol>
+</header>

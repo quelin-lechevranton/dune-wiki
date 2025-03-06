@@ -1,44 +1,4 @@
 baseURL: 'https://quelin-lechevranton.github.io/dune-wiki/'
 languageCode: 'en-us'
 title: 'Dune Wiki'
-
-# https://gohugo.io/getting-started/configuration-markup/#highlight
-markup:
-  highlight:
-    noClasses: false
-    # codeFences: false
-  
-  tableOfContents:
-    ordered: true
-
-# https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
-  goldmark:
-    renderer:
-      unsafe: true
-
-# https://gohugo.io/render-hooks/blockquotes/#attributes
-# https://gohugo.io/render-hooks/headings/#attributes
-    parser:
-      attribute:
-        block: true
-        title: true
-
-# https://gohugo.io/content-management/mathematics/#step-1
-    extensions:
-      passthrough:
-        delimiters:
-          block:
-          - - \[
-            - \]
-          inline:
-          - - \(
-            - \)
-        enable: true
-
-# https://gohugo.io/content-management/taxonomies/#default-taxonomies
-disableKinds:
-  - taxonomy
-  - term
-  - 404
-
-  
+theme: 'classic'

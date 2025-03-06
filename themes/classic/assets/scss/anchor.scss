@@ -1,0 +1,25 @@
+@use 'colors' as c;
+@use 'fonts' as f; 
+
+a:not(.repo) {
+    position: relative;
+
+    &::before {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        bottom: -.1em;
+        left: 2.5%;
+        width: 95%;
+        height: .1 * f.$l;
+        // background-color: c.$accent;
+        background-color: var(--accent);
+        transition: opacity .2s, transform .2s;
+
+        transform: scaleX(0);
+    }
+    &:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}

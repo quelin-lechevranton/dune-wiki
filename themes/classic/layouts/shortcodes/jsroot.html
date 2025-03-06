@@ -1,0 +1,7 @@
+<div class="jsroot" id="{{ .Params.canvas | path.Base }}"></div>
+<script type='module'>
+    import { openFile, draw } from 'https://root.cern/js/latest/modules/main.mjs';
+    let file = await openFile('/dune-wiki/root/{{ .Params.file }}');
+    let obj = await file.readObject('{{ .Params.canvas }}');
+    draw('{{ .Params.canvas | path.Base }}', obj, 'colz');
+</script>

@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/dune-wiki/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/posts/jsroot/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/posts/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/posts/dra1/</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/larsoft/art/</loc>
@@ -10,23 +22,21 @@
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/cpp/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune-wiki/physics/detector/</loc>
+    <loc>http://localhost:1313/dune-wiki/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/data-products/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/detector/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/physics/dune/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/larsoft/fhicl/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune-wiki/</loc>
-  </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/larsoft/installation/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/larsoft/</loc>
   </url><url>
-    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/larsoft/</loc>
-  </url><url>
     <loc>http://localhost:1313/dune-wiki/physics/nu/</loc>
-  </url><url>
-    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/objects/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/physics/</loc>
   </url><url>
@@ -35,6 +45,12 @@
     <loc>http://localhost:1313/dune-wiki/analysis/root/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/root/root/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/analysis/larsoft/simulation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/posts/stage/</loc>
+  </url><url>
+    <loc>http://localhost:1313/dune-wiki/tags/</loc>
   </url><url>
     <loc>http://localhost:1313/dune-wiki/analysis/root/tcolor/</loc>
   </url>

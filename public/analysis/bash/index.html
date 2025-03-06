@@ -4,24 +4,32 @@
         <title>bash</title>
         <meta charset="utf-8">
 
+<link rel="shortcut icon" href="/dune-wiki/img/favicon.ico">
+
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 
-
-
-
 <link rel="stylesheet" href="/dune-wiki/css/style.css">
 
-        <script src="/dune-wiki/js/toc.js" defer></script>
-        <script src="/dune-wiki/js/code-copy.js" defer></script>
 
+
+
+
+<script>
+    const accent = localStorage.getItem('accent') || '#ed6a5d';
+    document.documentElement.style.setProperty("--accent", accent);
+</script>
+        <script src="/dune-wiki/js/toc.js" defer></script>
+        <script src="/dune-wiki/js/code-buttons.js" defer></script>
     </head>
     <body class="single">
         <header>
-    <li><a href="http://localhost:1313/dune-wiki/">Dune Wiki</a></li>
+    
     <ol>
+        
+        <li><a href="http://localhost:1313/dune-wiki/posts/">Posts</a></li>
         
         <li><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
         
@@ -30,23 +38,322 @@
     </ol>
 </header>
         <main>
-            <nav class="breadcrumb">
-                <ol>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li>
-                    
-                    <li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li>
-                    
-                </ol>
-            </nav>
-            <h1>bash<div class="subtitle">Bourne-Again SHell</div></h1>
+            <nav class="breadcrumbs">
+    <ol><li class="ancestor"><a href="http://localhost:1313/dune-wiki/">Home</a></li><li class="ancestor"><a href="http://localhost:1313/dune-wiki/analysis/">Analysis</a></li></ol>
+</nav>
+            
+            <h1>bash<div class="subtitle">bourne-again shell</div></h1>
             <section class="content">
-                
+                <h2 id="shells">
+    shells
+    
+    
+    
+</h2><table>
+  <thead>
+      <tr>
+          <th>shells</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>sh</td>
+          <td>The original Bourne shell</td>
+          <td>Present on every unix system</td>
+      </tr>
+      <tr>
+          <td>ksh</td>
+          <td>Original Korn shell</td>
+          <td>Richer shell programming environment than sh</td>
+      </tr>
+      <tr>
+          <td>csh</td>
+          <td>Original C-shell</td>
+          <td>C-like syntax; early versions buggy</td>
+      </tr>
+      <tr>
+          <td>tcsh</td>
+          <td>Enhanced C-shell</td>
+          <td>User-friendly and less buggy csh implementation</td>
+      </tr>
+      <tr>
+          <td>bash</td>
+          <td>GNU Bourne-again shell</td>
+          <td>Enhanced and free sh implementation</td>
+      </tr>
+      <tr>
+          <td>zsh</td>
+          <td>Z shell</td>
+          <td>Enhanced, user-friendly ksh-like shell</td>
+      </tr>
+      <tr>
+          <td>fish</td>
+          <td>???</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>--------- TERMINAL MOUVEMENT ----------
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#mouvement macros inspired by emacs</span>
+</span></span><span style="display:flex;"><span>ctrl+a <span style="color:#75715e">#goes to beginning of the line</span>
+</span></span><span style="display:flex;"><span>ctrl+e <span style="color:#75715e">#goes to end of the line</span>
+</span></span><span style="display:flex;"><span>ctrl+r <span style="color:#75715e">#search past command</span>
+</span></span><span style="display:flex;"><span>ctrl+shift+<span style="color:#f92672">{</span>x,c,v<span style="color:#f92672">}</span> <span style="color:#75715e">#cut, copy, pastr</span>
+</span></span><span style="display:flex;"><span>ctrl+u <span style="color:#75715e">#clear line</span>
+</span></span><span style="display:flex;"><span>ctrl+k <span style="color:#75715e">#clear from cursor to end</span>
+</span></span><span style="display:flex;"><span>ctrl+w <span style="color:#75715e">#delete word</span>
+</span></span><span style="display:flex;"><span>ctrl+c <span style="color:#75715e">#cancel</span>
+</span></span><span style="display:flex;"><span>ctrl+z <span style="color:#75715e">#suspend, resume with fg</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#esc in Mac, meta otherwise</span>
+</span></span><span style="display:flex;"><span>esc+h <span style="color:#75715e">#run-help of current written command</span>
+</span></span><span style="display:flex;"><span>esc+right_arrow <span style="color:#75715e">#move forward by a word</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------- VARIABLES -------
+</span></span><span style="display:flex;"><span>? <span style="color:#75715e">#stores the status code of last terminated program (0 for succes, i&gt;=1 for error)</span>
+</span></span><span style="display:flex;"><span>SHELL
+</span></span><span style="display:flex;"><span>PROMPT_DIRTRIM
+</span></span><span style="display:flex;"><span>CPLUS_INCLUDE_PATH
+</span></span><span style="display:flex;"><span>USER
+</span></span><span style="display:flex;"><span>HOSTNAME
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------- BASHRC ---------- 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#for colors cf. ANSI escape: eg. \e[1;31;24mA\e[0m</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#use Caskaydia (from Nerd fonts) for special characters</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">${</span>PWD##*/<span style="color:#e6db74">}</span> <span style="color:#75715e">#to remove whole path</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">${</span>PWD%%/*<span style="color:#e6db74">}</span> <span style="color:#75715e">#to keep only root directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">${</span>PWD#*/<span style="color:#e6db74">}</span> <span style="color:#75715e">#to remove root directory (and keep the rest of the path)</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">${</span>PWD%/*<span style="color:#e6db74">}</span> <span style="color:#75715e">#to remove the file (and keep the whole path)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alias <span style="color:#f92672">{</span>gstat,gs<span style="color:#f92672">}=</span><span style="color:#e6db74">&#39;git status&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># . is an alias for source</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># source file.sh excute with current session / bash file.sh execute in a new session</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------- TERMINAL COMMANDS ----------
+</span></span><span style="display:flex;"><span>... | grep &lt;keyword&gt; <span style="color:#75715e">#print only the lines where the keyword appears</span>
+</span></span><span style="display:flex;"><span>... | less <span style="color:#75715e">#navigate through stdout with space/b/q </span>
+</span></span><span style="display:flex;"><span>... | tail <span style="color:#75715e">#last 10 lines</span>
+</span></span><span style="display:flex;"><span>find -name <span style="color:#e6db74">&#34;full_name_of_file.extension&#34;</span>
+</span></span><span style="display:flex;"><span>rename --help
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>????????????????????????????????
+</span></span><span style="display:flex;"><span>df -h
+</span></span><span style="display:flex;"><span>du -h -d <span style="color:#ae81ff">1</span> .
+</span></span><span style="display:flex;"><span>du -sh *
+</span></span><span style="display:flex;"><span>ln -s
+</span></span><span style="display:flex;"><span>less / more ?
+</span></span><span style="display:flex;"><span>export <span style="color:#75715e">#add something to the tail of the variable? export PATH=something ???</span>
+</span></span><span style="display:flex;"><span>$ sh vs. $ source
+</span></span><span style="display:flex;"><span>kill ??
+</span></span><span style="display:flex;"><span>history
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cmd1 | cmd2 ; cmd2 <span style="color:#66d9ef">$(</span>cmd1<span style="color:#66d9ef">)</span> <span style="color:#75715e">#difference ?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------- DNF ---------
+</span></span><span style="display:flex;"><span>dnf list --installed | grep &lt;package_name&gt;
+</span></span><span style="display:flex;"><span>rename abc ABC * <span style="color:#75715e">#replace abc by ABC in all file names in the current directory</span>
+</span></span><span style="display:flex;"><span>sudo dnf whatprovides &lt;C_header_name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------- SCRIPTS ---------
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash_aliases <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    . ~/.bash_aliases
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code>
+        
+    </pre>
+</div><h2 id="terminology">
+    Terminology
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>$ command -flag/option argument/stdin
+</span></span><span style="display:flex;"><span>output/stdout</span></span></code>
+        
+    </pre>
+</div><h2 id="pipeline">
+    Pipeline
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>command &gt; output.txt <span style="color:#75715e">#rewrite output.txt with command ouput</span>
+</span></span><span style="display:flex;"><span>command &gt;&gt; output.txt <span style="color:#75715e">#append command output in output.txt</span>
+</span></span><span style="display:flex;"><span>command1 | command2 <span style="color:#75715e">#pass command1 output as command2 argument</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#command &lt; input.txt #?</span></span></span></code>
+        
+    </pre>
+</div><h2 id="file-manipulation">
+    File manipulation
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>cat file.txt <span style="color:#75715e">#print file.txt content</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wc file.txt <span style="color:#75715e">#print line word character counts and filename</span>
+</span></span><span style="display:flex;"><span>wc -l file.txt <span style="color:#75715e">#print line count</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sort file.txt <span style="color:#75715e">#print file.txt after alphabetical sort</span>
+</span></span><span style="display:flex;"><span>sort -n file.txt <span style="color:#75715e">#print file.txt after numerical sort</span>
+</span></span><span style="display:flex;"><span>sort -t, -k2 file.csv <span style="color:#75715e">#print file.txt after alphabetical sort of the second comma separated column</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>head -n <span style="color:#ae81ff">1</span> file.txt <span style="color:#75715e">#print first line</span>
+</span></span><span style="display:flex;"><span>tail -n <span style="color:#ae81ff">2</span> file.txt <span style="color:#75715e">#print last 2 lines</span>
+</span></span><span style="display:flex;"><span>tail -n +2 file.txt <span style="color:#75715e">#print lines 2 to last</span>
+</span></span><span style="display:flex;"><span>head -14 file.txt | tail +14 <span style="color:#75715e">#print 14th line</span>
+</span></span><span style="display:flex;"><span>sed -n <span style="color:#e6db74">&#39;10,14p&#39;</span> file.text <span style="color:#75715e">#print lines 10 to 14 included</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cut -f <span style="color:#ae81ff">1</span> file.tsv <span style="color:#75715e">#print first column of tab separated values</span>
+</span></span><span style="display:flex;"><span>cut -d , -f <span style="color:#ae81ff">2</span> file.csv <span style="color:#75715e">#print second column of comma separated values</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uniq -c text.txt <span style="color:#75715e">#print occurrence number of each line and line in order of appearance</span></span></span></code>
+        
+    </pre>
+</div><h2 id="loops">
+    Loops
+    
+    
+    
+</h2>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> in ;<span style="color:#66d9ef">do</span> ;<span style="color:#66d9ef">done</span></span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>uname -m</span></span></code>
+        
+    </pre>
+</div>
+<div class="highlight">
+    
+    <header>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        <div class="window-button"></div>
+        
+        <div class="code-label">bash</div>
+        
+    </header>
+    
+    <pre class="chroma">
+        <button class="copy"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentColor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z" fill="currentColor"></path></svg></button>
+        <button class="check"><svg data-testid="geist-icon" height="16" stroke-linejoin="round" style="color: currentcolor;" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5607 3.99999L15.0303 4.53032L6.23744 13.3232C5.55403 14.0066 4.44599 14.0066 3.76257 13.3232L4.2929 12.7929L3.76257 13.3232L0.969676 10.5303L0.439346 9.99999L1.50001 8.93933L2.03034 9.46966L4.82323 12.2626C4.92086 12.3602 5.07915 12.3602 5.17678 12.2626L13.9697 3.46966L14.5 2.93933L15.5607 3.99999Z" fill="currentColor"></path></svg></button>
+        
+        <code class="bash"><span style="display:flex;"><span>cd -</span></span></code>
+        
+    </pre>
+</div>
             </section>
             
             <nav class="toc">
                 <div class="toc-title">Contents</div>
-                <nav id="TableOfContents"></nav>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shells">shells</a></li>
+    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#file-manipulation">File manipulation</a></li>
+    <li><a href="#loops">Loops</a></li>
+  </ul>
+</nav>
             </nav>
             
         </main>
